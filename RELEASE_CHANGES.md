@@ -44,6 +44,28 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
 - An epigraph (Feynman, "Cargo Cult Science", 1974) opens the introduction,
   set with standard LaTeX (no new package).
 
+## Figures: overlapping labels fixed
+
+No plotted value changed; each regenerated figure was first checked to
+reproduce the reviewed PDF pixel for pixel before its layout was edited.
+
+- Figure 1 (`figs/make_fig1.py`): the seed connectors leave the seed box at
+  its top and bottom so they no longer cut through "training RNG stream";
+  the Run B title is set on two lines so the probe arrow no longer crosses it;
+  "counterfactual A path" moved onto the dashed line's extension, clear of
+  the step connectors.
+- Figure 2: its generator `figs/make_fig3_hf_boundary.py` and the eleven
+  probe records it reads (`logs_hf_pairing_probe/result_v2.json`,
+  `a1b_{rte,mrpc}_s41..45.json`) were missing from the reviewed artifact and
+  are restored from the authors' archive. Their data validation is unchanged.
+  The rotated x labels in panel A overlapped and are now short horizontal
+  labels (the caption names each path in full); the 1e-4 scale moved into
+  the y labels; "task--seed" now prints an en dash.
+- Figure 4a: new wrapper `figs/make_fig_r1_crossseed_camera.py` calls the
+  hash-recorded `figs/make_fig_r1_crossseed.py` unchanged, moves the s4
+  label to the right of its marker (it overlapped s2) and sets the side
+  statistics with uniform indentation and a true minus sign.
+
 ## Code
 
 - `scripts/rng_premise_check.py`: the 13 premise checks now run as assertions

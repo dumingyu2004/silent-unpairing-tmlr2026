@@ -141,11 +141,12 @@ def build_figure() -> Figure:
                                         color=INK, zorder=4.4))
     ax.text(9, 44.6, "same seed", ha="center", va="center", fontsize=FS_BODY,
             color=INK, zorder=4.2)
-    # elbow connectors seed -> each run (horizontal final approach)
-    ax.plot([16.3, 19, 19], [50.5, 50.5, 62], color=INK, lw=0.9, zorder=3,
+    # elbow connectors seed -> each run, leaving the box at its top and bottom
+    # centre so that neither vertical crosses the stream labels on the left
+    ax.plot([9, 9, 19], [53.2, 62, 62], color=INK, lw=0.9, zorder=3,
             solid_capstyle="round")
     arrow(ax, (19, 62), (21.6, 62), INK, lw=0.9, ms=7)
-    ax.plot([16.3, 19, 19], [44.5, 44.5, 38], color=INK, lw=0.9, zorder=3,
+    ax.plot([9, 9, 19], [41.8, 38, 38], color=INK, lw=0.9, zorder=3,
             solid_capstyle="round")
     arrow(ax, (19, 38), (21.6, 38), INK, lw=0.9, ms=7)
 
@@ -164,14 +165,16 @@ def build_figure() -> Figure:
     ax.text(106.3, 56.5, "…", fontsize=FS_BODY, color="0.35", va="center",
             zorder=1.4)
     connectors(ax, step_xs, yA - 1.1, 58.5)
-    ax.text(24, 56.5, "training RNG stream", ha="right", va="center",
-            fontsize=FS_BODY, color=GRAY, style="italic", zorder=4)
+    ax.text(24, 56.5, "training\nRNG stream", ha="right", va="center",
+            fontsize=FS_BODY, color=GRAY, style="italic", zorder=4,
+            linespacing=1.05)
 
     # ---------------- Run B: same seed + mid-training probe --------------
     yB = 38
-    ax.text(22, 41.9, "Run B: same seed + mid-training probe",
+    # two lines, so the title ends left of the probe arrow at x = 58
+    ax.text(22, 42.6, "Run B: same seed\n+ mid-training probe",
             fontsize=FS_RUN_TITLE, color=VERM, fontweight="bold",
-            va="center", zorder=4)
+            va="center", zorder=4, linespacing=1.05)
     # pre-probe segment: bitwise identical to A (blue + dashed vermillion)
     ax.plot([22, 61], [yB, yB], color=BLUE, lw=1.8, zorder=3,
             solid_capstyle="round")
@@ -185,12 +188,14 @@ def build_figure() -> Figure:
     # ghost continuation = counterfactual: where B would have gone (= A)
     ax.plot([61, 108], [yB, yB], color=BLUE, lw=0.9, ls=DASH, alpha=0.55,
             zorder=2.5)
-    ax.text(107.5, 36.4, "counterfactual A path", ha="right", va="center",
+    # label sits on the extension of the dashed ghost line, clear of the
+    # dotted step connectors below the diverged path
+    ax.text(109.2, yB, "counterfactual A path", ha="left", va="center",
             fontsize=FS_BODY, color=GRAY, zorder=4)
     # divergence wedge
     ax.fill([61] + bx + [108, 61], [yB] + by + [yB, yB], color=VERM,
             alpha=0.15, lw=0, zorder=1.8)
-    ax.text(94.5, 44.6, "possible divergence", fontsize=FS_BODY,
+    ax.text(94.5, 45.4, "possible divergence", fontsize=FS_BODY,
             color=VERM_DARK, style="italic", rotation=9, ha="center",
             va="center", zorder=4)
 
@@ -220,11 +225,11 @@ def build_figure() -> Figure:
             fontsize=FS_BODY, color=GRAY, va="center", zorder=4)
 
     # probe box taps the SAME ribbon
-    rounded_box(ax, 48.5, 45, 67.5, 51, edge=ORANGE_DARK, face="#FBE8C4",
+    rounded_box(ax, 48.5, 46.2, 67.5, 52.2, edge=ORANGE_DARK, face="#FBE8C4",
                 lw=1.1)
-    ax.text(58, 48, "probe: k draws", ha="center", va="center",
+    ax.text(58, 49.2, "probe: k draws", ha="center", va="center",
             fontsize=FS_BODY, color=ORANGE_DARK, zorder=4.2)
-    arrow(ax, (58, 45), (58, 34.8), ORANGE_DARK, lw=1.3, ms=8, zorder=2.8)
+    arrow(ax, (58, 46.2), (58, 34.8), ORANGE_DARK, lw=1.3, ms=8, zorder=2.8)
 
     # ---------------- outcomes at right -----------------------------------
     ax.text(112.2, yA, "acc A", fontsize=FS_BODY, color=BLUE, va="center",

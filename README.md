@@ -58,6 +58,21 @@ pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
 `paper_tmlr/appendix_body.tex` is generated from `paper/appendix.tex` by
 `scripts/revision_generate_appendix.py`; edit the source, not the output.
 
+The manuscript includes the figure PDFs in `paper_tmlr/figs/`. The
+main-text figures are drawn by generators in `figs/`: `make_fig1.py`
+(Figure 1), `make_fig3_hf_boundary.py` (Figure 2, from
+`logs_hf_pairing_probe/`), `make_fig2.py` (Figure 3),
+`make_fig_r1_crossseed_camera.py` (Figure 4a), `make_fig_r2_ratios_ci.py`
+(Figure 4b, also written by `scripts/revision_render_statistics.py`) and
+`make_fig_r3_evidence_ledger.py` (Figure 5). `figs/make_fig_r1_crossseed.py`
+is hash-recorded in `revision_results/statistics.json` and is kept unchanged;
+the `_camera` wrapper reuses it and only adjusts label layout.
+
+```bash
+python figs/make_fig3_hf_boundary.py --output-dir paper_tmlr/figs
+python figs/make_fig_r1_crossseed_camera.py
+```
+
 ## Repository layout
 
 | Path | Contents |
@@ -69,7 +84,7 @@ pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
 | `revision_results/` | Registered statistical inputs, the nanoGPT campaign (726 sanitized run records, frozen analyzer and prediction), repair patches, ledgers |
 | `revision_sources/` | Cited files from the audited codebases at their pinned commits, with their licenses; `external_source_index.json` holds pins and hashes |
 | `artifacts/` | Reconstructed E1 inputs, historical MW-Net endpoint files, causal-trace manifest |
-| `logs_*` | Per-run logs and configurations for the vision, MW-Net and NLP campaigns |
+| `logs_*` | Per-run logs and configurations for the vision, MW-Net and NLP campaigns, and the HuggingFace boundary probe (`logs_hf_pairing_probe/`) |
 | `docs/` | Preregistration, provenance and scope notes for each evidence family |
 
 ## What is and is not included
