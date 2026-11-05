@@ -6,7 +6,8 @@ Code, evidence and manuscript source for
 > Mingyu Du, Lu Han, Zhaoqi He, Jingyao Zhang, Junming Huang, Yun Li, Zerun Niu, Nguyen H. Tran, Ken-Tye Yong.
 > *Transactions on Machine Learning Research (TMLR)*, 10/2026.
 > Paper: https://openreview.net/forum?id=Xr662CduGR
-> Corresponding author: Ken-Tye Yong (ken.yong@sydney.edu.au)
+> Corresponding authors: Mingyu Du (z5719990@ad.unsw.edu.au), Nguyen H. Tran
+> (nguyen.tran@sydney.edu.au), Ken-Tye Yong (ken.yong@sydney.edu.au)
 
 **Keywords:** reproducibility, random seed, same-seed comparison, RNG,
 deterministic training, evaluation during training, selection bias, winner's
