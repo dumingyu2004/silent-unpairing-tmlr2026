@@ -43,6 +43,11 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
 - PDF metadata (title, authors, subject) set with `\hypersetup`.
 - An epigraph (Feynman, "Cargo Cult Science", 1974) opens the introduction,
   set with standard LaTeX (no new package).
+- Three wording clean-ups: the Broader Impact Statement now says the same
+  audit was first applied to the authors' predecessor implementation;
+  Appendix D.6 calls the two recovered MW-Net runners "primary" runners
+  (their files keep the `scripts/moneyshot/` path); the last sentence of the
+  Figure 20 caption is completed. Meaning unchanged.
 - Two sentences are inserted into the abstract, which is otherwise word for
   word as accepted: why the failure matters for AI agents (LLM-based coding
   and research agents, AI-scientist systems and other autonomous

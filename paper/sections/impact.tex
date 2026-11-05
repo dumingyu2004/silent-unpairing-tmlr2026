@@ -10,8 +10,8 @@ consequences deserve naming. First, the audit names repositories and commits:
 we report structural preconditions and, where we re-executed, realized
 divergence, but claim no published result is wrong. These are careful
 implementations, written when nothing in the tooling or the review process
-asked for probe-RNG isolation, and the same reading returned the same verdict
-on our own predecessor first. Second, a procedure that inflates a reported
+asked for probe-RNG isolation, and we first applied the same audit to our own
+predecessor implementation, which yielded the same verdict. Second, a procedure that inflates a reported
 gap is a recipe as well as a diagnosis. Disclosure is safer: the mechanism is
 already live in widely used released code, so it operates whether or not
 practitioners intend it. Isolation is often a small code change, but the full

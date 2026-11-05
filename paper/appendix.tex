@@ -1944,8 +1944,8 @@ reproduces the reported numerical results. Its README and file manifest
 state what is included; this is an analysis-reproduction package, not a
 claim that every historical training run can be repeated from it.
 
-The repository also includes the two recovered historical MW-Net moneyshot
-runners, source-backed explanatory repair diffs, and fifteen original
+The repository also includes the two primary MW-Net runners recovered from
+the historical campaigns, source-backed explanatory repair diffs, and fifteen original
 MW-Net endpoint files: baseline, repeat and isolated-probe model/meta-network
 states for five seeds. Their stored tensor bytes agree within each seed;
 these files do not contain complete optimizer, RNG or cursor state.
@@ -2119,9 +2119,9 @@ monitor study, full runs).} The clean and 30\%-noise conditions are
 separated from the first epoch (two-seed condition means $0.918$ vs.\
 $0.978$), but as the training loss collapses the noisy curves fall
 \emph{below} the clean ones (the condition means invert at epoch 16),
-so late-window readings carry the signal with the wrong sign: readings
-past the early epochs carry no information, the late-window
-boundary.}
+so late-window readings carry the signal with the wrong sign. Readings
+past the early epochs are therefore uninformative for detection, which
+sets the late-window boundary.}
 \label{fig:app-latewindow}
 \end{figure}
 
