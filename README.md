@@ -6,6 +6,7 @@ Code, evidence and manuscript source for
 > Mingyu Du, Lu Han, Zhaoqi He, Jingyao Zhang, Junming Huang, Yun Li, Zerun Niu, Nguyen H. Tran, Ken-Tye Yong.
 > *Transactions on Machine Learning Research (TMLR)*, 10/2026.
 > Paper: https://openreview.net/forum?id=Xr662CduGR
+> Corresponding author: Ken-Tye Yong (ken.yong@sydney.edu.au)
 
 A mid-training probe (an evaluation pass, a sampling callback, a monitoring
 statistic) that draws from the same random stream as training silently shifts
