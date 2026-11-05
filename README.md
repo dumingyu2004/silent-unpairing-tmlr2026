@@ -8,6 +8,10 @@ Code, evidence and manuscript source for
 > Paper: https://openreview.net/forum?id=Xr662CduGR
 > Corresponding author: Ken-Tye Yong (ken.yong@sydney.edu.au)
 
+**Keywords:** reproducibility, random seed, same-seed comparison, RNG,
+deterministic training, evaluation during training, selection bias, winner's
+curse, hyperparameter search, LLM agents, autonomous experimentation, AI scientist.
+
 A mid-training probe (an evaluation pass, a sampling callback, a monitoring
 statistic) that draws from the same random stream as training silently shifts
 every later draw. Two runs that share a seed and differ only in whether the
