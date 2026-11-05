@@ -144,8 +144,10 @@ def main() -> None:
     ax.text(P[1], honest - pad * 0.30,
             f"honest mean {honest:+.2f} pt", fontsize=BASE - 1.4,
             color=BLUE, va="top", zorder=5)
-    ax.text(xb, (honest + per_seed_sel) / 2, f"  {gap:+.2f} pt\n  manufactured",
-            fontsize=BASE - 1.4, color=INK, ha="left", va="center", zorder=5,
+    # above the bracket, in the empty upper right; beside it the label sat on
+    # the circled 5200 placement
+    ax.text(xb, per_seed_sel + 0.07, f"{gap:+.2f} pt\nmanufactured",
+            fontsize=BASE - 1.4, color=INK, ha="center", va="bottom", zorder=5,
             clip_on=False)
     ax.annotate(
         "fork_rng isolated:\n2/25 checked\nΔ = 0.00",

@@ -86,6 +86,33 @@ reproduce the reviewed PDF pixel for pixel before its layout was edited.
   manuscript copy, `paper_tmlr/figs/nanogpt_per_seed.pdf` (it used to also
   write a `paper/figs/` copy, a directory the release does not have).
 
+## Appendix figures: overlapping labels fixed
+
+Each generator below reproduced the reviewed PDF pixel for pixel before
+its layout was edited; no plotted value changed.
+
+| Figure | Overlap | Change |
+| --- | --- | --- |
+| 6 | a matched-pair line ran through "mean 1.27" | label moved right of its bar |
+| 8 | "update norm: ~3.3× band" sat on the blue traces | the ratio moved into the legend entry |
+| 11 | "+0.45 pt manufactured" sat on the circled 5200 placement | label moved above the bracket |
+| 12 | count labels wider than the bars ran into neighbouring bars | labels set vertically |
+| 15 | the dashed baseline crossed "+15.05" | label moved right of the arrow |
+| 16 | the dashed probe line crossed "all 35 cells …" | label centred right of the line |
+| 17 | the frameless legend in panel (a) hid seed 8 | legend moved to the empty lower right |
+| 20 | "late window" touched the epoch-16 line; the legend's line keys crossed it | label on four lines; legend moved lower left |
+
+Restored for these figures (missing from the reviewed artifact): generators
+`figs/make_appB.py`, `make_appH.py`, `make_appN.py`, `make_appR.py`,
+`make_fig_divergence_heatmap.py` (with its loader `make_fig_causal_trace.py`);
+inputs `logs_hf_pairing_probe/a1c_*.json` (4), `logs_local_5080_mnist/` (4),
+15 baseline `epoch_log.csv` files under `logs_nlp_payout_det/`, and
+`logs_causal_trace/causal_trace_figure_data.npz` and
+`causal_trace_verdict.json`. The figure-data NPZ is the 6 KB matrix behind
+Figure 16, not one of the seventeen trace payloads that stay unreleased.
+Local paths in the `args.data_root` field of the four `logs_local_5080_mnist`
+records were replaced by `/artifact/local-path`.
+
 ## Code
 
 - `scripts/rng_premise_check.py`: the 13 premise checks now run as assertions

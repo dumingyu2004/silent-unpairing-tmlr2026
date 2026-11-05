@@ -67,10 +67,21 @@ main-text figures are drawn by generators in `figs/`: `make_fig1.py`
 `make_fig_r3_evidence_ledger.py` (Figure 5). `figs/make_fig_r1_crossseed.py`
 is hash-recorded in `revision_results/statistics.json` and is kept unchanged;
 the `_camera` wrapper reuses it and only adjusts label layout. Appendix
-Figures 8, 17 and 18 come from `figs/make_appS.py` (reads `logs_a2_mwnet/`),
-`scripts/nanogpt_supplementary_plot.py` and `figs/make_appP.py` (reads
-`logs_monitor_study/` and `logs_nlp_gradpr/`). The other appendix figure
-generators were not part of the reviewed artifact.
+figures with a generator in this repository:
+
+| Figure | Generator | Inputs |
+| --- | --- | --- |
+| 6 | `figs/make_appB.py` | `logs_hf_pairing_probe/` |
+| 8 | `figs/make_appS.py` | `logs_a2_mwnet/` |
+| 11 | `figs/make_fig_realeval.py` | `logs_moneyshot/` |
+| 12 | `figs/make_appH.py` | `logs_local_5080_mnist/`, `logs_nlp_payout_det/` |
+| 15 | `figs/make_appN.py` | `logs_nlp_payout_det/roberta_base_cola/` |
+| 16 | `python -m figs.make_fig_divergence_heatmap` | `logs_causal_trace/` |
+| 17 | `scripts/nanogpt_supplementary_plot.py` | `revision_results/nanogpt_final/` |
+| 18 | `figs/make_appP.py` | `logs_monitor_study/`, `logs_nlp_gradpr/` |
+| 20 | `figs/make_appR.py` | `logs_monitor_study/` |
+
+Appendix Figures 7, 9, 10, 13, 14 and 19 are included as PDFs only.
 
 ```bash
 python figs/make_fig3_hf_boundary.py --output-dir paper_tmlr/figs
@@ -88,7 +99,7 @@ python figs/make_fig_r1_crossseed_camera.py
 | `revision_results/` | Registered statistical inputs, the nanoGPT campaign (726 sanitized run records, frozen analyzer and prediction), repair patches, ledgers |
 | `revision_sources/` | Cited files from the audited codebases at their pinned commits, with their licenses; `external_source_index.json` holds pins and hashes |
 | `artifacts/` | Reconstructed E1 inputs, historical MW-Net endpoint files, causal-trace manifest |
-| `logs_*` | Per-run logs and configurations for the vision, MW-Net and NLP campaigns, and the HuggingFace boundary probe (`logs_hf_pairing_probe/`); `logs_monitor_study/`, `logs_nlp_gradpr/` and `logs_a2_mwnet/` hold the inputs of appendix Figures 8 and 18 |
+| `logs_*` | Per-run logs and configurations for the vision, MW-Net and NLP campaigns, and the HuggingFace boundary probe (`logs_hf_pairing_probe/`); `logs_monitor_study/`, `logs_nlp_gradpr/`, `logs_a2_mwnet/`, `logs_local_5080_mnist/` and `logs_causal_trace/` hold appendix-figure inputs (see the figure table above) |
 | `docs/` | Preregistration, provenance and scope notes for each evidence family |
 
 ## What is and is not included

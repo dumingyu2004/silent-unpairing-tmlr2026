@@ -1,0 +1,26 @@
+{
+  "args": {
+    "model": "roberta-base",
+    "task": "rte",
+    "arms": "ref,repeat,probe_cuda",
+    "steps": 470,
+    "probe_every": 200,
+    "seed": 42,
+    "workdir": "logs_hf_pairing_probe",
+    "out": "logs_hf_pairing_probe/a1c_rte_s42.json"
+  },
+  "results": {
+    "ref": {
+      "final_val_acc": 0.6953125,
+      "max_param_diff_vs_ref": 0.0
+    },
+    "repeat": {
+      "final_val_acc": 0.6953125,
+      "max_param_diff_vs_ref": 0.0
+    },
+    "probe_cuda": {
+      "final_val_acc": 0.66796875,
+      "max_param_diff_vs_ref": 0.0009818103862926364
+    }
+  }
+}

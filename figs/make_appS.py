@@ -86,8 +86,9 @@ def main() -> None:
              va="top", fontsize=BASE - 1.0, color="black", fontweight="bold")
     axL.text(430, 4.0, f"meta-grad: up to\n~{meta_ratio:,.0f}× swing",
              fontsize=BASE - 1.8, color=VERM, ha="right", va="bottom")
-    axL.text(430, 3.6e-3, f"update norm: ~{upd_ratio:.1f}× band",
-             fontsize=BASE - 1.8, color=BLUE, ha="right", va="bottom")
+    # The update-norm band ratio is carried by the legend entry: the band sits
+    # on the axis floor under the meta-grad traces, so an in-axes label always
+    # landed on the blue lines.
 
     for noise, seed in RUNS:
         rs = rows("l2rw", noise, seed)
@@ -110,7 +111,8 @@ def main() -> None:
     handles = [Line2D([], [], color=VERM, lw=1.0),
                Line2D([], [], color=BLUE, lw=1.0),
                Line2D([], [], color=GREEN, lw=1.0)]
-    fig.legend(handles, ["MW-Net meta-grad norm", "MW-Net update norm",
+    fig.legend(handles, ["MW-Net meta-grad norm",
+                         f"MW-Net update norm (~{upd_ratio:.1f}× band)",
                          "L2RW grad-eps / lr"],
                loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2,
                frameon=False, handlelength=1.4, handletextpad=0.4,

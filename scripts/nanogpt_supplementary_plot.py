@@ -34,7 +34,8 @@ def build_figure(data, frozen):
         ax.set_title(title, fontweight='bold', color='black', fontsize=TITLE_SIZE)
         ax.set_xticks([1, 4, 8, 12, 16])
         ax.grid(axis='y', alpha=.18)
-    axes[0].legend(loc='upper right', fontsize=6.7, frameon=False)
+    # lower right is empty; at upper right the frameless legend hid seed 8
+    axes[0].legend(loc='lower right', fontsize=6.7, frameon=False)
     grid = np.asarray(data['validation_shared_deltas'])
     mean, best = grid.mean(axis=1)*1000, grid.max(axis=1)*1000
     ax = axes[2]
