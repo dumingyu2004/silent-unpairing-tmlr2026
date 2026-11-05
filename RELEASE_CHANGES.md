@@ -43,6 +43,12 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
 - PDF metadata (title, authors, subject) set with `\hypersetup`.
 - An epigraph (Feynman, "Cargo Cult Science", 1974) opens the introduction,
   set with standard LaTeX (no new package).
+- The abstract states why the failure matters for AI agents (LLM-based coding
+  and research agents, AI-scientist systems and other autonomous
+  experimentation pipelines), presented as an argument rather than a
+  measurement, and uses plain terms in place of paper-specific ones
+  ("probe positions" for placements, "winner's-curse effect" for reporting
+  optimism). No result, number or conclusion changed.
 
 ## Figures: overlapping labels fixed
 

@@ -3,38 +3,42 @@
 % lead with the instrument, one-sentence failure, manufactured-gain witness,
 % seed-variance distinction, certificate close, precondition!=harm disclaimer.
 % Monitor and the kernel layer are demoted out of the abstract.
-Same-seed comparisons are widely used to evaluate deep-learning methods while
-controlling run-to-run variation. We study when this intended control fails: an arm-specific
-mid-training probe can advance a random stream or data cursor later consumed
-by training. For state-pure probes in an otherwise identical deterministic
-training program, we prove a sufficient condition for bitwise trajectory
-identity and characterize its first update-level violation; a fixed stream
-offset applies only on the aligned execution prefix, and subsequent
-reconvergence is possible. Desynchronization alone need not bias the marginal
-mean method effect. Direct selection on the affected reported quantity,
-however, has nonnegative expected reporting optimism even with dependent,
-non-Gaussian, unequal-mean placements. We distinguish this optimism from
-systematic placement effects and give exact offset and scale decompositions;
-the iid-Gaussian special case gives $c_m\sigma$, which we use as a
-conditional scaling benchmark.
-An audit of 28 deliberately selected codebases records 22 exposed, four
-guarded and two configuration-dependent cases. Dynamic witnesses have
-different verification strengths; the strongest Meta-Weight-Net comparison
-localizes the first divergent training consumer and restores model and
-meta-network state identity with a probe-free baseline on 5/5 seeds.
-Selecting on the reported quantity itself yields a $4.01$-point uplift over
-the placement average in one single-rig campaign. Whether this translates
-into a positive independent-test gain remains unresolved: both primary
-intervals in our validation-to-test bridge include zero.
-The Gaussian calibration uses the same placement outcomes and is descriptive.
-A separate nanoGPT campaign
-freezes a calibration-only prediction of $0.003884$ loss units before 16
-held-out seeds yield $0.003431$; the discrepancy interval includes zero.
-This checks mean calibration within one additional setting rather than
-the formula's transferability across settings.
-The practical repair combines probe-state isolation,
-deterministic execution and repeat checks on each materially distinct path,
-with explicit metric, weight and full-state verification scopes and costs.
-We provide a reproducible diagnosis of a deep-learning evaluation failure,
-not a claim that any audited published result is wrong.
+Same-seed comparisons, which train a method and its baseline from the same
+random seed, are widely used to evaluate deep-learning methods while
+controlling run-to-run variation. This control matters more as AI agents
+(LLM-based coding and research agents, AI-scientist systems and other
+autonomous experimentation pipelines) increasingly run such comparisons for
+researchers: we argue that autonomous experiments meet the conditions for the
+failure we study by default, putting the reproducibility of agent-reported
+results at risk. The failure: a mid-training probe that runs in
+only one of the two runs (an evaluation pass, sampling call or monitoring hook)
+can advance a random-number-generator (RNG) stream or data
+cursor that training later reads. For probes that leave model state untouched,
+in an otherwise identical deterministic training program, we prove a
+sufficient condition for bitwise-identical training and characterize the first
+update at which it breaks, without ruling out later reconvergence. This desynchronization alone
+need not bias the average method effect. Reporting the best of several runs
+(probe positions, configurations or checkpoints) on the affected metric,
+however, cannot be biased downward in expectation: a winner's-curse effect
+that holds even for dependent, non-Gaussian runs with unequal means. We
+separate this bias from genuine differences between probe positions; under an
+iid Gaussian model it is $c_m\sigma$, a descriptive reference scale fitted on
+the same runs. An audit of 28 deliberately selected codebases finds 22
+exposed, four guarded and two configuration-dependent. In the strongest
+re-execution (Meta-Weight-Net), isolating the probe restores model and
+meta-network state bitwise identical to a probe-free run on 5/5 seeds. Picking the best-scoring
+probe position yields a $4.01$-point gain over the average position in one
+single-machine campaign; whether this carries over to an untouched test set is
+unresolved, as both primary validation-to-test intervals include zero. A nanoGPT
+prediction fixed in advance ($0.003884$ loss units) is consistent with 16 new
+seeds ($0.003431$), checking mean calibration in one more setting, not
+transfer across settings. In autonomous experimentation, an
+LLM agent's progress checks, piecemeal relaunches and automated hyperparameter
+search can meet these conditions without deliberate choice, silently breaking
+the same-seed comparisons it relies on and reporting gains that may not
+reproduce. The repair applies unchanged to agentic research pipelines: isolate
+each probe's RNG use, run training deterministically, and rerun each distinct
+code path to confirm a zero repeat difference at a stated scope. We provide a
+reproducible diagnosis of a deep-learning evaluation failure, not a claim that
+any audited published result is wrong.
 Code and data: \url{https://github.com/dumingyu2004/silent-unpairing-tmlr2026}.
