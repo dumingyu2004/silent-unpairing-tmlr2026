@@ -67,7 +67,7 @@ consequence when selection acts on the affected outcome.
 \citet{jordan2024variance} argues that the between-run
 test-set variance it measures is harmless and inevitable, which we do not dispute: pairing
 exists precisely to see \emph{through} that variance, and our result is that
-the instrument can fail, while selection on the reported quantity creates
+this instrument can fail, and that selection on the reported quantity creates
 optimism; observed uplift can also contain systematic placement effects.
 
 \paragraph{Bilevel meta-learning and sample reweighting.}
@@ -77,7 +77,7 @@ optimizer step and a meta-objective on held-out data: L2RW
 co-training lineage of Co-teaching \citep{han2018coteaching} and DivideMix
 \citep{li2020dividemix}, recent entries BHN \citep{yu2023bhn} and RENT
 \citep{bae2024rent}, and a three-phase reweighting theory
-\citep{zhang2025revisiting}. This is the audit's home neighborhood. A
+\citep{zhang2025revisiting}. This is the method family the audit targets. A
 second\diagtwoscope{}
 diagnosis speaks to this family: the canonical lr-scaled
 virtual step emits an exactly $\eta$-scaled meta-signal, which can be dominated
@@ -108,7 +108,7 @@ isolate probe RNG (Lightning's isolate-rng utility
 splittable keys \citep{jax2018prng}) ship the primitives that enforce
 isolation, though whether a given program is isolated still depends on how it
 assigns probe and training keys. Isolation is
-often small as a code change, but it must be \emph{checked}, not assumed:
+often a small code change, but it must be \emph{checked}, not assumed:
 deterministic kernels and a per-path repeat/state audit add real runtime and
 storage costs, and some platforms lack deterministic implementations. The
 three practices of Section~\ref{sec:repair} make the check mechanical. A
@@ -120,8 +120,8 @@ The general selection decomposition separates reporting optimism from
 systematic placement effects without independence assumptions. Selecting
 the best of $m$ candidates has expected uplift $c_m\sigma$ only under the
 stated iid-Gaussian benchmark (Proposition~\ref{prop:harvest}); correlated,
-heteroscedastic, or offset placements need not obey that scale: classical
-selection bias \citep{cawley2010overfitting}, fed here by divergence the
+heteroscedastic, or offset placements need not obey that scale. The mechanism is classical
+selection bias \citep{cawley2010overfitting}, fed here by divergence that the
 instrument manufactures. Observed max-minus-mean uplift is not identified
 as pure optimism or held-out gain: it also contains placement effects.
 The no-op corollary is an application of the pairing condition, not a

@@ -5,8 +5,8 @@
 Same-seed comparisons should check the three practices in
 Section~\ref{sec:repair}: isolate probes, pin kernels, and verify each
 materially distinct execution path at the resolution claimed.
-Stream sharing alone does not imply divergence: the tested Trainer
-evaluation is configuration-specifically stream-disjoint from training
+Stream sharing alone does not imply divergence: in the tested configuration,
+Trainer evaluation is stream-disjoint from training
 (Table~\ref{tab:hf}). Existing isolation primitives help, but their use must
 be checked. Deterministic execution and repeat/state audits incur runtime
 and storage costs; some platforms lack deterministic implementations.

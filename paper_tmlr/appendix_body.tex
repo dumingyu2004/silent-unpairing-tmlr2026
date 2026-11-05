@@ -20,8 +20,9 @@ Register}
 \paragraph{Tone, stated once and applying to every named repository.}
 These verdicts convict a practice, not people. The audited releases are careful
 implementations of influential methods, and we know of no venue checklist or
-framework default from their era that asked for probe-RNG isolation. The same
-reading applied to our own predecessor system returned the same verdict first.
+framework default from their era that asked for probe-RNG isolation. We first
+applied the same audit to our own predecessor system, which yielded the same
+verdict.
 
 \paragraph{Method.}
 Two static-reading waves over shallow clones pinned by commit SHA: six classic
@@ -31,14 +32,14 @@ Table~\ref{tab:classic}) and five recent or large-scale targets
 flagship 2023--2026 stacks as a \emph{boundary probe} rather than a prevalence
 claim: three-way verdicts (exposed / guarded / ambiguous with the deciding flag
 stated), a single reading whose load-bearing citations were independently
-re-verified against the pinned clones, entering neither the eleven-repository
-count nor the corrections register. Static reading establishes only that the
+re-verified against the pinned clones. This wave enters neither the
+eleven-repository count nor the corrections register. Static reading establishes only that the
 consumption pattern exists, a claim about code rather than about any published
 number; realized divergence comes from the re-execution witnesses, whose floors
 are registered in Appendix~D, and the remaining six verdicts are labeled static
 in the main text. An independent second reading against the same pinned commits
 refuted 0/11, strengthened two (TopoFilter, DivideMix), and produced seven
-secondary corrections, an eighth surfacing during witness construction
+secondary corrections, with an eighth surfacing during witness construction
 (register below).
 
 \paragraph{The shared negative result.}
@@ -224,7 +225,7 @@ only training-mode global draws (MoE jitter \code{router.py:331},
 \code{:336}; dropout defaults off); batch order is counter-keyed from a
 dedicated PCG64 generator (\code{data\_loader.py:667--688}) &
 guarded &
-no audited configuration flips it. The $k = 0$ counts the training-mode
+no audited configuration flips it. The $k = 0$ count covers the training-mode
 global draws the evaluator gates off, not every value an evaluation path
 could take; what carries the verdict is the dedicated generator, which
 leaves training's batch order disjoint from the global stream whatever an
@@ -288,7 +289,7 @@ an eighth from witness construction; zero verdicts refuted).}
 \begin{enumerate}\itemsep2pt
 \item \emph{L2RW official}: provenance inversion, the executed \code{DataSet}
 coming from TensorFlow r1.10 with the vendored copy dead code (mechanism
-byte-identical); an \code{nval} confusion clarified. Lacking a graph-level seed
+byte-identical); a confusion about \code{nval} was clarified. Lacking a graph-level seed
 it re-seeds from entropy, so the repository's same-seed-list comparisons
 (\code{mnist\_train.py:417--422}) were never seed-controlled, strengthening
 the ``paired in intent, desynchronized in fact'' reading.
@@ -345,8 +346,8 @@ The main text's claim that the exposure reaches past the noisy-label
 neighborhood rests on a second audit of twelve field-standard codebases spanning
 diffusion, vision recipes, reinforcement learning, LLM finetuning, and recent
 sample-selection methods. We separate it from the double-read core by
-verification tier: this wave is a single structured reading at pinned commits,
-of which the four headline verdicts (\code{timm}, \code{lucidrains/ddpm},
+verification tier: this wave is a single structured reading at pinned commits;
+its four headline verdicts (\code{timm}, \code{lucidrains/ddpm},
 Sel-CL, MLC) were independently re-verified at file--line by the authors, and
 \code{timm}'s data-order channel was reproduced empirically under \code{torch}
 2.11 (inserting an eval-loader iteration between epochs shifts the next epoch's
@@ -444,7 +445,7 @@ NumPy does not isolate torch CPU augmentation from a loader base seed.
 Across all 28 paths the revised counts are 22 exposed, four guarded and
 two configuration-dependent. Guarded does not imply state purity or
 universal framework immunity. Exact source-chain conditions and before/after
-verdicts are recorded in the revision audit ledger.}
+verdicts are recorded in \code{revision\_results/audit\_ledger.json}.}
 \label{tab:fieldwide}
 \end{table}
 
@@ -770,8 +771,8 @@ particular $c_6=1.2672$ and $c_7=1.3522$.
 
 \begin{remarkx}[Offsets, dependence, and the scale being estimated]
 Let $P=I-\mathbf1\mathbf1^\top/m$ and let $\alpha$ be deterministic. Since
-$H(x)=\max_j(Px)_j$ and the maximum changes by between the smallest and
-largest added coordinate,
+$H(x)=\max_j(Px)_j$ and the maximum changes by an amount between the
+smallest and largest added coordinate,
 \[
 \min_j(P\alpha)_j\le
 \mathbb EH(\alpha+\varepsilon)-\mathbb EH(\varepsilon)
@@ -820,7 +821,7 @@ Expand $T_J$ with selection indicators to prove the identity. Its sign is
 unrestricted: positive validation--test Pearson correlation does not fix
 these selection-indicator covariances. For a finite counterexample, take
 $x$ uniform on $(-2,-1,1,2)$, validation scores $(x,-x)$, and test scores
-$(t,-t)$ with respective $t=(-10,15,-15,10)$. Both candidate correlations
+$(t,-t)$, where $t=(-10,15,-15,10)$ for the four values of $x$. Both candidate correlations
 are positive, but all test means vanish and $\mathcal O_T=-2.5$.
 An observed selected test delta from a common baseline is not this optimism
 unless the same candidate-specific mean reference is used. Stronger transfer
@@ -915,7 +916,7 @@ The historical cross-seed implementations use different scales:
 \code{scripts/prop2\_fit.py} flattens the remaining rows before calculating one SD,
 whereas \code{figs/make\_fig\_r1\_crossseed.py} averages their within-row SDs.
 The former mixes between-seed means into the scale; both are reported in
-the canonical reanalysis. For the latter, predicting the fifth seed's
+the released reanalysis. For the latter, predicting the fifth seed's
 max-minus-mean as $c_6\bar\sigma$ \emph{fails at the individual-seed level}.
 Predicted versus observed
 (points): $3.95/3.00$, $4.38/2.71$, $3.87/5.39$, $4.71/1.63$, $3.70/7.32$:
@@ -923,7 +924,8 @@ mean absolute error $2.17$, $54\%$ of the $4.01$ being predicted, with the two
 series \emph{anti}-correlated ($r=-0.8672$); mean signed error is $+0.11$.
 The flattened-row alternative has MAE $2.2441$ and $r=-0.9683$; the
 $c_4(m)$-corrected within-row alternative has MAE $2.2210$.
-Mean-other-SD predictions are affine decreasing functions of held-out SD,
+Predictions from the mean SD of the other seeds are affine decreasing
+functions of the held-out SD,
 so their correlation with harvest is the negative of the \emph{observed}
 SD--harvest correlation, not necessarily negative in every population or
 dataset. Substituting each seed's own SD reduces MAE to $0.8256$, but uses
@@ -1112,7 +1114,7 @@ paper's contribution: a condition, a prevalence audit, byte-level witnesses, a
 harvest law, and a repair. What follows is a second, narrower
 diagnosis of the same method family, established analytically and instrumented
 in three systems (Figure~\ref{fig:app-f1-decoupling}) rather than audited at
-scale, and reported because it lands on the same victims.
+scale, and reported because it affects the same method family.
 
 Proposition~\ref{prop:deadmeta}'s $O(\eta)$ scale can become negligible in
 \emph{competition}: the relevant magnitude ratio compares the $\eta$-scaled
@@ -1128,7 +1130,7 @@ remove) sensitivity to gradient magnitude. A signal that is
 $\eta$-independent by construction (a real validation-metric difference
 between materialized candidate models, the choice our constructive endpoint
 makes) sidesteps the competition entirely (Table~\ref{tab:f1}). The dead
-regime is not hypothetical: our own predecessor system was the specimen, its
+regime is not hypothetical: our own predecessor system is an instance, its
 signal ${\sim}10^{-6}$ against a ${\sim}10^{-4}$ regularizer, every learned
 amplitude pinned at initialization and its ``filtering'' map identically the
 identity for entire runs.
@@ -1172,9 +1174,9 @@ $\eta$-independent quantity or a scale-invariant map can avoid explicit
 lr-scale competition, while adaptive optimization can mitigate it. An
 lr-scaled signal may become negligible relative to a fixed-scale competing
 term as the learning rate decays; exact inactivity requires additional
-consumer behavior or measurement. This is why the two diagnoses fall on the
-same victims: the virtual-step probe that makes a controller's signal scale
-suspect is also the most RNG-hungry pattern in our audit, so the method family
+consumer behavior or measurement. This is why the two diagnoses affect the
+same method family: the virtual-step probe that makes a controller's signal scale
+suspect is also the most RNG-intensive pattern in our audit, so the method family
 that most needs trustworthy paired evaluation is the one whose default
 implementation most reliably destroys it.
 
@@ -1230,7 +1232,7 @@ champion-raw cell falsifies the premise conjunction but does not uniquely
 identify stream displacement: hidden state mutation or an untested
 nondeterministic path can also account for it. Across the evaluated campaigns
 every champion-raw cell reported exactly zero (18/18 tuned,
-Table~\ref{tab:certreg}; 6/6 under-tuned canaries); the count includes metric-only cells without an independent floor, so it is not a bitwise certificate. The two other exact
+Table~\ref{tab:certreg}; 6/6 under-tuned cells); the count includes metric-only cells without an independent floor, so it is not a bitwise certificate. The two other exact
 zeros are EMA holdout ties logged as promotions rather than certificates.
 \end{remarkx}
 
@@ -1245,7 +1247,7 @@ Tuned regime & Guard $\Delta$ & Exact zeros & LAWA \\
 NLP, linear decay (3 tasks $\times$ 3 seeds) & \textbf{0.00} & 9/9 &
 $-1.44$ (6/9 neg) \\
 Vision SGD, clean & \textbf{0.00} & 5/5 & $-0.11$ (4/5 neg) \\
-Vision SGD, noise30 & \textbf{0.00} & 5/5 & $-1.16$ (5/5 neg) \\
+Vision SGD, 30\% noise & \textbf{0.00} & 5/5 & $-1.16$ (5/5 neg) \\
 \bottomrule
 \end{tabular}
 \caption{Observational guard registry, not a count of state-level
@@ -1299,8 +1301,8 @@ on every $D=d$; averaging over $D$ proves the unconditional bound. Bonferroni
 gives the displayed allocations without any cross-event independence.
 \end{proof}
 \begin{remarkx}[Scope of the margin result]
-The conditional rule avoids a guessed variance reduction or a population
-accuracy replaced by its same-probe estimate. It is a prospective calibration
+The conditional rule needs neither an assumed variance reduction nor a
+same-probe estimate substituted for the population accuracy. It is a prospective calibration
 option, not a retrospective error guarantee for the historical fixed-margin
 campaigns. State-pure RNG isolation does not make an adaptively reused
 validation set statistically fresh. The no-op corollary is a separate
@@ -1320,7 +1322,7 @@ under-tuned cells ($-3.12$; the candidate cleared its margin on the probe and
 failed to generalize to the holdout, the residual risk a probe margin
 cannot price, reported rather than averaged away). What the guard pays out
 where it does act, against LAWA and against an unconditional always-EMA
-policy, is Figures~\ref{fig:app-payout-bars} and~\ref{fig:app-symmetry}; the
+policy, is shown in Figures~\ref{fig:app-payout-bars} and~\ref{fig:app-symmetry}; the
 cell-by-cell record and its largest single rescue are
 Figures~\ref{fig:app-nlp-strip} and~\ref{fig:app-cola-case}, and the
 participation-ratio detector that gates the candidates is
@@ -1351,7 +1353,8 @@ measured under those settings.
 The NLP harness reaches deterministic execution through \code{transformers}'
 \code{enable\_full\_determinism(seed)}, which sets
 \code{CUBLAS\_WORKSPACE\_CONFIG=":16:8"} itself. Proposition~1 is stated under
-deterministic execution, and the second layer is real: in the under-tuned
+deterministic execution, and kernel nondeterminism is a real second source
+of unpairing: in the under-tuned
 CIFAR-100 protocol, same-seed cross-arm bifurcation from nondeterministic
 kernels alone reached 11.7 points (Figure~\ref{fig:app-kernel-noise}).
 \item \textbf{Stream isolation for every internal consumer.} Every monitor
@@ -1422,7 +1425,7 @@ ten-pair effect size, full-length) &
 verified bitwise identical to its reference &
 weight-level $\max|\Delta W|$ \\
 \addlinespace
-NLP tuned, gate B (RTE/MRPC/CoLA $\times$ 3 seeds, linear decay) &
+NLP tuned (RTE/MRPC/CoLA $\times$ 3 seeds, linear decay) &
 \emph{no independent rerun}: 8/9 cells champion $=$ raw with $\Delta$
 exactly $0.00$;
 the ninth (MRPC seed~2) an exact EMA--baseline holdout tie at
@@ -1437,13 +1440,13 @@ $\Delta$ exactly $0.00$
 final metric, exact; not a rerun \\
 \addlinespace
 Vision tuned, deterministic (CIFAR-10, SGD cosine $+$ augmentation;
-clean and noise30) &
+clean and 30\% noise) &
 repeat floor exactly $0.0$; 10/10 cells report the guard at exactly
 $0.00$ (float-equal finals) &
 final metric, exact \\
 \addlinespace
 Vision under-tuned, deterministic (CIFAR-10/100, constant lr, no
-augmentation; clean and noise30) &
+augmentation; clean and 30\% noise) &
 \code{tmp} $+$ atomic-rename write protocol; whole-pipeline integrity
 rerun: seed 1, all three arms re-run from scratch reproduce the archived
 finals bitwise ($0.802444$ / $0.824222$ / $0.783333$) &
@@ -1659,7 +1662,7 @@ zero mean across seeds.}
     Placeholder for \texttt{figs/fig\_realeval.pdf}.}}%
 }
 \caption{\textbf{The harvest reproduced by an \emph{unmodified} standard monitoring
-evaluation, at a believable protocol (Meta-Weight-Net official code, full
+evaluation, under a realistic protocol (Meta-Weight-Net official code, full
 $45$k train, $12$ epochs).} A shuffled monitoring \texttt{DataLoader}'s two
 $64$-bit seed draws desynchronize the pair; per-seed selection over five
 placements manufactures $+0.45$ points (tracking $c_5\bar\sigma$, ratio
@@ -1681,7 +1684,7 @@ small-sample, same-sample calibration.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_payout\_bars.pdf}.}}%
 }
-\caption{\textbf{Guard payout versus LAWA across the five under-tuned cells, as
+\caption{\textbf{Guard gain versus LAWA across the five under-tuned cells, as
 mean holdout gain over the paired baseline:} guard $+1.88$ (NLP macro),
 $+3.64$/$+6.95$ (CIFAR-10 clean/noise), $+4.86$/$+0.87$ (CIFAR-100
 clean/noise); LAWA $+0.48$, $+4.73$, $-0.89$, $-0.00$ (not run on NLP).
@@ -1689,7 +1692,7 @@ Above each bar: per-unit win/zero/negative counts (15 task--seed cells for
 NLP, 5 seeds per vision cell), where a zero is an \emph{exact} $0.00$
 delta, not by itself a state-level certificate. The guard has one realized
 loss ($-3.12$, RTE seed 1); LAWA is negative in $2$--$3$ units in three of
-the four vision cells. These observed payouts do not bound the guard's
+the four vision cells. These observed gains do not bound the guard's
 downside; the conditional no-op implication applies only under its premises.}
 \label{fig:app-payout-bars}
 \end{figure}
@@ -1707,8 +1710,8 @@ downside; the conditional no-op implication applies only under its premises.}
 (CIFAR-10, 30\% noise, deterministic, 5 seeds), as mean holdout gain over
 the paired baseline.} Under-tuned recipe: guard $+6.95$ versus always-EMA
 $+7.13$; tuned recipe: guard exactly $0.00$ (all champions raw, metric-level
-zeros) versus always-EMA $-0.18$. The $0.18$ points of upside conceded
-where EMA helps accompanies an observed zero where it hurts; these metrics
+zeros) versus always-EMA $-0.18$. The guard concedes $0.18$ points
+of upside where EMA helps and records an observed zero where it hurts; these metrics
 alone do not establish a state-level certificate.}
 \label{fig:app-symmetry}
 \end{figure}
@@ -1722,7 +1725,7 @@ alone do not establish a state-level certificate.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_nlp\_strip.pdf}.}}%
 }
-\caption{\textbf{Per-cell guard payout on the under-tuned NLP campaign
+\caption{\textbf{Per-cell guard gain on the under-tuned NLP campaign
 (deterministic; 3 tasks $\times$ 5 seeds; champion from the selection log
 versus the paired baseline's final holdout metric).} Task means $-0.62$
 (RTE), $+1.42$ (MRPC), $+4.84$ (CoLA); seven cells are exact zeros
@@ -1746,16 +1749,16 @@ averaged away.}
 (deterministic pairing, same seed).} The baseline's raw model collapses on
 the final half-epoch (holdout MCC $\times 100$: $47.83$), while the
 guard's deployed champion (EMA $0.999$, engaged by the epoch-1 fallback)
-ends at $62.88$. The guard converts trajectory instability the baseline
-merely suffers into a selection among stable candidates, which is what the
-CoLA column of Figure~\ref{fig:app-nlp-strip} is made of.}
+ends at $62.88$. The guard converts trajectory instability, which the baseline
+merely suffers, into a selection among stable candidates; the CoLA column of
+Figure~\ref{fig:app-nlp-strip} consists of such selections.}
 \label{fig:app-cola-case}
 \end{figure}
 
 \subsection{Where divergence starts: the traced MW-Net witness}
 \label{sec:divergence-onset}
 
-A dense causal trace on the Meta-Weight-Net rig localizes the onset of
+A dense causal trace on the Meta-Weight-Net setup localizes the onset of
 divergence exactly (five frozen seeds; arms \code{base}, \code{shared\_eval},
 \code{isolated\_eval}; all six preregistered gates pass: capture and trace
 conservation, isolated restoration, single probe firing, repeat floor, and
@@ -1912,7 +1915,7 @@ states for five seeds. Their stored tensor bytes agree within each seed;
 these files do not contain complete optimizer, RNG or cursor state.
 The diffs are revision-generated explanations against documented source
 bases, not a recovered complete original repair-patch series.
-A separate local trace companion retains seventeen original MW-Net tensor
+A separate local archive retains seventeen original MW-Net tensor
 archives for the five baseline/shared/isolated triplets and two baseline
 repeats, checked against their retained run records. These seventeen NPZ
 archives are not included in the public repository.
@@ -1948,12 +1951,12 @@ The harvest also does not need an inserted probe. Replacing the semantically
 inert permutation draw with an \emph{unmodified} standard monitoring
 evaluation (switch the model to evaluation mode, iterate a shuffled
 validation loader for a few batches, switch back) reproduces the mechanism
-at a believable protocol (Meta-Weight-Net official code, the full
+under a realistic protocol (Meta-Weight-Net official code, the full
 $45{,}000$-image training set, $12$ epochs on the real three-phase schedule,
 held-out test). The shuffled loader draws
-exactly \emph{two} $64$-bit integers from the global stream training consumes,
-its loader's base seed and its sampler's seed, with nothing inserted, and that
-alone desynchronizes the pair: across $5$ seeds $\times\,5$ placements, per-seed
+exactly \emph{two} $64$-bit integers (the loader's base seed and the sampler's
+seed) from the global stream that training also consumes; nothing is inserted,
+and that alone desynchronizes the pair: across $5$ seeds $\times\,5$ placements, per-seed
 selection manufactures $+0.45$ points over the honest mean at ratio $1.15$ to
 $c_5\bar\sigma$. The two directly checked isolated comparisons (two seeds,
 placement 1400) match the never-evaluated baseline in final model and
@@ -1970,7 +1973,7 @@ and the isolation wrapper restores endpoint equality in the two checked pairs.
 
 The full official protocol closes the loop. At $120$ epochs ($58{,}800$
 steps; repeat floor SHA-exact across all three seeds, model and
-meta-network alike), the same rig sustains every layer: all twelve
+meta-network alike), the same setup reproduces every layer of the result: all twelve
 placement$\times$seed pairs desynchronize bitwise, a single inert
 permutation draw moves the printed method-versus-baseline gap by up
 to $0.32$ points on the paper's best-accuracy metric ($0.56$ on final),
@@ -2001,7 +2004,7 @@ before launch and passed at model and meta-network SHA-256 resolution.
 \item The new nanoGPT calibration/held-out campaign used an NVIDIA RTX PRO
 6000 Blackwell Workstation Edition with PyTorch \code{2.11.0+cu128};
 its per-path repeat checks were performed on that stack, not inferred from
-the default RTX 5080 rig.
+the default RTX 5080 machine.
 \item Framework citations in Appendix~B are pinned to \code{transformers}
 5.12.1 and \code{torch} 2.11.0; audited repositories are pinned by commit
 SHA (Tables~\ref{tab:classic} and~\ref{tab:recent}).
@@ -2041,8 +2044,8 @@ CoLA/MRPC (per-40-step monitor). All 8/8 clean--noise pairs separate in
 the early window; at the sample nearest epoch 1 the clean-versus-noise
 gaps are $+0.27$ (CIFAR-10), $+0.52$ (CoLA), and $+0.68$ (MRPC), while
 CIFAR-100's separation ($+0.04$ at epoch 1) opens over the following
-epochs. Readings are same-dataset and seed-paired only: the scales differ
-across datasets, the no-global-cutoff boundary.}
+epochs. Readings are compared only within a dataset and seed pair: the scales
+differ across datasets, so no global cutoff applies.}
 \label{fig:app-detector-grid}
 \end{figure}
 

@@ -36,7 +36,7 @@ own marginal mean (Proposition~\ref{prop:harvest}), without iid or Gaussian
 assumptions. The observed uplift above the placement average also includes
 systematic placement effects, which we separate analytically. Whether this
 translates into a positive gain on an untouched test set after validation-based
-selection remains unresolved: both primary E1 intervals include zero
+selection remains unresolved: both primary validation-to-test intervals include zero
 (Section~\ref{sec:harvest}).
 We read twenty-eight official and field-standard codebases spanning
 2018--2026, from noisy-label vision methods to LLM pretraining, and found the
@@ -66,7 +66,7 @@ double-read, twelve field-standard training loops, five flagship
 stacks). Separately, selection on the reported quantity yields an observed
 $+4.01$ uplift over the placement average in released code. We use
 $c_6\bar\sigma$ as a conditional iid-Gaussian benchmark, with same-sample
-calibration on one codebase, one dataset and a single rig
+calibration on one codebase, one dataset and a single machine
 (Proposition~\ref{prop:harvest}; Section~\ref{sec:harvest}). A separate nanoGPT
 experiment freezes the prediction before evaluating held-out seeds (16 seeds
 per split), assessing mean calibration within one additional setting rather
@@ -80,7 +80,8 @@ require an exact repeat floor. On top of it we prove a bitwise no-op
 certificate (Corollary~\ref{cor:noop}) by which a repaired selection endpoint
 can prove that a comparison it declined to change is unpolluted
 (Section~\ref{sec:receipt}). We claim no unconditional accuracy gain for that
-endpoint anywhere in this paper; its payout behavior is reported in the appendix.
+endpoint anywhere in this paper; its observed gains and losses are reported in
+the appendix.
 \contribdiagtwo{}
 
 Common-random-number alignment and selection optimism have established

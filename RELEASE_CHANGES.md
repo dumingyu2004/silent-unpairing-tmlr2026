@@ -48,6 +48,17 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
   Appendix D.6 calls the two recovered MW-Net runners "primary" runners
   (their files keep the `scripts/moneyshot/` path); the last sentence of the
   Figure 20 caption is completed. Meaning unchanged.
+- A proofreading pass applied the same kind of clean-up throughout, again
+  without changing any claim or number: informal terms replaced ("payout"
+  by "gain", "rig" by "machine" or "setup", "canaries", "victims",
+  "believable protocol", "RNG-hungry"); internal labels a reader cannot
+  decode removed or spelled out ("E1" in the introduction, "gate B",
+  "noise30", "cure counts", the Figure 12 legend "guard (topo champion)"
+  now "guard", regenerated from `figs/make_appH.py`); the Figure 2 caption
+  explains its R/M axis codes; and incomplete or ungrammatical sentences
+  repaired (the Figure 18 caption, a duplicate of the Broader Impact
+  sentence in Appendix A, and about twenty others in the main text and
+  appendix).
 - Two sentences are inserted into the abstract, which is otherwise word for
   word as accepted: why the failure matters for AI agents (LLM-based coding
   and research agents, AI-scientist systems and other autonomous

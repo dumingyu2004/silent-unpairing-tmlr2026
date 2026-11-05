@@ -141,7 +141,7 @@ def main() -> None:
     ax.set_ylim(-2.0, 8.6)
     ax.set_yticks([-2, 0, 2, 4, 6, 8])
     handles = [Patch(facecolor=BLUE, edgecolor="black", lw=0.4,
-                     label="guard (topo champion)"),
+                     label="guard"),
                Patch(facecolor=ORANGE, edgecolor="black", lw=0.4,
                      label="LAWA")]
     ax.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 1.01),

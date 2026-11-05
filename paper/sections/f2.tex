@@ -131,7 +131,8 @@ built on.
 training's CUDA random stream breaks exact pairing.} (A) In one matched
 five-arm audit, repeat, sequential Trainer evaluation, and a CPU random-batch
 probe are exactly zero; the CUDA random-batch probe is nonzero. (B) Across ten
-unique task--seed pairs, every repeat is exact and every CUDA probe diverges.
+unique task--seed pairs (R = RTE, M = MRPC; digits give the seed), every
+repeat is exact and every CUDA probe diverges.
 Each value is measured against its corresponding reference; no isolated-HF arm
 is implied.}
 \label{fig:hf-boundary}
@@ -151,8 +152,8 @@ These eleven were \emph{chosen}, not sampled. They are the neighborhood the
 diagnosis came from plus a reference pretraining loop, selected because we had
 reason to suspect them. Eleven of eleven therefore measures how uniform the
 idiom is inside a suspected neighborhood; it is not an estimate of any rate
-across deep learning, and no count here is one. The later waves are selected
-for reach the same way. What the audit does support is narrower: the pattern is
+across deep learning, and no count here is one. The later waves were selected the
+same way, for their reach. What the audit does support is narrower: the pattern is
 easy to find in code people use, no repository in the core wave isolates any
 stream, and the exposure survives into work published through 2024.
 
@@ -185,7 +186,7 @@ from a separate nanoGPT calibration/held-out check.
 \toprule
 Codebase & Exposure mechanism & Tier \\
 \midrule
-L2RW official (ICML'18) & eval eats train iterator & static \\
+L2RW official (ICML'18) & eval consumes train iterator & static \\
 L2RW PyTorch reimpl. & per-step re-init; shuffled eval & static \\
 MW-Net official (NeurIPS'19) & per-step re-init + meta loader & \textbf{dyn.} \\
 DivideMix official (ICLR'20) & unseeded GMM $\leftrightarrow$ mixup & \textbf{dyn.} \\
@@ -219,8 +220,8 @@ reimplementation was re-executed only for signal-scale measurements, not a
 paired-divergence test), and in all four, paired runs diverge exactly when the
 static analysis predicts. Divergence and repair are separate results, verified
 on different sets, and we state the split rather than average over it.
-Meta-Weight-Net includes a repaired arm run against a
-\emph{probe-free} baseline and found SHA-256 identical to it (5/5 seeds). For
+For Meta-Weight-Net, a repaired arm run against a \emph{probe-free}
+baseline was found SHA-256 identical to it (5/5 seeds). For
 BHN and DivideMix we re-executed a repaired arm and verified its
 same-configuration floor exactly, but the reported contrast is between two
 configurations rather than against a probe-free run. The historical nanoGPT
@@ -251,8 +252,8 @@ at epoch 2, the first epoch whose shuffle order the probe's stream
 position can reach, ending $1.93$ points apart on the printed test
 accuracy: a single 64-bit draw, in official ICML-2023 code. The same
 witness holds at the \emph{full shipped $200$-epoch protocol}: the
-isolated pair bitwise-identical through all $200$ epochs, the
-configurations ending $82.68$ vs.\ $83.03$. The gap anneals to $0.35$
+isolated pair stays bitwise-identical through all $200$ epochs, and the
+configurations end at $82.68$ vs.\ $83.03$. The gap narrows to $0.35$
 points but the mechanism is intact at convergence. The fourth witness
 leaves supervised vision entirely: four nanoGPT arms at $200$ iterations
 (\code{shakespeare\_char}, fp32) differ only in whether the loss-estimation
@@ -270,7 +271,8 @@ the mechanisms are diverse enough to defeat spot-checking: a data-pointer
 variant needing no RNG at all (official L2RW's evaluation consumes batches from
 \emph{training's own iterator}, and its pipeline re-seeds from entropy, so its
 same-seed-list comparisons were never seed-controlled), an eval-active-dropout
-variant (Co-teaching), and a CUDA-escalation variant (RENT). Third, the pattern
+variant (Co-teaching), and a variant whose shared draws are on the CUDA
+stream (RENT). Third, the pattern
 persists unchanged into ICML 2023, ICLR 2024, and the 60.7k-star reference
 pretraining loop.
 
@@ -280,7 +282,7 @@ field-standard training loops at file--line resolution
 (Table~\ref{tab:fieldwide}). Ten are exposed: the reference vision recipe (timm
 \citep{wightman2019timm}, whose periodic validation desynchronizes the next
 epoch's shuffle, reproduced under torch~2.11), a widely copied diffusion
-template \citep{lucidrains2020ddpm}, single-file RL, LLM finetuning, and five
+template \citep{lucidrains2020ddpm}, single-file RL, LLM finetuning, five
 recent selection methods (Sel-CL, MLC, ProMix, UNICON, DISC), and InfoBatch:
 its NumPy pruning reseed does not protect main-process torch augmentation
 from the unshuffled evaluation loader's base-seed draw. Two guard the audited
@@ -288,9 +290,9 @@ RNG channel (a fixed-noise DCGAN buffer and deterministic Stable-Baselines3
 evaluation with a separate, privately seeded environment); this does not
 certify state purity, since DCGAN visualization updates BatchNorm buffers. A third wave
 probes five flagship 2023--2026 stacks, where the boundary is a design choice
-rather than an era: SDXL's in-loop logging is exposed by default, TRL and a
-diffusers script sit one flag from either side, OLMo-core and MMSelfSup
-guard the audited RNG paths under their stated configuration conditions.
+rather than an era: SDXL's in-loop logging is exposed by default; in TRL and a
+diffusers script a single flag decides between exposed and guarded; OLMo-core
+and MMSelfSup guard the audited RNG paths under their stated configuration conditions.
 Neither wave enters the eleven-of-eleven count.
 
 \subsection{The printed gap moves, and selection harvests it}
@@ -344,7 +346,7 @@ setting-specific. The historical measurements use one codebase
 nanoGPT check below estimates its own scale from calibration seeds before
 held-out evaluation, assessing within-setting prediction rather than
 transfer across architectures, datasets, or tasks.
-Across 5 seeds $\times$ 6 placements on the same rig
+Across 5 seeds $\times$ 6 placements on the same machine
 (shortened protocol: Meta-Weight-Net official code on a $10{,}000$-image
 CIFAR-10 subset at $40\%$ symmetric noise, $20$ epochs of $100$ steps, giving
 mean within-seed sample SD $\bar\sigma = 3.25$ points, computed across
@@ -388,7 +390,7 @@ The corrected full-best interval is $[0.8665,0.9776]$: it excludes one, but
 27 resamples of three seeds are a discrete sensitivity analysis, not reliable
 model rejection or calibrated population coverage.
 
-The placement effect previously reported at $p=0.049$ relies on exchanging
+The placement effect reported at $p=0.049$ in Appendix~C relies on exchanging
 fixed training positions and is conditional on that exchangeability null.
 Treating observed column means as fixed offsets changed a legacy simulation
 ratio from $1.00$ to $1.04$; this is a fitted-offset sensitivity, not proof
@@ -466,15 +468,15 @@ Closing every shared-stream leak is still not sufficient for pairing. With
 identical training mathematics and no RNG sharing, nondeterministic GPU
 kernels alone bifurcate same-seed cross-arm trajectories, a documented
 layer \citep{zhuang2021randomness} for which we claim no novelty, and one
-repeat checks help distinguish from deterministic stream displacement:
+that repeat checks help distinguish from deterministic stream displacement:
 a nonzero same-configuration floor detects nonrepeatability, whereas a
 deterministic stream shift can leave repeats exact while moving a cross-arm
 pair. A finite zero floor does not rule out all nondeterminism. The layer
 is material: in an under-tuned CIFAR-100 regime
 (constant lr, no augmentation, TF32), same-seed raw candidates across arms
-differed by up to 11.7 points; in our NLP suite, trajectories
-bitwise-identical through half an epoch later bifurcated by 13.7 points on
-CoLA. Seeds alone therefore never
+differed by up to 11.7 points; in our NLP suite, trajectories that were
+bitwise-identical for the first half epoch subsequently bifurcated by 13.7
+points on CoLA. Seeds alone therefore never
 establish exact pairing; repeat checks must accompany the isolation and
 state-purity premises.
 The repair has three requirements with different costs, and they are
