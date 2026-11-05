@@ -8,6 +8,10 @@
 % hidelinks: keep cross-references clickable without hyperref's default
 % coloured boxes, which the TMLR template leaves on and which print badly.
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Silent Unpairing: How Mid-Training Probes Break Same-Seed Comparisons and Can Enable Selection Bias},
+  pdfauthor={Mingyu Du, Lu Han, Zhaoqi He, Jingyao Zhang, Junming Huang, Yun Li, Zerun Niu, Nguyen H. Tran, Ken-Tye Yong},
+  pdfsubject={Transactions on Machine Learning Research (10/2026)}}
 \usepackage{url}
 
 % Math + theorem environments.
@@ -60,17 +64,17 @@
 % its 8pt floor is the size that actually reaches the page.
 \newcommand{\figwidthharvest}{\textwidth}
 
-% Diagnosis II is supplement-scoped. It is a correct result and it explains why
+% Diagnosis II is appendix-scoped. It is a correct result and it explains why
 % the two diagnoses land on the same method family, but its evidence base
 % (analytical plus three instrumented systems) is a different kind of thing
 % from the audit that carries the paper, and stating it in the body invited
 % reviewers to read the submission as two loosely-coupled papers. It therefore
 % lives in the appendix, with one contribution sentence and a pointer here.
-\newcommand{\diagtwoscope}{, supplement-scoped}
+\newcommand{\diagtwoscope}{, appendix-scoped}
 \newcommand{\diagtwopointer}{Appendix~\ref{sec:deadmeta-taxonomy} gives the
 statement, the three escapes, and a per-system taxonomy, with the proof in
 Appendix~\ref{sec:proofs}}
-\newcommand{\contribdiagtwo}{(3) A second, supplement-scoped diagnosis
+\newcommand{\contribdiagtwo}{(3) A second, appendix-scoped diagnosis
 (Appendix~\ref{sec:deadmeta-taxonomy}) explains why this method family is the
 one the audit keeps landing on: the canonical lr-scaled virtual step emits an
 exactly $\eta$-scaled meta-signal (Proposition~\ref{prop:deadmeta}), which is

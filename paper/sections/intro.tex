@@ -68,7 +68,7 @@ require an exact repeat floor. On top of it we prove a bitwise no-op
 certificate (Corollary~\ref{cor:noop}) by which a repaired selection endpoint
 can prove that a comparison it declined to change is unpolluted
 (Section~\ref{sec:receipt}). We claim no unconditional accuracy gain for that
-endpoint anywhere in this paper; its payout behavior is supplement material.
+endpoint anywhere in this paper; its payout behavior is reported in the appendix.
 \contribdiagtwo{}
 
 Common-random-number alignment and selection optimism have established
@@ -90,5 +90,7 @@ separately from this certificate: cells without an independent floor are
 excluded from certificate counts, and metric equality is not upgraded to
 weight or full-state identity. Section~\ref{sec:receipt} and
 Figure~\ref{fig:ledger} distinguish the available evidence.
-Appendix~\ref{sec:availability} describes the anonymous supplement's contents
+Code, data and analysis are released at
+\url{https://github.com/dumingyu2004/silent-unpairing-tmlr2026};
+Appendix~\ref{sec:availability} describes the release's contents
 and the remaining limits of historical reproduction.

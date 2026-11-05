@@ -38,13 +38,13 @@ Comparisons\\[4pt] {\large Supplementary Material}}
 \begin{document}
 \maketitle
 
-\noindent This supplement is self-contained. Appendix~A is the static-audit
+\noindent The appendix is organized as follows. Appendix~A is the static-audit
 register: per-repository mechanisms cited by file and line against pinned
 commits, verdicts, and the corrections an independent second reading produced.
 Appendix~B verifies at source level the main text's two framework claims,
 the tested HuggingFace Trainer stream disjointness and Proposition~1's PyTorch stream
 premises. Appendix~C proves the three propositions, the certified-no-op corollary and
-the margin-calibration lemma, and states the paper's second, supplement-scoped
+the margin-calibration lemma, and states the paper's second, appendix-scoped
 diagnosis in Appendix~\ref{sec:deadmeta-taxonomy}. Appendix~D gives the pairing
 protocol, the per-campaign repeat-floor registry, the traced MW-Net divergence
 witness, and the preregistered validation-to-test bridge; Appendices~E and~F
@@ -1142,11 +1142,11 @@ rectify-then-normalize map removes the explicit scale by
 \label{fig:app-f1-decoupling}
 \end{figure}
 
-\subsection{The dead-meta-gradient taxonomy (a second, supplement-scoped
+\subsection{The dead-meta-gradient taxonomy (a second, appendix-scoped
 diagnosis)}
 \label{sec:deadmeta-taxonomy}
 
-This diagnosis is deliberately supplement-scoped. The main text carries the
+This diagnosis is deliberately appendix-scoped. The main text carries the
 paper's contribution: a condition, a prevalence audit, byte-level witnesses, a
 harvest law, and a repair. What follows is a second, narrower
 diagnosis of the same method family, established analytically and instrumented
@@ -1905,7 +1905,8 @@ and correlation ranges $[-0.694,0.791]$ and $[-0.690,0.684]$.
 Centering mechanically imposes a sum-zero constraint; negative contrast
 correlations are not an iid rejection either. These small-sample descriptive
 diagnostics neither certify equal placement means/variances nor constitute
-a formal Gaussian test; full matrices are released in the supplemental JSON.
+a formal Gaussian test; full matrices are released in
+\code{revision\_results/nanogpt\_final/supplementary.json}.
 
 Leaving out each calibration seed in turn gives corrected predictions
 $[0.00372860,0.00400198]$. Leaving out each held-out seed, keeping the
@@ -1930,17 +1931,20 @@ The figure does not demonstrate independent-test transfer.}
 \subsection{Reproducibility and data availability}
 \label{sec:availability}
 
-The prepared anonymous supplement contains the raw results and analysis code
+The public repository
+\url{https://github.com/dumingyu2004/silent-unpairing-tmlr2026} is the artifact
+verified during review, with every later change listed in its
+\code{RELEASE\_CHANGES.md}. It contains the raw results and analysis code
 used for the reported harvest, E1 and verification summaries, together with
 available run configurations, seeds, repeat records, exact upstream code
 versions and source citations. It includes all 726 individual records from
 the new nanoGPT campaign, its experiment and analysis scripts, frozen
-prediction, and per-seed checks. Reanalysis from a freshly unpacked copy
+prediction, and per-seed checks. Reanalysis from a fresh clone
 reproduces the reported numerical results. Its README and file manifest
 state what is included; this is an analysis-reproduction package, not a
 claim that every historical training run can be repeated from it.
 
-The supplement also includes the two recovered historical MW-Net moneyshot
+The repository also includes the two recovered historical MW-Net moneyshot
 runners, source-backed explanatory repair diffs, and fifteen original
 MW-Net endpoint files: baseline, repeat and isolated-probe model/meta-network
 states for five seeds. Their stored tensor bytes agree within each seed;
@@ -1950,7 +1954,7 @@ bases, not a recovered complete original repair-patch series.
 A separate local trace companion retains seventeen original MW-Net tensor
 archives for the five baseline/shared/isolated triplets and two baseline
 repeats, checked against their retained run records. These seventeen NPZ
-archives are not included in this submission's compact supplement ZIP.
+archives are not included in the public repository.
 
 For E1, twenty split/noise input files are supplied as explicitly labelled
 reconstructions from the retained source, seeds and configuration records.
@@ -1958,7 +1962,7 @@ The original runner generated these arrays in memory and exported only
 configuration and results; it did not separately save them. The reconstruction
 is checked against the source recipe, not against an unavailable original
 array file. Clean dataset labels are external inputs to the supplied corruption
-recipe. The supplement therefore supports reanalysis and inspection of the
+recipe. The repository therefore supports reanalysis and inspection of the
 specified inputs and repairs without claiming every original checkpoint or
 complete historical retraining coverage.
 
@@ -1966,7 +1970,7 @@ Historical writing and editing records reproduce the retained E1 runner and
 protocol text exactly after newline normalization. The last content-changing
 protocol edit is recorded at 10 July 2026, 14:56:39 UTC (11 July locally),
 about 51 hours before the recorded campaign launch at 12 July 2026,
-17:39:29 UTC. The supplement includes a redacted chronology and verification
+17:39:29 UTC. The repository includes a redacted chronology and verification
 record in \code{docs/E1\_PROVENANCE.md} and
 \code{revision\_results/e1\_provenance.json}.
 For the new nanoGPT campaign, local controller records place the prediction

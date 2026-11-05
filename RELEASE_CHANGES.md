@@ -28,6 +28,20 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
 | Appendix D.1, deterministic kernels | every paired run sets `allow_tf32 = False` on both paths | deterministic algorithms (`warn_only=True` in the DivideMix and BHN witnesses) and `CUBLAS_WORKSPACE_CONFIG` for every run; TF32 explicitly disabled only in the nanoGPT campaign, PyTorch defaults elsewhere, with the repeat floors measured under those settings | only the nanoGPT arm code sets the TF32 flags, and Sec. 2.5 already reports a CIFAR-100 regime run with TF32 |
 | Appendix D.1, NLP harness | "reaches the same state through `enable_full_determinism(seed)`" | reaches deterministic execution through it, which sets `CUBLAS_WORKSPACE_CONFIG=":16:8"` itself | `transformers` 5.12.1 `enable_full_determinism` overwrites the variable with `:16:8`, not `:4096:8` |
 
+## Manuscript: camera-ready wording
+
+- The anonymous-supplement wording now points to this repository: the
+  introduction and Appendix D.6 give its URL, D.6 says it is the reviewed
+  artifact plus the changes in this file, "freshly unpacked copy" became
+  "fresh clone", and D.5 names `revision_results/nanogpt_final/supplementary.json`
+  instead of "the supplemental JSON". The abstract ends with the code URL.
+- Leftovers from the AAAI supplement build now say "appendix": the appendix
+  opening sentence, "supplement-scoped" (now "appendix-scoped"), and two
+  "in the supplement" pointers. The "reviewer-requested" analysis keeps its
+  name because the code and `revision_results/statistics.json` call it
+  `reviewer_bootstrap`.
+- PDF metadata (title, authors, subject) set with `\hypersetup`.
+
 ## Code
 
 - `scripts/rng_premise_check.py`: the 13 premise checks now run as assertions
