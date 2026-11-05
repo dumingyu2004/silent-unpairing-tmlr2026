@@ -1,0 +1,29 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Evaluation practice.}
+Same-seed comparisons should check the three practices in
+Section~\ref{sec:repair}: isolate probes, pin kernels, and verify each
+materially distinct execution path at the resolution claimed.
+Stream sharing alone does not imply divergence: the tested Trainer
+evaluation is configuration-specifically stream-disjoint from training
+(Table~\ref{tab:hf}). Existing isolation primitives help, but their use must
+be checked. Deterministic execution and repeat/state audits incur runtime
+and storage costs; some platforms lack deterministic implementations.
+
+\paragraph{Interpretation and scope.}
+Desynchronization, variance changes, and selection optimism are distinct.
+Observed max-minus-mean uplift can contain both systematic placement
+effects and optimism; the Gaussian formula applies only under its stated
+model. Omitting selection removes this source of directional optimism,
+not trajectory displacement. The no-op corollary is an application of the
+pairing condition, not an accuracy claim about selection or averaging.
+
+Our evidence is single-process and academic-scale, not distributed training,
+ImageNet, or production-LLM validation. The nanoGPT experiment checks a
+frozen mean prediction on held-out seeds in one setting, not universal
+Gaussian scaling, per-run prediction, or untouched-test transfer.
+Static exposure remains distinct from dynamic evidence, and historical
+score-level equality does not establish state-level identity.
+Appendix~\ref{sec:extended-context} records the detailed scope and practical
+limitations.

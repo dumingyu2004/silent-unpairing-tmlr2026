@@ -1,0 +1,8 @@
+# CPU reanalysis, evidence checks and tests (versions used for the recorded analysis)
+numpy==2.4.4
+scipy==1.18.0
+matplotlib==3.10.8
+pypdf==6.9.2
+
+# Only for scripts/rng_premise_check.py (needs a CUDA device):
+# torch==2.11.0

@@ -1,0 +1,40 @@
+{
+  "args": {
+    "repo": "/artifact/local-path",
+    "data_root": "/artifact/local-path",
+    "epochs": 12,
+    "batch_size": 100,
+    "train_size": 45000,
+    "val_size": 2000,
+    "val1_size": 4000,
+    "noise": 0.4,
+    "lr": 0.1,
+    "seed": 107,
+    "probe_step": 999999,
+    "eval_steps": 0,
+    "eval_batch_size": 100,
+    "eval_batches": 4,
+    "arm": "base",
+    "device": "cuda",
+    "out": "/artifact/local-path"
+  },
+  "arm": "base",
+  "result": {
+    "final_test_acc": 0.7231,
+    "official_test_acc": 0.7231,
+    "val1_acc": 0.72475,
+    "val1_n": 4000,
+    "state_sha256": "f7c5dacb6d81c3b7debd4bb94014f58913cb78765d631e0716c861cf2a4e292a",
+    "vnet_state_sha256": "2430edd53f48984a59a218ed765640636163d40a4cad129350e647b5b8a778de",
+    "total_steps": 5400,
+    "sec_per_step": 0.8635046487316665,
+    "train_wall_sec": 4662.925103150999,
+    "eval_wall_sec": 0.0,
+    "eval_fired": 0,
+    "eval_rng_int64_draws": 0,
+    "val_metrics": [],
+    "mechanism": "DataLoader(val,shuffle=True) monitoring eval; global-stream seed draws",
+    "wall_sec": 4664.097974377
+  },
+  "partial": false
+}

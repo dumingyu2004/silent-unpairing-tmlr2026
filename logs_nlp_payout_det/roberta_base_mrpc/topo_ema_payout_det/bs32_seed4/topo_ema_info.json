@@ -1,0 +1,17 @@
+{
+  "betas": [
+    0.99,
+    0.999
+  ],
+  "trigger_step": 106,
+  "trigger_reason": "fallback at epoch 1.00",
+  "level_names": [
+    "32",
+    "16",
+    "8",
+    "4",
+    "2",
+    "1"
+  ],
+  "private_max_support": 2
+}

@@ -1,0 +1,15 @@
+\section{Conclusion}
+
+Matching initial seeds does not ensure aligned training randomness.
+Arm-specific probes can displace later training draws; our pairing
+condition guarantees preservation and localizes divergence onset on the
+aligned prefix without ruling out later re-coincidence.
+Released-code witnesses make this evaluation failure concrete.
+Desynchronization alone need not bias the expected effect: selection on
+the affected reported quantity creates a separate optimism mechanism,
+while positive untouched-test transfer remains unestablished.
+The general selection decomposition accommodates placement effects;
+Gaussian scaling is a conditional benchmark, with a separate held-out
+mean check in nanoGPT. The repair is checkable through probe isolation,
+deterministic execution, and per-path repeat checks at the claimed
+resolution.

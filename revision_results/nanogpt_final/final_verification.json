@@ -1,0 +1,26 @@
+{
+  "status": {
+    "status": "complete",
+    "completed_runs": 726,
+    "budget_seconds": 64279.50287437439
+  },
+  "records": 726,
+  "main_seed_checks_passed": 32,
+  "failed_checks": [],
+  "code_hash_matches_manifest": {
+    "revision_nanogpt_campaign.py": true,
+    "revision_nanogpt_arm.py": true,
+    "revision_nanogpt_analyze.py": true
+  },
+  "all_records_complete": true,
+  "all_probe_pure": true,
+  "main_shared_divergent": 160,
+  "main_isolated_exact": 160,
+  "main_prefix_onset_matches": 160,
+  "comparison_count": 160,
+  "frozen_mtime": 1788893700.5979657,
+  "first_validation_start": 1788893700.5979974,
+  "frozen_precedes_validation_local_record": true,
+  "analysis_sha256": "f469d5b6ed681f5ead30c7f06eb30457ddd66d83cb03ddc00e505255121b66ba",
+  "failed_attempts": []
+}

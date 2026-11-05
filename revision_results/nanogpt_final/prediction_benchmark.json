@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "stage": "exploratory_post_readout",
+  "scope": "Entire benchmark chosen after readout. Two calibration-only constant mean forecasts, not model selection. Frozen primary unchanged; all seeds retained. No significance, superiority, or transfer claim.",
+  "units": {
+    "harvest": "fixed validation loss; H=max_placement D-mean_placement D; D=baseline_loss-shared_loss",
+    "squared_error": "squared loss units"
+  },
+  "estimand": "Difference in heldout per-seed mean squared prediction error; negative favors Gaussian descriptively.",
+  "mean_discrepancy_scope": "Observed heldout mean minus calibration-only prediction estimates the population-mean discrepancy; the population mean is not known.",
+  "mae_scope": "Descriptive only. Squared error is the benchmark score for mean forecasts; MAE is not the primary benchmark score.",
+  "calibration_n": 16,
+  "validation_n": 16,
+  "placements": [
+    200,
+    500,
+    900,
+    1300,
+    1700
+  ],
+  "calibration_seeds": [
+    860901,
+    860902,
+    860903,
+    860904,
+    860905,
+    860906,
+    860907,
+    860908,
+    860909,
+    860910,
+    860911,
+    860912,
+    860913,
+    860914,
+    860915,
+    860916
+  ],
+  "validation_seeds": [
+    860917,
+    860918,
+    860919,
+    860920,
+    860921,
+    860922,
+    860923,
+    860924,
+    860925,
+    860926,
+    860927,
+    860928,
+    860929,
+    860930,
+    860931,
+    860932
+  ],
+  "observed_validation_mean_harvest": 0.0034306036308407784,
+  "predictor_formulas": {
+    "gaussian": "frozen c5 / normal_sample_sd_bias_factor * calibration mean within-seed sample SD (ddof=1)",
+    "empirical": "calibration mean H"
+  },
+  "predictors": {
+    "gaussian": {
+      "prediction": 0.003884060193310974,
+      "signed_mean_discrepancy": -0.0004534565624701955,
+      "absolute_mean_discrepancy": 0.0004534565624701955,
+      "mse": 1.8957991293124946e-06,
+      "mae_descriptive": 0.0012052963809682426
+    },
+    "empirical": {
+      "prediction": 0.004280788451433181,
+      "signed_mean_discrepancy": -0.000850184820592403,
+      "absolute_mean_discrepancy": 0.000850184820592403,
+      "mse": 2.412990504430945e-06,
+      "mae_descriptive": 0.0012903502210974691
+    }
+  },
+  "contrast": {
+    "mse_gaussian_minus_empirical": -5.171913751184501e-07,
+    "fixed_predictor_ci95": [
+      -1.0228292531468724e-06,
+      -5.385313142069919e-09
+    ],
+    "full_procedure_ci95": [
+      -1.7006056739035322e-06,
+      1.6498244818844286e-07
+    ],
+    "mse_ratio": 0.7856637337906063,
+    "ratio_definition": "Gaussian MSE / empirical MSE; null if empirical MSE is zero"
+  },
+  "bootstrap": {
+    "repetitions": 20000,
+    "seed": 2026090801,
+    "method": "approximate percentile 95% intervals",
+    "unit": "whole seed vector",
+    "draw_order": "calibration then validation; same draws as frozen analyzer",
+    "fixed_predictor_ci95": "Conditional on original calibration data: paired per-heldout-seed squared-error difference, predictors held fixed.",
+    "full_procedure_ci95": "Calibration and validation independently resampled; both predictors recomputed from the same resampled calibration vectors only, then scored on the same resampled validation seeds."
+  },
+  "per_seed": [
+    {
+      "seed": 860917,
+      "harvest": 0.0023923277854919433,
+      "gaussian_squared_error": 2.225265576537563e-06,
+      "empirical_squared_error": 3.5662836868072245e-06,
+      "squared_error_difference": -1.3410181102696616e-06
+    },
+    {
+      "seed": 860918,
+      "harvest": 0.004890257120132446,
+      "gaussian_squared_error": 1.0124322555449747e-06,
+      "empirical_squared_error": 3.7145205812605386e-07,
+      "squared_error_difference": 6.409801974189208e-07
+    },
+    {
+      "seed": 860919,
+      "harvest": 0.004031917452812195,
+      "gaussian_squared_error": 2.1861769187211477e-08,
+      "empirical_squared_error": 6.193677395460694e-08,
+      "squared_error_difference": -4.0075004767395467e-08
+    },
+    {
+      "seed": 860920,
+      "harvest": 0.0028988391160964964,
+      "gaussian_squared_error": 9.706605709876554e-07,
+      "empirical_squared_error": 1.9097839654375053e-06,
+      "squared_error_difference": -9.391233944498499e-07
+    },
+    {
+      "seed": 860921,
+      "harvest": 0.003258916735649109,
+      "gaussian_squared_error": 3.9080434265743183e-07,
+      "empirical_squared_error": 1.044221803519484e-06,
+      "squared_error_difference": -6.534174608620521e-07
+    },
+    {
+      "seed": 860922,
+      "harvest": 0.0016735315322875975,
+      "gaussian_squared_error": 4.886436961205802e-06,
+      "empirical_squared_error": 6.797788642432522e-06,
+      "squared_error_difference": -1.9113516812267198e-06
+    },
+    {
+      "seed": 860923,
+      "harvest": 0.004279559850692749,
+      "gaussian_squared_error": 1.5641997898910175e-07,
+      "empirical_squared_error": 1.5094597793901702e-12,
+      "squared_error_difference": 1.5641846952932238e-07
+    },
+    {
+      "seed": 860924,
+      "harvest": 0.0015117883682250976,
+      "gaussian_squared_error": 5.6276736120962745e-06,
+      "empirical_squared_error": 7.667361460806375e-06,
+      "squared_error_difference": -2.0396878487101e-06
+    },
+    {
+      "seed": 860925,
+      "harvest": 0.0015413254499435421,
+      "gaussian_squared_error": 5.488406077780867e-06,
+      "empirical_squared_error": 7.504657536530623e-06,
+      "squared_error_difference": -2.0162514587497567e-06
+    },
+    {
+      "seed": 860926,
+      "harvest": 0.0028509199619293213,
+      "gaussian_squared_error": 1.0673787376993347e-06,
+      "empirical_squared_error": 2.0445238972760504e-06,
+      "squared_error_difference": -9.771451595767157e-07
+    },
+    {
+      "seed": 860927,
+      "harvest": 0.005314865708351135,
+      "gaussian_squared_error": 2.0472044218693403e-06,
+      "empirical_squared_error": 1.0693157732749592e-06,
+      "squared_error_difference": 9.778886485943811e-07
+    },
+    {
+      "seed": 860928,
+      "harvest": 0.005519077181816101,
+      "gaussian_squared_error": 2.673280552700375e-06,
+      "empirical_squared_error": 1.533358979793343e-06,
+      "squared_error_difference": 1.139921572907032e-06
+    },
+    {
+      "seed": 860929,
+      "harvest": 0.004247185587882995,
+      "gaussian_squared_error": 1.318600521830863e-07,
+      "empirical_squared_error": 1.1291524387724177e-09,
+      "squared_error_difference": 1.3073089974431388e-07
+    },
+    {
+      "seed": 860930,
+      "harvest": 0.0025355488061904905,
+      "gaussian_squared_error": 1.8184829611936103e-06,
+      "empirical_squared_error": 3.0458614193268334e-06,
+      "squared_error_difference": -1.2273784581332231e-06
+    },
+    {
+      "seed": 860931,
+      "harvest": 0.004920276999473572,
+      "gaussian_squared_error": 1.0737452693738153e-06,
+      "empirical_squared_error": 4.089456030748069e-07,
+      "squared_error_difference": 6.647996662990084e-07
+    },
+    {
+      "seed": 860932,
+      "harvest": 0.0030233204364776612,
+      "gaussian_squared_error": 7.408729289934704e-07,
+      "empirical_squared_error": 1.5812258086361764e-06,
+      "squared_error_difference": -8.40352879642706e-07
+    }
+  ],
+  "primary_checks": {
+    "calibration_gaussian_prediction_reproduced": true,
+    "primary_point_prediction_unchanged": true,
+    "harvest_vectors_reproduced": true
+  },
+  "provenance": {
+    "input_sha256": {
+      "analysis.json": "2c009005210dc996d0be889f42e9e3307ca888445c72222ad4d56dc85c9a6406",
+      "frozen_calibration_prediction.json": "e2580b67e53d052b638c1303971f7df6a73114483019c76aaa61470c7d0a5224",
+      "manifest.json": "d2097faf928a7b662a650b8a98aebbb412cdfcd566ba78df88ee23b05563aed1"
+    },
+    "code_sha256": "fac68dff002bdd6dfb80cf528696fb0edba494dcabf786a96d6cdb4c35008cf3"
+  }
+}

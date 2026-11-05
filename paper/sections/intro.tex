@@ -1,0 +1,94 @@
+% SOURCE: docs/PAPER_DRAFT_INTRO_DIAGNOSIS.md §1 + integration repairs
+% (guarantee-iff phrasing, degree-0 homogeneity, Buffalo "recent",
+% [[INSURANCE-PAYOUT-RANGE]] filled, harvest contribution updated). Single-touch.
+\section{Introduction}
+\label{sec:intro}
+
+The same-seed paired comparison is widely used to evaluate deep-learning
+methods: to attribute a small performance difference to a method rather
+than run-to-run noise, one launches method and baseline from an identical
+seed, holds everything else fixed, and reads the gap as the method's
+effect. The instrument looks self-verifying: same seed, same
+initialization, same data order, so whatever diverges must be the method.
+This paper studies when that intended experimental control fails. A
+mid-training probe that advances a stream later consumed by training can
+change subsequent stochastic inputs and updates. The fixed-offset account
+holds on the aligned prefix; later reconvergence is possible.
+State-pure RNG isolation and deterministic execution restore the sufficient
+pairing condition, with per-path repeat checks testing its implementation.
+The first failure is not automatically a marginal mean bias: it is loss of
+the common-random-number coupling and its covariance-based variance reduction.
+If the shifted stream preserves the arm's marginal law, more seeds still
+estimate the marginal method effect; whether paired variance increases depends
+on the change in covariance. Directly selecting the largest reported gap has
+nonnegative expected reporting optimism relative to the selected placement's
+own marginal mean (Proposition~\ref{prop:harvest}), without iid or Gaussian
+assumptions. The observed uplift above the placement average also includes
+systematic placement effects, which we separate analytically. Whether this
+translates into a positive gain on an untouched test set after validation-based
+selection remains unresolved: both primary E1 intervals include zero
+(Section~\ref{sec:harvest}).
+We read twenty-eight official and field-standard codebases spanning
+2018--2026, from noisy-label vision methods to LLM pretraining, and found the
+exposure in twenty-two, among them all eleven in the neighborhood the diagnosis
+came from, four of which we confirmed broken by re-execution; the selection
+step is the machinery those
+same pipelines and reporting practices already run, from best-of-$m$ placement
+and configuration choices to validation-guarded champion selection.
+
+Our main finding is the \emph{pairing-divergence artifact}. A mid-training
+probe that consumes a stream later used by training can change batch orders
+or dropout masks and break exact coupling (Proposition~\ref{prop:pairing}). An in-house paired
+comparison reporting $+2.97$ fell to $+0.16$ once the probe's RNG was isolated,
+and the guarded endpoint motivates the conditional no-op result
+(Section~\ref{sec:receipt}); its historical metric zeros are not universal
+bitwise certificates.
+
+\paragraph{Contributions.}
+(1) We diagnose a failure of same-seed evaluation, formalize a sufficient
+pairing condition and the onset of divergence,
+verify the tested boundary inside the
+HuggingFace Trainer (Figure~\ref{fig:hf-boundary}), audit exposure across
+twenty-eight codebases (Section~\ref{sec:prevalence}: eleven core repositories
+double-read, twelve field-standard training loops, five flagship
+stacks). Separately, selection on the reported quantity yields an observed
+$+4.01$ uplift over the placement average in released code. We use
+$c_6\bar\sigma$ as a conditional iid-Gaussian benchmark, with same-sample
+calibration on one codebase, one dataset and a single rig
+(Proposition~\ref{prop:harvest}; Section~\ref{sec:harvest}). A separate nanoGPT
+experiment freezes the prediction before evaluating held-out seeds (16 seeds
+per split), assessing mean calibration within one additional setting rather
+than cross-setting transferability. Its discrepancy interval includes zero.
+This held-out-seed check is
+distinct from the validation-to-test bridge above. Monitoring and full
+$120$-epoch witnesses extend the pairing diagnosis.
+(2) We give a practical repair: isolate every probe, pin kernels
+(nondeterministic ones reproduce the failure with no RNG sharing at all), and
+require an exact repeat floor. On top of it we prove a bitwise no-op
+certificate (Corollary~\ref{cor:noop}) by which a repaired selection endpoint
+can prove that a comparison it declined to change is unpolluted
+(Section~\ref{sec:receipt}). We claim no unconditional accuracy gain for that
+endpoint anywhere in this paper; its payout behavior is supplement material.
+\contribdiagtwo{}
+
+Common-random-number alignment and selection optimism have established
+theoretical foundations; recent work treats event alignment in stochastic
+simulation \citep{buffalo2026realizing}. Our contribution is their concrete
+connection in deep-learning evaluation: source-level exposure audits,
+controlled first-consumer traces, repaired comparisons against probe-free
+baselines, and a quantitative assessment of placement selection. The general
+selection inequalities clarify the estimand; the released-code diagnosis and
+its verification supply the empirical contribution.
+
+The diagnosis is constructive. The repair has three requirements with
+different costs: isolation is often a small code change, whereas deterministic
+kernels and per-path repeat/state checks add runtime, storage, and sometimes
+platform constraints. Under verified premises, a selection endpoint that
+serves its raw candidate yields the conditional no-op certificate in
+Corollary~\ref{cor:noop}. Historical tuned-regime zero metrics are reported
+separately from this certificate: cells without an independent floor are
+excluded from certificate counts, and metric equality is not upgraded to
+weight or full-state identity. Section~\ref{sec:receipt} and
+Figure~\ref{fig:ledger} distinguish the available evidence.
+Appendix~\ref{sec:availability} describes the anonymous supplement's contents
+and the remaining limits of historical reproduction.

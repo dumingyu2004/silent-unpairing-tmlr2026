@@ -1,0 +1,13 @@
+diff --git a/scripts/moneyshot/moneyshot_mwnet.py b/scripts/moneyshot/moneyshot_mwnet.py
+--- a/scripts/moneyshot/moneyshot_mwnet.py
++++ b/scripts/moneyshot/moneyshot_mwnet.py
+@@ -102,7 +102,8 @@ def run_arm(arm, args, xs, ys, ytr, meta_idx, train_idx, xte, yte, device, ResNet32, VNet):
+         for bi in range(spe):
+             gstep += 1
+             if arm == "mwnet_probe" and gstep == args.probe_step:
+-                torch.randperm(1000)  # ONE probe: an eval-loader shuffle draw. Unused.
++                with torch.random.fork_rng(devices=[device] if device.type == "cuda" else []):
++                    torch.randperm(1000)  # ONE probe: an eval-loader shuffle draw. Unused.
+                 probe_fired = True
+             elif arm == "mwnet_probe_isolated" and gstep == args.probe_step:
+                 # cure arm: SAME probe, CPU(+CUDA) RNG forked & restored. If stream

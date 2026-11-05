@@ -1,0 +1,369 @@
+{
+  "complete": true,
+  "seed": 860902,
+  "path": "shared_1300",
+  "completed_updates": 2000,
+  "endpoint": {
+    "weight_sha256": "8fbed388c1f2a639dfbcac5572f68b500544e6752dc519ef1cfa4a89d47f390d",
+    "nonrng_sha256": "26aeaf28a84c9945db8102a2b042aa332bc0b582edc512675ca747c3de405f79",
+    "rng_sha256": "a2f8d950d05fca9d6376ee66a7b55e44be94e6cec209fea29a3587dc947067f5",
+    "full_sha256": "1e8041d7964bce9e8bcb5a334636f96e1de10d62d4ece7a0345a40d83c10e35f"
+  },
+  "trace": [
+    {
+      "event": "after_update",
+      "updates": 1,
+      "weight_sha256": "ac44245ec01219a0a0110f9de400ef569d855a588612eaf58cffaf6ed4572662",
+      "nonrng_sha256": "f5b246cadc1dbb2fc8f6f5c6d7dfb0962f466cf94f737cd3b2533feb13c0b331",
+      "rng_sha256": "1dd17635bbba0a5fd2f11c63d7ed89f1666bab18002284c4b4a8728b0d364d3f",
+      "full_sha256": "0fe528b2ead4403d20100f4bf2b01241b0bdef50f7d2e3ca46ef32c73fdf1192"
+    },
+    {
+      "event": "after_update",
+      "updates": 200,
+      "weight_sha256": "13d3e7dca49f2c9bbed22378e502bb573338ff09558f561ef54792cc0fd0c356",
+      "nonrng_sha256": "4faf446eee93fd2085448951cb2885184b017e466c79a5a01e67ae800395a0e8",
+      "rng_sha256": "f6640a5d9e00ee9c53d1b5bb7606c65508d7078f0b0ee2fb5d22073e52d92538",
+      "full_sha256": "4b680a94e966e189737aae72836d7865f294c7056a7a880c1cb7bc87c2c70ca8"
+    },
+    {
+      "event": "first_postplacement_training_draw",
+      "after_updates": 200,
+      "indices_sha256": "9788ffea4881b3efb5ab89393617796813cdb972ce70a60f2e59be51e4f46ac7",
+      "cpu_rng_sha256": "178a140b9c64fece233115dcb0eed6485cb5526966369d976ed396e464ead50f"
+    },
+    {
+      "event": "after_update",
+      "updates": 201,
+      "weight_sha256": "a861efc6fcd0214b9108d51bc03d1de54be5b10bb603096e2ad3966611b95af7",
+      "nonrng_sha256": "d1205bbb8ea19aa5731c6617fb4c9c78296d9f34a7f10a42a08bf33921d3be9e",
+      "rng_sha256": "ec747c1ca85d621b12007ee2fd2598348fded2a8517387ba144acaecc9468138",
+      "full_sha256": "3959566cdf30b6d1760afd9ae1f0de3ff4e8d54fbb5710a835579860f75cab28"
+    },
+    {
+      "event": "after_update",
+      "updates": 202,
+      "weight_sha256": "93246f20590ab745d2d00eb5b8c091b99165c73fd2d1ea837141a249fd4d0dd0",
+      "nonrng_sha256": "edef65ec7efab3614c7988f25a819a3013f7e8fb063e5b17a1b94ad8d8a13772",
+      "rng_sha256": "542bfe6738055768618a28a9d6eca9314a224ad59d8d7764a818c2fecef16aeb",
+      "full_sha256": "653ab8f92841a54b0d51f74d9056d2f51a13c7035283b798b45412a4f25cabba"
+    },
+    {
+      "event": "after_update",
+      "updates": 500,
+      "weight_sha256": "2c4350c588643d9c4d0bb8cf9e8d5b5bc81f0e3b0965adf2999fc6f3b22d40b5",
+      "nonrng_sha256": "c23302151a59a214d84307bea36c957dcb02a9121e15f487c01434747ff1910f",
+      "rng_sha256": "7f0133e4b98ab62fda24ae145b1788f0e91743a165267b9690e3f29e291df734",
+      "full_sha256": "37ad8d96be3b7a50acf01c9f6298d66b5d9de892096dac94811a79ae2b68edcf"
+    },
+    {
+      "event": "first_postplacement_training_draw",
+      "after_updates": 500,
+      "indices_sha256": "b027f5f1907d465729b6f19750ddf346c383634c910192889f4493175a5a97e2",
+      "cpu_rng_sha256": "2df73a14e78be405dd7bc629861928f16c8972ef658be5f609b5ac9936b994a9"
+    },
+    {
+      "event": "after_update",
+      "updates": 501,
+      "weight_sha256": "402be3fb662e48c66288463db24b26cc6118da1040eabaf1c1c237540e34f88f",
+      "nonrng_sha256": "8ab48468541390fd5829ac05e2f3d735dc5ce8df2aa040c03bce117c516cc487",
+      "rng_sha256": "813f5d06caaa2ffe2b7a30edd59768879a0d4d295ec1ff6223b4df6baf30bd8b",
+      "full_sha256": "66ccd5616bb8ec5ed4e83b759bdc87e51a3eeb31a640134c816e457611571964"
+    },
+    {
+      "event": "after_update",
+      "updates": 502,
+      "weight_sha256": "6c95551ed4d726aa86d9ee36047a3079a40abd74299b0f0152d467726c9d087e",
+      "nonrng_sha256": "1e7b09eb77e84001eb59ddd3e08e25538c846f11a52cc32b689956fa3b184307",
+      "rng_sha256": "42d089fb1be445f625e663866d7ebd0d431b5e282c7f35ca9defa58dbbb0e1cd",
+      "full_sha256": "f2aff6943686c01e2851669ab73619643a55132aa85ff463cb46fd236105a5ba"
+    },
+    {
+      "event": "after_update",
+      "updates": 900,
+      "weight_sha256": "0666cd732a449401e0e483466108233e327467242ec6cdd996870f218d1af7e4",
+      "nonrng_sha256": "219091d5fe3ebcd9286a9a02ed5c72fcf2a6b51c34d7aab814cbf8a6ccd807ce",
+      "rng_sha256": "9b0c560b0a91becf89b1813b1f9cb7e162d39e93876740aab6d23e1e5a55cab4",
+      "full_sha256": "d79000625759f2b7006567aaf4b734dbf9b0dc743ecb68cfa77a51cca0983c69"
+    },
+    {
+      "event": "first_postplacement_training_draw",
+      "after_updates": 900,
+      "indices_sha256": "c5906c1e35c2c09d486295238bf6ec5e0075aed5d6c9abe2ca1af92075f03737",
+      "cpu_rng_sha256": "9019159a3c4d28241cf367256d9add6d73eb80175c19e1c749966ca598bfc85d"
+    },
+    {
+      "event": "after_update",
+      "updates": 901,
+      "weight_sha256": "1e79f428d6cbede9054dc632c9cfde616d6439859586cdbc3a3ea9f847ce5214",
+      "nonrng_sha256": "3bfe2ab42efcaaf38d571f60d660d94b7faa8b2fdc83d5a2c02cd709feaa9bf2",
+      "rng_sha256": "4f49ec36584ff2aa0bb6727d7df2174d5b3c2ad63c35ad106fc9c288d95e5398",
+      "full_sha256": "b915aef88b44488a3d3e8f9bfaabafe917e3a86e275c92899686c998a8c92cbf"
+    },
+    {
+      "event": "after_update",
+      "updates": 902,
+      "weight_sha256": "21bb29b9a3d2ce3c80acc385fe468df5a995a42ea1bcafe088c63eae81b76837",
+      "nonrng_sha256": "15c7af0c5c7b59c19ead3cfe3e5115652481d46bcd698c504028fbbf0b11aa86",
+      "rng_sha256": "68796cd25555e2f9c757d88eb2e7a4a697c9ee89b51547550b03085f4f04723a",
+      "full_sha256": "1587728b56b852ca9d9ab48e786a5aea6304dfa606be9cbdc4eeb303d666d784"
+    },
+    {
+      "event": "after_update",
+      "updates": 1300,
+      "weight_sha256": "226a05b5e5f68285f8dd5b67841d68defcb2f9b01e1b8e4a631de7660311d222",
+      "nonrng_sha256": "1100c5452accd5eacc9a4f09a553761db4ed31c46da72a738a6c783548c29244",
+      "rng_sha256": "6e359f080f4d5e565524001ec2adb6696a66f7880481b00ec877db30bf322155",
+      "full_sha256": "972540b167546daf4243a16602e2cb77d2fbfce2130e36265be8db73ed2cf083"
+    },
+    {
+      "event": "probe",
+      "updates": 1300,
+      "before": {
+        "weight_sha256": "226a05b5e5f68285f8dd5b67841d68defcb2f9b01e1b8e4a631de7660311d222",
+        "nonrng_sha256": "1100c5452accd5eacc9a4f09a553761db4ed31c46da72a738a6c783548c29244",
+        "rng_sha256": "6e359f080f4d5e565524001ec2adb6696a66f7880481b00ec877db30bf322155",
+        "full_sha256": "972540b167546daf4243a16602e2cb77d2fbfce2130e36265be8db73ed2cf083"
+      },
+      "after": {
+        "weight_sha256": "226a05b5e5f68285f8dd5b67841d68defcb2f9b01e1b8e4a631de7660311d222",
+        "nonrng_sha256": "1100c5452accd5eacc9a4f09a553761db4ed31c46da72a738a6c783548c29244",
+        "rng_sha256": "bcccdfdeeea71815c33573b0093e9cdbcad901d003235121dbdb72e373fe6098",
+        "full_sha256": "4d3b8560136385cb05c937505a1f660067d5613a974c07579ad3439bee6cee96"
+      }
+    },
+    {
+      "event": "first_postplacement_training_draw",
+      "after_updates": 1300,
+      "indices_sha256": "cb485711d77df042c6b857f94b7aeacd57bc722cf624203938a7e950449205c9",
+      "cpu_rng_sha256": "49ada5f4aa305cecb462047df37fd3ebb7e51c242a2ef2c4e383ccbcec710174"
+    },
+    {
+      "event": "after_update",
+      "updates": 1301,
+      "weight_sha256": "dc9b4e5603b2dcc3ce718c0f5b78aba9887888a345cfcdfd25a0a896620b7620",
+      "nonrng_sha256": "397ef46dd7a2386c983e34a36185095d53b63ff5b679a4b0a55e6f56110801da",
+      "rng_sha256": "81dade1712a13dbc1891925def82442eeebe2000e6e63dd03e072027762d6d93",
+      "full_sha256": "48b1fc4acc2e3eee0a1df36c15d35ddeae784a36ef2d23e7a4c78fb7c08105f0"
+    },
+    {
+      "event": "after_update",
+      "updates": 1302,
+      "weight_sha256": "a1f9bd4ad37c7cf8989e0695691812d5112086b25ee9ebd5d69db06b35bc3126",
+      "nonrng_sha256": "c5e1e048e4f811d71c5a31275e932101b2c579ed36a89cd41c90eb4b0835b897",
+      "rng_sha256": "0af7ab0a4df50eda3c5f302cfee07101e7a0f6cd0655e5c373547b289fcb5e27",
+      "full_sha256": "709801605325fc658216d19c937f89ec66213a49c64f493f11a0e69059bf7331"
+    },
+    {
+      "event": "after_update",
+      "updates": 1700,
+      "weight_sha256": "2b3fb861e761d5d491c3fe9fed1363de747d870befd8349eb4f70709b8ca2434",
+      "nonrng_sha256": "bc7220de4a7c6bac8d08e5543aaab102360539cb852c1b6e4434404e2d328e1d",
+      "rng_sha256": "958f848c41048cda33071fcfb967270a2f45714c51967cf319f8c9375a1ccb19",
+      "full_sha256": "9a86f1886252461d62dffebc2f18dff1eed7015eb0917bcb635f3e17444d014e"
+    },
+    {
+      "event": "first_postplacement_training_draw",
+      "after_updates": 1700,
+      "indices_sha256": "308bba1db18e119163cd4d5e6c8a20b164528d47cf0459df8726473ca6148adf",
+      "cpu_rng_sha256": "4588e7c97030714f5d4da209271e28de9bd919ee7d3379cbda2b7bcf7dce7dcd"
+    },
+    {
+      "event": "after_update",
+      "updates": 1701,
+      "weight_sha256": "6e7db50726d14061d20a78f27d899844aa94515a18306797c6463d2b2eb27cc4",
+      "nonrng_sha256": "15fe1df1f134204d3c0fba3b05765920bde07373402af91628b63a8a2d9bf3b3",
+      "rng_sha256": "adf9659e59a94ce383037bf1bea031fa851a245191227779385c5eea04c32da5",
+      "full_sha256": "70f2697e685cc475925867a1b8666159d67847dd169d43137ca0668f433d0339"
+    },
+    {
+      "event": "after_update",
+      "updates": 1702,
+      "weight_sha256": "a96c3c0bc890012261ea2df09c88da9acb1aa61a8e645a9c5a8d137c41a9e038",
+      "nonrng_sha256": "8ac4c48587475bf0fe0462534e6114b2228a936d50161b3e8ed65f53b37f4fbf",
+      "rng_sha256": "a3ae8cf0f92be1be530a1ad7211ee06bae77d921f74806bd21ee3770eca6025e",
+      "full_sha256": "ac071aa302cd676491ccbd133ac588eb859eae9d0159dbe0b5128f66d9ec5ed0"
+    },
+    {
+      "event": "after_update",
+      "updates": 2000,
+      "weight_sha256": "8fbed388c1f2a639dfbcac5572f68b500544e6752dc519ef1cfa4a89d47f390d",
+      "nonrng_sha256": "26aeaf28a84c9945db8102a2b042aa332bc0b582edc512675ca747c3de405f79",
+      "rng_sha256": "a2f8d950d05fca9d6376ee66a7b55e44be94e6cec209fea29a3587dc947067f5",
+      "full_sha256": "1e8041d7964bce9e8bcb5a334636f96e1de10d62d4ece7a0345a40d83c10e35f"
+    }
+  ],
+  "common_trace": [
+    {
+      "event": "after_update",
+      "updates": 1,
+      "weight_sha256": "ac44245ec01219a0a0110f9de400ef569d855a588612eaf58cffaf6ed4572662",
+      "nonrng_sha256": "f5b246cadc1dbb2fc8f6f5c6d7dfb0962f466cf94f737cd3b2533feb13c0b331",
+      "rng_sha256": "1dd17635bbba0a5fd2f11c63d7ed89f1666bab18002284c4b4a8728b0d364d3f",
+      "full_sha256": "0fe528b2ead4403d20100f4bf2b01241b0bdef50f7d2e3ca46ef32c73fdf1192"
+    },
+    {
+      "event": "after_update",
+      "updates": 200,
+      "weight_sha256": "13d3e7dca49f2c9bbed22378e502bb573338ff09558f561ef54792cc0fd0c356",
+      "nonrng_sha256": "4faf446eee93fd2085448951cb2885184b017e466c79a5a01e67ae800395a0e8",
+      "rng_sha256": "f6640a5d9e00ee9c53d1b5bb7606c65508d7078f0b0ee2fb5d22073e52d92538",
+      "full_sha256": "4b680a94e966e189737aae72836d7865f294c7056a7a880c1cb7bc87c2c70ca8"
+    },
+    {
+      "event": "after_update",
+      "updates": 201,
+      "weight_sha256": "a861efc6fcd0214b9108d51bc03d1de54be5b10bb603096e2ad3966611b95af7",
+      "nonrng_sha256": "d1205bbb8ea19aa5731c6617fb4c9c78296d9f34a7f10a42a08bf33921d3be9e",
+      "rng_sha256": "ec747c1ca85d621b12007ee2fd2598348fded2a8517387ba144acaecc9468138",
+      "full_sha256": "3959566cdf30b6d1760afd9ae1f0de3ff4e8d54fbb5710a835579860f75cab28"
+    },
+    {
+      "event": "after_update",
+      "updates": 202,
+      "weight_sha256": "93246f20590ab745d2d00eb5b8c091b99165c73fd2d1ea837141a249fd4d0dd0",
+      "nonrng_sha256": "edef65ec7efab3614c7988f25a819a3013f7e8fb063e5b17a1b94ad8d8a13772",
+      "rng_sha256": "542bfe6738055768618a28a9d6eca9314a224ad59d8d7764a818c2fecef16aeb",
+      "full_sha256": "653ab8f92841a54b0d51f74d9056d2f51a13c7035283b798b45412a4f25cabba"
+    },
+    {
+      "event": "after_update",
+      "updates": 500,
+      "weight_sha256": "2c4350c588643d9c4d0bb8cf9e8d5b5bc81f0e3b0965adf2999fc6f3b22d40b5",
+      "nonrng_sha256": "c23302151a59a214d84307bea36c957dcb02a9121e15f487c01434747ff1910f",
+      "rng_sha256": "7f0133e4b98ab62fda24ae145b1788f0e91743a165267b9690e3f29e291df734",
+      "full_sha256": "37ad8d96be3b7a50acf01c9f6298d66b5d9de892096dac94811a79ae2b68edcf"
+    },
+    {
+      "event": "after_update",
+      "updates": 501,
+      "weight_sha256": "402be3fb662e48c66288463db24b26cc6118da1040eabaf1c1c237540e34f88f",
+      "nonrng_sha256": "8ab48468541390fd5829ac05e2f3d735dc5ce8df2aa040c03bce117c516cc487",
+      "rng_sha256": "813f5d06caaa2ffe2b7a30edd59768879a0d4d295ec1ff6223b4df6baf30bd8b",
+      "full_sha256": "66ccd5616bb8ec5ed4e83b759bdc87e51a3eeb31a640134c816e457611571964"
+    },
+    {
+      "event": "after_update",
+      "updates": 502,
+      "weight_sha256": "6c95551ed4d726aa86d9ee36047a3079a40abd74299b0f0152d467726c9d087e",
+      "nonrng_sha256": "1e7b09eb77e84001eb59ddd3e08e25538c846f11a52cc32b689956fa3b184307",
+      "rng_sha256": "42d089fb1be445f625e663866d7ebd0d431b5e282c7f35ca9defa58dbbb0e1cd",
+      "full_sha256": "f2aff6943686c01e2851669ab73619643a55132aa85ff463cb46fd236105a5ba"
+    },
+    {
+      "event": "after_update",
+      "updates": 900,
+      "weight_sha256": "0666cd732a449401e0e483466108233e327467242ec6cdd996870f218d1af7e4",
+      "nonrng_sha256": "219091d5fe3ebcd9286a9a02ed5c72fcf2a6b51c34d7aab814cbf8a6ccd807ce",
+      "rng_sha256": "9b0c560b0a91becf89b1813b1f9cb7e162d39e93876740aab6d23e1e5a55cab4",
+      "full_sha256": "d79000625759f2b7006567aaf4b734dbf9b0dc743ecb68cfa77a51cca0983c69"
+    },
+    {
+      "event": "after_update",
+      "updates": 901,
+      "weight_sha256": "1e79f428d6cbede9054dc632c9cfde616d6439859586cdbc3a3ea9f847ce5214",
+      "nonrng_sha256": "3bfe2ab42efcaaf38d571f60d660d94b7faa8b2fdc83d5a2c02cd709feaa9bf2",
+      "rng_sha256": "4f49ec36584ff2aa0bb6727d7df2174d5b3c2ad63c35ad106fc9c288d95e5398",
+      "full_sha256": "b915aef88b44488a3d3e8f9bfaabafe917e3a86e275c92899686c998a8c92cbf"
+    },
+    {
+      "event": "after_update",
+      "updates": 902,
+      "weight_sha256": "21bb29b9a3d2ce3c80acc385fe468df5a995a42ea1bcafe088c63eae81b76837",
+      "nonrng_sha256": "15c7af0c5c7b59c19ead3cfe3e5115652481d46bcd698c504028fbbf0b11aa86",
+      "rng_sha256": "68796cd25555e2f9c757d88eb2e7a4a697c9ee89b51547550b03085f4f04723a",
+      "full_sha256": "1587728b56b852ca9d9ab48e786a5aea6304dfa606be9cbdc4eeb303d666d784"
+    },
+    {
+      "event": "after_update",
+      "updates": 1300,
+      "weight_sha256": "226a05b5e5f68285f8dd5b67841d68defcb2f9b01e1b8e4a631de7660311d222",
+      "nonrng_sha256": "1100c5452accd5eacc9a4f09a553761db4ed31c46da72a738a6c783548c29244",
+      "rng_sha256": "6e359f080f4d5e565524001ec2adb6696a66f7880481b00ec877db30bf322155",
+      "full_sha256": "972540b167546daf4243a16602e2cb77d2fbfce2130e36265be8db73ed2cf083"
+    },
+    {
+      "event": "after_update",
+      "updates": 1301,
+      "weight_sha256": "dc9b4e5603b2dcc3ce718c0f5b78aba9887888a345cfcdfd25a0a896620b7620",
+      "nonrng_sha256": "397ef46dd7a2386c983e34a36185095d53b63ff5b679a4b0a55e6f56110801da",
+      "rng_sha256": "81dade1712a13dbc1891925def82442eeebe2000e6e63dd03e072027762d6d93",
+      "full_sha256": "48b1fc4acc2e3eee0a1df36c15d35ddeae784a36ef2d23e7a4c78fb7c08105f0"
+    },
+    {
+      "event": "after_update",
+      "updates": 1302,
+      "weight_sha256": "a1f9bd4ad37c7cf8989e0695691812d5112086b25ee9ebd5d69db06b35bc3126",
+      "nonrng_sha256": "c5e1e048e4f811d71c5a31275e932101b2c579ed36a89cd41c90eb4b0835b897",
+      "rng_sha256": "0af7ab0a4df50eda3c5f302cfee07101e7a0f6cd0655e5c373547b289fcb5e27",
+      "full_sha256": "709801605325fc658216d19c937f89ec66213a49c64f493f11a0e69059bf7331"
+    },
+    {
+      "event": "after_update",
+      "updates": 1700,
+      "weight_sha256": "2b3fb861e761d5d491c3fe9fed1363de747d870befd8349eb4f70709b8ca2434",
+      "nonrng_sha256": "bc7220de4a7c6bac8d08e5543aaab102360539cb852c1b6e4434404e2d328e1d",
+      "rng_sha256": "958f848c41048cda33071fcfb967270a2f45714c51967cf319f8c9375a1ccb19",
+      "full_sha256": "9a86f1886252461d62dffebc2f18dff1eed7015eb0917bcb635f3e17444d014e"
+    },
+    {
+      "event": "after_update",
+      "updates": 1701,
+      "weight_sha256": "6e7db50726d14061d20a78f27d899844aa94515a18306797c6463d2b2eb27cc4",
+      "nonrng_sha256": "15fe1df1f134204d3c0fba3b05765920bde07373402af91628b63a8a2d9bf3b3",
+      "rng_sha256": "adf9659e59a94ce383037bf1bea031fa851a245191227779385c5eea04c32da5",
+      "full_sha256": "70f2697e685cc475925867a1b8666159d67847dd169d43137ca0668f433d0339"
+    },
+    {
+      "event": "after_update",
+      "updates": 1702,
+      "weight_sha256": "a96c3c0bc890012261ea2df09c88da9acb1aa61a8e645a9c5a8d137c41a9e038",
+      "nonrng_sha256": "8ac4c48587475bf0fe0462534e6114b2228a936d50161b3e8ed65f53b37f4fbf",
+      "rng_sha256": "a3ae8cf0f92be1be530a1ad7211ee06bae77d921f74806bd21ee3770eca6025e",
+      "full_sha256": "ac071aa302cd676491ccbd133ac588eb859eae9d0159dbe0b5128f66d9ec5ed0"
+    },
+    {
+      "event": "after_update",
+      "updates": 2000,
+      "weight_sha256": "8fbed388c1f2a639dfbcac5572f68b500544e6752dc519ef1cfa4a89d47f390d",
+      "nonrng_sha256": "26aeaf28a84c9945db8102a2b042aa332bc0b582edc512675ca747c3de405f79",
+      "rng_sha256": "a2f8d950d05fca9d6376ee66a7b55e44be94e6cec209fea29a3587dc947067f5",
+      "full_sha256": "1e8041d7964bce9e8bcb5a334636f96e1de10d62d4ece7a0345a40d83c10e35f"
+    }
+  ],
+  "repeat_trace_sha256": "70862e5ab8974af86f1496cbafff2f80da635343f8c3722a40db72775d1bc8e0",
+  "common_trace_sha256": "b07c42f5e3198ecfb2aedfbcc95040e80bb7fb9c8a8e6d0e352471a27939ef38",
+  "probe_pure": true,
+  "fixed_val_loss": 1.4657102972269058,
+  "fixed_val_loss_per_batch": [
+    1.5025359392166138,
+    1.4123609066009521,
+    1.4746034145355225,
+    1.47296142578125,
+    1.453984022140503,
+    1.4891688823699951,
+    1.4347829818725586,
+    1.4852848052978516
+  ],
+  "fixed_batch_indices_sha256": [
+    "c09ee6779686c881668a09bf20ff8efa7333b91645cb66d9da9333d20c59e8db",
+    "82e6b50e0fde9b639bd93ff3f0a6eddcc50a279e4b43c7cd94b2a0a9243a7f88",
+    "dc3430d260ab9f43d03426a7b5df02cf612ef6d7c04bc72ca867bd935f13fe1a",
+    "5b15017db6be9a3dfc06e62e73b73c2ecf2de39ec761bf45d079c074aff82c93",
+    "4856f418070febe11c898fbd45fe2fe2fcabb0fe4a7649e975195260b533cf51",
+    "0f9ec124073f3da357eeca47c01d4605f28d3bc107d399afa35716c3f301f8f3",
+    "ef357e848dc1543daeb7d9ebc924c71ff4ecd7c561f1148aae37c71a5f6ebad3",
+    "4cb8e05bfa2ddf51d5d22b382bb87f102efa5a97d95355b3479aa8f02fc55a56"
+  ],
+  "wall_seconds": 87.32055294234306,
+  "peak_allocated_bytes": 4208595968,
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "train_source_sha256": "413bd97b40bb400a2a0d01230e2946f056c263ebac1b7281c2367d964a123085",
+  "instrumented_source_sha256": "0718c2ead7206edec753d957656d9d1315c2b6365dd87675645a7c24944a0f31",
+  "instrumented_model_sha256": "90ebc73fdf7a96f1b7542ffbacfe5e0e7ac794a5b8a2cccb2bd4f4e72842c580",
+  "model_source_diff": "--- model.py\n+++ instrumented_model.py\n@@ -279,7 +279,7 @@\n         print(f\"num non-decayed parameter tensors: {len(nodecay_params)}, with {num_nodecay_params:,} parameters\")\n         # Create AdamW optimizer and use the fused version if it is available\n         fused_available = 'fused' in inspect.signature(torch.optim.AdamW).parameters\n-        use_fused = fused_available and device_type == 'cuda'\n+        use_fused = False  # revision: deterministic non-fused AdamW\n         extra_args = dict(fused=True) if use_fused else dict()\n         optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=betas, **extra_args)\n         print(f\"using fused AdamW: {use_fused}\")\n",
+  "source_diff": "--- train.py\n+++ instrumented_train.py\n@@ -103,13 +103,13 @@\n \n if master_process:\n     os.makedirs(out_dir, exist_ok=True)\n-torch.manual_seed(1337 + seed_offset)\n-torch.backends.cuda.matmul.allow_tf32 = True # allow tf32 on matmul\n-torch.backends.cudnn.allow_tf32 = True # allow tf32 on cudnn\n+torch.manual_seed(860902 + seed_offset)\n+torch.backends.cuda.matmul.allow_tf32 = False # allow tf32 on matmul\n+torch.backends.cudnn.allow_tf32 = False # allow tf32 on cudnn\n device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast\n # note: float16 data type will automatically use a GradScaler\n ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torch.float16}[dtype]\n-ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)\n+ctx = nullcontext()  # revision: FP32, no autocast\n \n # poor man's data loader\n data_dir = os.path.join('data', dataset)\n@@ -121,6 +121,7 @@\n     else:\n         data = np.memmap(os.path.join(data_dir, 'val.bin'), dtype=np.uint16, mode='r')\n     ix = torch.randint(len(data) - block_size, (batch_size,))\n+    rev.note_draw(split, ix, globals())\n     x = torch.stack([torch.from_numpy((data[i:i+block_size]).astype(np.int64)) for i in ix])\n     y = torch.stack([torch.from_numpy((data[i+1:i+1+block_size]).astype(np.int64)) for i in ix])\n     if device_type == 'cuda':\n@@ -260,7 +261,7 @@\n         param_group['lr'] = lr\n \n     # evaluate the loss on train/val sets and write checkpoints\n-    if iter_num % eval_interval == 0 and master_process:\n+    if iter_num == 0 and master_process:\n         losses = estimate_loss()\n         print(f\"step {iter_num}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}\")\n         if wandb_log:\n@@ -312,6 +313,7 @@\n     scaler.update()\n     # flush the gradients as soon as we can, no need for this memory anymore\n     optimizer.zero_grad(set_to_none=True)\n+    rev.after_update(globals(), iter_num + 1)\n \n     # timing and logging\n     t1 = time.time()\n@@ -329,7 +331,7 @@\n     local_iter_num += 1\n \n     # termination conditions\n-    if iter_num > max_iters:\n+    if iter_num >= max_iters:\n         break\n \n if ddp:\n",
+  "state_hash_scope": "weights+buffers,optimizer,scaler,prefetchedX/Y,completedupdates,lr,modulemodes,grads,Python/NumPy/CPU/CUDA RNG; sparse checkpoints, not every update"
+}

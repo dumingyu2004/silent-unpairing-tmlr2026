@@ -1,0 +1,226 @@
+[
+  {
+    "name": "l2rw_tf",
+    "pinned_prefix": "0b616c9",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "0b616c99ecf8a1c99925322167694272a966ed00",
+    "archive_sha256": "e0f9290a981e2c360f3113a5b6dbb5001cf4868c1054d069b618726263a10355"
+  },
+  {
+    "name": "l2rw_torch",
+    "pinned_prefix": "182aad0",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "182aad0ddd11a38d86b7abfb34e35b54bc7efb39",
+    "archive_sha256": "67acae5c5ebda34ec3843a554e5bddc3bdcd5acfecd6f7ade56017b890cdd820"
+  },
+  {
+    "name": "mwnet",
+    "pinned_prefix": "3f1800f",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "3f1800ff26bc66ceda6075f3fa25f3a7e0665a4d",
+    "archive_sha256": "aa253a77ae35a589261c353ef7d0dfbe031e6ec0a5153f6bc3b85c903ecf026b"
+  },
+  {
+    "name": "dividemix",
+    "pinned_prefix": "d9d3058",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "d9d3058fa69a952463b896f84730378cdee6ec39",
+    "archive_sha256": "b023fff2ccd65149c1d55928e7b619771c97a40b5bcd52eaca894da022649ef6"
+  },
+  {
+    "name": "coteaching",
+    "pinned_prefix": "7c7fbe2",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "7c7fbe23e15e517db76a0882b6d108e4508e09d6",
+    "archive_sha256": "668ea78d8c8484c0c4ef16d68b2a9bede98c59fa0d2f0fda8ab17b00695e1c66"
+  },
+  {
+    "name": "maml",
+    "pinned_prefix": "98a00d4",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "98a00d41724c133bd29619a2fb2cc46dd128a368",
+    "archive_sha256": "0a706f5c66d8983c51e0f80161161dd54cc82d72a47c87916a318815583b93c4"
+  },
+  {
+    "name": "nanogpt",
+    "pinned_prefix": "3adf61e",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291",
+    "archive_sha256": "90017702c8faf518b9f106533e9155c35e2bc51fddd7b37eccada5175a5355d3"
+  },
+  {
+    "name": "rent",
+    "pinned_prefix": "d40f3c4",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "d40f3c408ed78915d7c61b201760de71e101b0f5",
+    "archive_sha256": "1c918a3f8d4f9b1c294981abf442fbd1bcecc477aeaa9a8f29d6b7193f9b5473"
+  },
+  {
+    "name": "bhn",
+    "pinned_prefix": "2b09d3a",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "2b09d3a376494371b9dd852e4742aef756b8fd93",
+    "archive_sha256": "e899bc0792e925f7256146be93c3b256536dd8267b0f7047e0e7a81b59f620fa"
+  },
+  {
+    "name": "topofilter",
+    "pinned_prefix": "9835d8c",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "9835d8cbc966b96b9a99f788760e5bf0b43b0d3c",
+    "archive_sha256": "bb231bb13323980af1c34927c503157c564fd42b64b26a1c4c16e5757bc67b5f"
+  },
+  {
+    "name": "crust",
+    "pinned_prefix": "a430069",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "a430069a413a0bb96ab33080df16b7d285e18040",
+    "archive_sha256": "90892dae4ab7d4bfa3fea67038a08ad2a4883a213441e4bbb905b779a352c7d7"
+  },
+  {
+    "name": "selcl",
+    "pinned_prefix": "98cc41e",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "98cc41e09789ed338684dff24751685147010b30",
+    "archive_sha256": "eb47f0fdafbc4f019874c3d8f3c7259b9a5cc0a7d567737869b36b717c62500d"
+  },
+  {
+    "name": "mlc",
+    "pinned_prefix": "5747d0b",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "5747d0b6294550dfbd8229f50d5035a8e3055d61",
+    "archive_sha256": "2d07ffd0c724d705cc2a43de411e2d7aafbccf739b2d389564aa473d90725962"
+  },
+  {
+    "name": "promix",
+    "pinned_prefix": "40d8378",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "40d8378193f1a098473479ebcb56dbafa89dfacb",
+    "archive_sha256": "530f4e91010ffa52910dfafeb5517f4d395f845d273858b118df0a7e208ab6e1"
+  },
+  {
+    "name": "unicon",
+    "pinned_prefix": "1b5a03f",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "1b5a03f6dc0faf6d19dd0172ad17e22f8f0efcae",
+    "archive_sha256": "bbe235208e958b4724e075c9eb76d45382f22f3d267cb63aee31f3e99a7d78e8"
+  },
+  {
+    "name": "disc",
+    "pinned_prefix": "a21e910",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "a21e910bffeb34873684937ac1066991a720552a",
+    "archive_sha256": "fc9f280a6e8b97af62e33ef03db73ad20e350a5e4e028a85fca94f94f904afff"
+  },
+  {
+    "name": "ddpm",
+    "pinned_prefix": "d93647a",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "d93647ad3cf97d786a064ef80429ee6c3e5ebd55",
+    "archive_sha256": "779a0fe05d58b64404f0500515feecb0ed2c15a4b0bc68378b4be876e26a445d"
+  },
+  {
+    "name": "timm",
+    "pinned_prefix": "ce7c976",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "ce7c976311776496fec826d97ec14ba68db909bf",
+    "archive_sha256": "810c7eb8afb58c67018f4ee1cb6e61ed138eafd7c91c93b9db93a1623470d65f"
+  },
+  {
+    "name": "cleanrl",
+    "pinned_prefix": "fe8d8a0",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "fe8d8a03c41a7ef5b523e2e354bd01c363e786bb",
+    "archive_sha256": "7d2f8c1cbeee1768fa2d257f6a3631cbe22f5838d05c55552f3223260e7f13cc"
+  },
+  {
+    "name": "litgpt",
+    "pinned_prefix": "2685705",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "26857050fe3ff627cd714fe92f5838f51a3d5efa",
+    "archive_sha256": "2258d720f9f60e8ee225de356a4b91b0796fb46aa47af6da2f6b06b65fc9b1eb"
+  },
+  {
+    "name": "infobatch",
+    "pinned_prefix": "8bbb012",
+    "original_verdict": "guarded",
+    "status": "recovered",
+    "commit": "8bbb012c256c9eb4de3bb209f8a5e73899de8d02",
+    "archive_sha256": "c5bdfa970a4a7e3b512d05c067d988d112928be475f6144dbb056631a55035e1"
+  },
+  {
+    "name": "dcgan",
+    "pinned_prefix": "acc295d",
+    "original_verdict": "guarded",
+    "status": "recovered",
+    "commit": "acc295dc7b90714f1bf47f06004fc19a7fe235c4",
+    "archive_sha256": "09ba0a38d270d10b2f3fc085b11d1939f07d4ed0fe846fdf85e7759c134de1b8"
+  },
+  {
+    "name": "sb3",
+    "pinned_prefix": "8908708",
+    "original_verdict": "guarded",
+    "status": "recovered",
+    "commit": "8908708f10c8ff29759c67f55c8acb56cab27463",
+    "archive_sha256": "8d737d76de6b5d5aa7a8ada39072f47d81a91896014f6b938b623926d5aa4b60"
+  },
+  {
+    "name": "trl",
+    "pinned_prefix": "b6ff4a7",
+    "original_verdict": "conditional",
+    "status": "recovered",
+    "commit": "b6ff4a780e364a92c27165d2fcdb7154bbf1b564",
+    "archive_sha256": "b73e72ad64d234291934b931a74b4bd068876f79a61eeefeaad881e4bfa2dc41"
+  },
+  {
+    "name": "olmo",
+    "pinned_prefix": "fa6c501",
+    "original_verdict": "guarded",
+    "status": "recovered",
+    "commit": "fa6c5014c9f6e9ee789da2d9c20d5126fee8df0d",
+    "archive_sha256": "aa1d6819ef51503e4e95e54f94421fb92f118d9cb9154f384adaf1c720f7da54"
+  },
+  {
+    "name": "sdxl",
+    "pinned_prefix": "e8cd657",
+    "original_verdict": "exposed",
+    "status": "recovered",
+    "commit": "e8cd657656fa5d61688191730d0e03242bf4ed44",
+    "archive_sha256": "463a1b26d5e7f8d582b0b6701e970a2bd7b387b73c22fc51740847e3cad3caa9"
+  },
+  {
+    "name": "mmselfsup",
+    "pinned_prefix": "db861f3",
+    "original_verdict": "guarded",
+    "status": "recovered",
+    "commit": "db861f30487c9a0b0cb3e35e176d6058887660bc",
+    "archive_sha256": "87363ba7d4377b9b93b273617e1e9619c9c0874bdd6905457058e4453a648ee0"
+  },
+  {
+    "name": "diffusers",
+    "pinned_prefix": "d1b988b",
+    "original_verdict": "conditional",
+    "status": "recovered",
+    "commit": "d1b988b08f51110670a0a187f998470d913fb85a",
+    "archive_sha256": "12532b2695d9ca1367f69e41423d07ea8400e21789d035216dbb0b4bcefa3b06"
+  }
+]

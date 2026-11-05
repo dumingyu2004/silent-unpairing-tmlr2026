@@ -1,0 +1,25 @@
+{
+  "args": {
+    "repo": "/artifact/local-path",
+    "data_root": "/artifact/local-path",
+    "epochs": 20,
+    "batch_size": 100,
+    "train_size": 10000,
+    "noise": 0.4,
+    "seed": 3,
+    "probe_step": 400,
+    "arms": "mwnet_probe",
+    "device": "cuda",
+    "dump_state_dir": null,
+    "out": "logs_flip_demo/harvest_seed3_p400.json"
+  },
+  "results": {
+    "mwnet_probe": {
+      "final_val_acc": 0.3824,
+      "state_sha256": "5457e286250bffc9a02412ac4f1c16b179f3238892ac4db5407629396bfef52c",
+      "vnet_state_sha256": "6c21605515f92a772c626fc7a3db1466967e12ac0597a78dd707b870b3b7ccee",
+      "probe_fired": true
+    }
+  },
+  "partial": false
+}

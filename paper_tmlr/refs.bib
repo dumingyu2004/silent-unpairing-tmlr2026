@@ -1,0 +1,541 @@
+% refs.bib — integrated pass 2026-07-07; official-source canonicalization pass
+% 2026-07-17: every published entry re-verified against its OFFICIAL page
+% (proceedings.mlr.press, proceedings.neurips.cc, proceedings.mlsys.org,
+% openreview.net, ojs.aaai.org, aclanthology.org, dl.acm.org,
+% academic.oup.com, pubsonline.informs.org, auai.org) with volume/pages taken
+% from those pages only; arXiv-cited entries confirmed to have no
+% peer-reviewed version as of 2026-07-17 unless upgraded below.
+% NeurIPS 2018/2019 official records carry no page numbers (none invented).
+% BibTeX does not parse "%" comments inside entries: annotations sit ABOVE
+% their entry.
+
+% --- Reproducibility / nondeterminism / causally-valid comparison -----------
+
+% Official: https://proceedings.mlr.press/v139/summers21a.html
+@inproceedings{summers2021nondeterminism,
+  author    = {Summers, Cecilia and Dinneen, Michael J.},
+  title     = {Nondeterminism and Instability in Neural Network Optimization},
+  booktitle = {Proceedings of the 38th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {139},
+  pages     = {9913--9922},
+  publisher = {PMLR},
+  year      = {2021}
+}
+
+% Official: https://proceedings.mlr.press/v267/altintas25a.html (ICML 2025).
+% Upgraded 2026-08-02 from the 2024 HiLD workshop version (openreview
+% T1urv73edU: three authors, different title). The archival record adds Colin
+% Raffel and states the timing dependence we cite it for more directly, so the
+% earlier note about the workshop framing "matching our text" no longer holds.
+@inproceedings{altintas2025butterfly,
+  author    = {Alt{\i}nta{\c{s}}, G{\"u}l Sena and Kwok, Devin and Raffel, Colin and Rolnick, David},
+  title     = {The Butterfly Effect: Neural Network Training Trajectories Are Highly Sensitive to Initial Conditions},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {267},
+  pages     = {1314--1342},
+  publisher = {PMLR},
+  year      = {2025}
+}
+
+% arXiv-only confirmed 2026-07-17 (no journal ref; not in NeurIPS'25/ICLR'26).
+@misc{ly2025riddled,
+  author = {Ly, Andrew and Gong, Pulin},
+  title  = {Riddled Basin Geometry Sets Fundamental Limits to Predictability and Reproducibility in Deep Learning},
+  note   = {arXiv:2510.05606},
+  year   = {2025}
+}
+
+% Official: JMLR 25(318), 2024.
+@article{patterson2024empirical,
+  author  = {Patterson, Andrew and Neumann, Samuel and White, Martha and White, Adam},
+  title   = {Empirical Design in Reinforcement Learning},
+  journal = {Journal of Machine Learning Research},
+  volume  = {25},
+  number  = {318},
+  pages   = {1--63},
+  year    = {2024}
+}
+
+% Official: https://arxiv.org/abs/2409.02086 (q-bio.QM; no venue version as of
+% 2026-07-17). Directly studies misaligned random-number realizations in
+% agent-based simulation comparison.
+@misc{klein2024noisefree,
+  author = {Klein, Daniel J. and Abeysuriya, Romesh G. and Stuart, Robyn M. and Kerr, Cliff C.},
+  title  = {Noise-free Comparison of Stochastic Agent-based Simulations Using Common Random Numbers},
+  note   = {arXiv:2409.02086},
+  year   = {2024}
+}
+
+% Official: https://doi.org/10.1007/s10729-008-9067-6 (PubMed 18998599).
+% Synchronized random numbers per stochastic event, with independent streams
+% assigned per event group.
+@article{stout2008keeping,
+  author  = {Stout, Natasha K. and Goldie, Sue J.},
+  title   = {Keeping the Noise Down: Common Random Numbers for Disease Simulation Modeling},
+  journal = {Health Care Management Science},
+  volume  = {11},
+  number  = {4},
+  pages   = {399--406},
+  year    = {2008}
+}
+
+% Official: https://www.jmlr.org/papers/v11/cawley10a.html
+% Classic direct antecedent for selection optimism / model-selection overfitting.
+@article{cawley2010overfitting,
+  author  = {Cawley, Gavin C. and Talbot, Nicola L. C.},
+  title   = {On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation},
+  journal = {Journal of Machine Learning Research},
+  volume  = {11},
+  number  = {70},
+  pages   = {2079--2107},
+  year    = {2010}
+}
+
+% arXiv-only confirmed 2026-07-17 (stat.ME preprint, posted 2026-03-11).
+@misc{buffalo2026realizing,
+  author = {Buffalo, Vince and Pearson, Carl A. B. and Klein, Daniel},
+  title  = {Realizing Common Random Numbers: Event-Keyed Hashing for Causally Valid Stochastic Models},
+  note   = {arXiv:2603.11084},
+  year   = {2026}
+}
+
+% Official pages verified from the AAAI OJS PDF galley (folios 3207-3214).
+@inproceedings{henderson2018deep,
+  author    = {Henderson, Peter and Islam, Riashat and Bachman, Philip and Pineau, Joelle and Precup, Doina and Meger, David},
+  title     = {Deep Reinforcement Learning That Matters},
+  booktitle = {Proceedings of the Thirty-Second AAAI Conference on Artificial Intelligence},
+  pages     = {3207--3214},
+  year      = {2018}
+}
+
+% Official CVF Open Access proceedings BibTeX (authoritative for this entry):
+% https://openaccess.thecvf.com/content/WACV2023/html/Ji_Randomness_Is_the_Root_of_All_Evil_More_Reliable_Evaluation_WACV_2023_paper.html
+% Note: the IEEE Xplore version paginates the same paper 3932-3941. We cite the
+% CVF proceedings, so the CVF pagination (3943-3952) is used throughout; the two
+% paginations are never mixed.
+@inproceedings{ji2023randomness,
+  author    = {Ji, Yilin and Kaestner, Daniel and Wirth, Oliver and Wressnegger, Christian},
+  title     = {Randomness Is the Root of All Evil: More Reliable Evaluation of Deep Active Learning},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  month     = {January},
+  pages     = {3943--3952},
+  year      = {2023}
+}
+
+@misc{jax2018prng,
+  key          = {JAX PRNG},
+  title        = {{JEP} 263: {JAX} {PRNG} Design (Splittable Keys)},
+  howpublished = {\url{https://docs.jax.dev/en/latest/jep/263-prng.html}},
+  note         = {Software-design document},
+  year         = {2018}
+}
+
+@misc{pytorch_forkrng,
+  key          = {PyTorch fork rng},
+  title        = {torch.random.fork\_rng},
+  howpublished = {\url{https://pytorch.org/docs/stable/random.html}},
+  note         = {PyTorch documentation (software)},
+  year         = {2026}
+}
+
+% --- Training frameworks (immunity landscape) --------------------------------
+
+% Official: https://aclanthology.org/2020.emnlp-demos.6/ (pages 38-45).
+@inproceedings{wolf2020transformers,
+  author    = {Wolf, Thomas and Debut, Lysandre and Sanh, Victor and Chaumond, Julien and Delangue, Clement and Moi, Anthony and Cistac, Pierric and Rault, Tim and Louf, R{\'e}mi and Funtowicz, Morgan and Davison, Joe and Shleifer, Sam and von Platen, Patrick and Ma, Clara and Jernite, Yacine and Plu, Julien and Xu, Canwen and Le Scao, Teven and Gugger, Sylvain and Drame, Mariama and Lhoest, Quentin and Rush, Alexander},
+  title     = {Transformers: State-of-the-Art Natural Language Processing},
+  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
+  pages     = {38--45},
+  year      = {2020}
+}
+
+% Official: https://aclanthology.org/N19-4009/ (pages 48-53; booktitle per
+% Anthology, which omits "HLT").
+@inproceedings{ott2019fairseq,
+  author    = {Ott, Myle and Edunov, Sergey and Baevski, Alexei and Fan, Angela and Gross, Sam and Ng, Nathan and Grangier, David and Auli, Michael},
+  title     = {fairseq: A Fast, Extensible Toolkit for Sequence Modeling},
+  booktitle = {Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (Demonstrations)},
+  pages     = {48--53},
+  year      = {2019}
+}
+
+@misc{falcon2019lightning,
+  author       = {Falcon, William and {The PyTorch Lightning team}},
+  title        = {PyTorch Lightning},
+  howpublished = {\url{https://github.com/Lightning-AI/pytorch-lightning}},
+  note         = {Software},
+  year         = {2019}
+}
+
+@misc{wightman2019timm,
+  author       = {Wightman, Ross},
+  title        = {PyTorch Image Models},
+  howpublished = {\url{https://github.com/huggingface/pytorch-image-models}},
+  note         = {Software},
+  year         = {2019}
+}
+
+@misc{karpathy2022nanogpt,
+  author       = {Karpathy, Andrej},
+  title        = {nanoGPT},
+  howpublished = {\url{https://github.com/karpathy/nanoGPT}},
+  note         = {Software},
+  year         = {2022}
+}
+
+% --- Bilevel meta-learning and sample reweighting ---------------------------
+
+% Official: https://proceedings.mlr.press/v80/ren18a.html
+@inproceedings{ren2018learning,
+  author    = {Ren, Mengye and Zeng, Wenyuan and Yang, Bin and Urtasun, Raquel},
+  title     = {Learning to Reweight Examples for Robust Deep Learning},
+  booktitle = {Proceedings of the 35th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {80},
+  pages     = {4334--4343},
+  publisher = {PMLR},
+  year      = {2018}
+}
+
+% Official: https://proceedings.neurips.cc/paper/2019/hash/e58cc5ca94270acaceed13bc82dfedf7-Abstract.html
+% (NeurIPS 2019 official record carries no page numbers.)
+@inproceedings{shu2019metaweightnet,
+  author    = {Shu, Jun and Xie, Qi and Yi, Lixuan and Zhao, Qian and Zhou, Sanping and Xu, Zongben and Meng, Deyu},
+  title     = {Meta-Weight-Net: Learning an Explicit Mapping for Sample Weighting},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {32},
+  publisher = {Curran Associates, Inc.},
+  year      = {2019}
+}
+
+% Official: https://proceedings.neurips.cc/paper/2018/hash/a19744e268754fb0148b017647355b7b-Abstract.html
+% (NeurIPS 2018 official record carries no page numbers.)
+@inproceedings{han2018coteaching,
+  author    = {Han, Bo and Yao, Quanming and Yu, Xingrui and Niu, Gang and Xu, Miao and Hu, Weihua and Tsang, Ivor and Sugiyama, Masashi},
+  title     = {Co-teaching: Robust Training of Deep Neural Networks with Extremely Noisy Labels},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {31},
+  publisher = {Curran Associates, Inc.},
+  year      = {2018}
+}
+
+% Official: https://openreview.net/forum?id=HJgExaVtwr (ICLR 2020 poster).
+@inproceedings{li2020dividemix,
+  author    = {Li, Junnan and Socher, Richard and Hoi, Steven C. H.},
+  title     = {DivideMix: Learning with Noisy Labels as Semi-supervised Learning},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2020}
+}
+
+% Official: https://proceedings.mlr.press/v202/yu23b.html (ICML 2023 oral).
+% Second author is Xinsong Ma (not Xingjun).
+@inproceedings{yu2023bhn,
+  author    = {Yu, Chenglin and Ma, Xinsong and Liu, Weiwei},
+  title     = {Delving into Noisy Label Detection with Clean Data},
+  booktitle = {Proceedings of the 40th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {202},
+  pages     = {40290--40305},
+  publisher = {PMLR},
+  year      = {2023}
+}
+
+% Official: https://openreview.net/forum?id=A4mJuFRMN8 (ICLR 2024 poster).
+@inproceedings{bae2024rent,
+  author    = {Bae, HeeSun and Shin, Seungjae and Na, Byeonghu and Moon, Il-Chul},
+  title     = {Dirichlet-based Per-Sample Weighting by Transition Matrix for Noisy Label Learning},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  year      = {2024}
+}
+
+% arXiv-only confirmed 2026-07-17 (preprint, no accepted venue).
+@misc{zhang2025revisiting,
+  author = {Zhang, Yiming and Holtz, Chester and Mishne, Gal and Cloninger, Alex},
+  title  = {Revisiting Meta-Learning with Noisy Labels: Reweighting Dynamics and Theoretical Guarantees},
+  note   = {arXiv:2510.12209},
+  year   = {2025}
+}
+
+% --- Weight averaging --------------------------------------------------------
+
+% Official: AUAI front matter + camera-ready (auai.org/uai2018): pages 876-885.
+@inproceedings{izmailov2018averaging,
+  author    = {Izmailov, Pavel and Podoprikhin, Dmitrii and Garipov, Timur and Vetrov, Dmitry and Wilson, Andrew Gordon},
+  title     = {Averaging Weights Leads to Wider Optima and Better Generalization},
+  booktitle = {Proceedings of the Thirty-Fourth Conference on Uncertainty in Artificial Intelligence},
+  pages     = {876--885},
+  publisher = {AUAI Press},
+  year      = {2018}
+}
+
+% Official: https://proceedings.mlr.press/v162/wortsman22a.html
+@inproceedings{wortsman2022soups,
+  author    = {Wortsman, Mitchell and Ilharco, Gabriel and Gadre, Samir Yitzhak and Roelofs, Rebecca and Gontijo-Lopes, Raphael and Morcos, Ari S. and Namkoong, Hongseok and Farhadi, Ali and Carmon, Yair and Kornblith, Simon and Schmidt, Ludwig},
+  title     = {Model Soups: Averaging Weights of Multiple Fine-Tuned Models Improves Accuracy without Increasing Inference Time},
+  booktitle = {Proceedings of the 39th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {162},
+  pages     = {23965--23998},
+  publisher = {PMLR},
+  year      = {2022}
+}
+
+% Official: https://openreview.net/forum?id=8wbnpOJY-f (ICLR 2023 poster).
+% arXiv:2205.13104 v4 (2025) carries a different title and expanded author
+% list; do not cite the arXiv version.
+@inproceedings{li2023twa,
+  author    = {Li, Tao and Huang, Zhehao and Tao, Qinghua and Wu, Yingwen and Huang, Xiaolin},
+  title     = {Trainable Weight Averaging: Efficient Training by Optimizing Historical Solutions},
+  booktitle = {The Eleventh International Conference on Learning Representations},
+  year      = {2023}
+}
+
+% Official: https://openreview.net/forum?id=0OrABUHZuz (HITY Workshop, NeurIPS
+% 2022; sole author; workshop papers carry no pages).
+@inproceedings{kaddour2022lawa,
+  author    = {Kaddour, Jean},
+  title     = {Stop Wasting My Time! Saving Days of ImageNet and BERT Training with Latest Weight Averaging},
+  booktitle = {NeurIPS 2022 Workshop on Has It Trained Yet? (HITY)},
+  year      = {2022}
+}
+
+% Official: https://openreview.net/forum?id=IA8CWtNkUr (COLM 2024).
+@inproceedings{sanyal2024early,
+  author    = {Sanyal, Sunny and Neerkaje, Atula Tejaswi and Kaddour, Jean and Kumar, Abhishek and Sanghavi, Sujay},
+  title     = {Early Weight Averaging Meets High Learning Rates for LLM Pre-training},
+  booktitle = {First Conference on Language Modeling (COLM)},
+  year      = {2024}
+}
+
+% Official: https://proceedings.mlr.press/v267/ajroldi25a.html (ICML 2025).
+@inproceedings{ajroldi2025when,
+  author    = {Ajroldi, Niccol{\`o} and Orvieto, Antonio and Geiping, Jonas},
+  title     = {When, Where and Why to Average Weights?},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {267},
+  pages     = {925--941},
+  publisher = {PMLR},
+  year      = {2025}
+}
+
+% Official: https://proceedings.neurips.cc/paper/2020/hash/f4e3ce3e7b581ff32e40968298ba013d-Abstract.html
+@inproceedings{wu2020topofilter,
+  author    = {Wu, Pengxiang and Zheng, Songzhu and Goswami, Mayank and Metaxas, Dimitris and Chen, Chao},
+  title     = {A Topological Filter for Learning with Label Noise},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {33},
+  pages     = {21382--21393},
+  publisher = {Curran Associates, Inc.},
+  year      = {2020}
+}
+
+% Official: https://proceedings.neurips.cc/paper/2020/hash/8493eeaccb772c0878f99d60a0bd2bb3-Abstract.html
+@inproceedings{mirzasoleiman2020crust,
+  author    = {Mirzasoleiman, Baharan and Cao, Kaidi and Leskovec, Jure},
+  title     = {Coresets for Robust Training of Deep Neural Networks against Noisy Labels},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {33},
+  pages     = {11465--11477},
+  publisher = {Curran Associates, Inc.},
+  year      = {2020}
+}
+
+% Official: https://proceedings.mlr.press/v70/finn17a.html
+@inproceedings{finn2017maml,
+  author    = {Finn, Chelsea and Abbeel, Pieter and Levine, Sergey},
+  title     = {Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks},
+  booktitle = {Proceedings of the 34th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {70},
+  pages     = {1126--1135},
+  publisher = {PMLR},
+  year      = {2017}
+}
+
+% Official: https://proceedings.mlr.press/v108/li20j.html
+@inproceedings{li2020earlystop,
+  author    = {Li, Mingchen and Soltanolkotabi, Mahdi and Oymak, Samet},
+  title     = {Gradient Descent with Early Stopping is Provably Robust to Label Noise for Overparameterized Neural Networks},
+  booktitle = {Proceedings of the 23rd International Conference on Artificial Intelligence and Statistics},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {108},
+  pages     = {4313--4324},
+  publisher = {PMLR},
+  year      = {2020}
+}
+
+% Official: https://proceedings.mlr.press/v70/arpit17a.html
+@inproceedings{arpit2017memorization,
+  author    = {Arpit, Devansh and Jastrz{\k{e}}bski, Stanis{\l}aw and Ballas, Nicolas and Krueger, David and Bengio, Emmanuel and Kanwal, Maxinder S. and Maharaj, Tegan and Fischer, Asja and Courville, Aaron and Bengio, Yoshua and Lacoste-Julien, Simon},
+  title     = {A Closer Look at Memorization in Deep Networks},
+  booktitle = {Proceedings of the 34th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {70},
+  pages     = {233--242},
+  publisher = {PMLR},
+  year      = {2017}
+}
+
+% arXiv-only confirmed 2026-07-17 (not in AISTATS'25/ICML'25/NeurIPS'24-25).
+@misc{toner2024noisyes,
+  author = {Toner, William and Storkey, Amos},
+  title  = {Noisy Early Stopping for Noisy Labels},
+  note   = {arXiv:2409.06830},
+  year   = {2024}
+}
+
+% Official: https://pubsonline.informs.org/doi/10.1287/mnsc.38.6.884
+@article{glasserman1992crn,
+  author  = {Glasserman, Paul and Yao, David D.},
+  title   = {Some Guidelines and Guarantees for Common Random Numbers},
+  journal = {Management Science},
+  volume  = {38},
+  number  = {6},
+  pages   = {884--908},
+  year    = {1992}
+}
+
+@misc{lightning2022rngissue,
+  author       = {{PyTorch Lightning contributors}},
+  title        = {\code{TrainingEpochLoop.\_should\_check\_val\_fx} discrepancy between continued run <> restore from ckpt (issue \#14579)},
+  note         = {The thread reports that interleaving validation and training differently across runs leaves the two consuming different random numbers when both draw from one generator},
+  howpublished = {\url{https://github.com/Lightning-AI/pytorch-lightning/issues/14579}},
+  year         = {2022}
+}
+
+% The "rlevaulator" spelling in the URL is MathWorks' own live filename (the
+% corrected spelling returns 404); verified 2026-07-17.
+@misc{matlab_rlevaluator,
+  author       = {{The MathWorks, Inc.}},
+  title        = {rlEvaluator: Options for evaluating reinforcement learning agents during training (Reinforcement Learning Toolbox documentation)},
+  howpublished = {\url{https://www.mathworks.com/help/reinforcement-learning/ref/rl.evaluation.rlevaulator.html}},
+  note         = {Accessed 2026-07-17},
+  year         = {2024}
+}
+
+% arXiv-only confirmed 2026-07-17.
+@misc{apicella2026validation,
+  author = {Apicella, Andrea and Isgr{\`o}, Francesco and Pollastro, Andrea and Prevete, Roberto},
+  title  = {Don't Stop Me Now: Rethinking Validation Criteria for Model Parameter Selection},
+  note   = {arXiv:2602.22107},
+  year   = {2026}
+}
+
+% arXiv-only confirmed 2026-07-17 (ECAI-version suspicion disproven: the
+% author's ECAI 2024 paper is a different work).
+@misc{demir2024aswa,
+  author = {Demir, Caglar and Sharma, Arnab and Ngonga Ngomo, Axel-Cyrille},
+  title  = {Adaptive Stochastic Weight Averaging},
+  note   = {arXiv:2406.19092},
+  year   = {2024}
+}
+
+% arXiv-only confirmed 2026-07-17 (not in NeurIPS 2023 proceedings).
+@misc{melis2022twotailed,
+  author = {Melis, G{\'a}bor},
+  title  = {Two-Tailed Averaging: Anytime, Adaptive, Once-in-a-While Optimal Weight Averaging for Better Generalization},
+  note   = {arXiv:2209.12581},
+  year   = {2022}
+}
+
+% Venue upgrade 2026-07-17: the arXiv:1910.09259 preprint was published in
+% Operations Research 70(6), 2022 (INFORMS; DOI 10.1287/opre.2021.2208).
+@article{pearce2022bayesian,
+  author  = {Pearce, Michael Arthur Leopold and Poloczek, Matthias and Branke, Juergen},
+  title   = {Bayesian Optimization Allowing for Common Random Numbers},
+  journal = {Operations Research},
+  volume  = {70},
+  number  = {6},
+  pages   = {3457--3472},
+  year    = {2022}
+}
+
+% arXiv-only confirmed 2026-07-17 (never published at a venue; dblp CoRR only).
+@misc{dodge2020finetuning,
+  author = {Dodge, Jesse and Ilharco, Gabriel and Schwartz, Roy and Farhadi, Ali and Hajishirzi, Hannaneh and Smith, Noah A.},
+  title  = {Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping},
+  note   = {arXiv:2002.06305},
+  year   = {2020}
+}
+
+% Official: proceedings.mlsys.org 2021 (volume 3, pages 747-769); author list
+% corrected to the official record (Mohammadi Sepahvand, Ebrahimi Kahou).
+@inproceedings{bouthillier2021accounting,
+  author    = {Bouthillier, Xavier and Delaunay, Pierre and Bronzi, Mirko and Trofimov, Assya and Nichyporuk, Brennan and Szeto, Justin and Mohammadi Sepahvand, Nazanin and Raff, Edward and Madan, Kanika and Voleti, Vikram and Ebrahimi Kahou, Samira and Michalski, Vincent and Arbel, Tal and Pal, Chris and Varoquaux, Ga{\"e}l and Vincent, Pascal},
+  title     = {Accounting for Variance in Machine Learning Benchmarks},
+  booktitle = {Proceedings of Machine Learning and Systems},
+  volume    = {3},
+  pages     = {747--769},
+  year      = {2021}
+}
+
+% arXiv-only confirmed 2026-07-17 (ICLR 2026 submission, not accepted; absent
+% from ICML/NeurIPS 2025 proceedings).
+@misc{wang2025sewa,
+  author = {Wang, Peng and Hu, Shengchao and Tao, Zerui and Wang, Guoxia and Yu, Dianhai and Shen, Li and Zheng, Quan and Tao, Dacheng},
+  title  = {SeWA: Selective Weight Average via Probabilistic Masking},
+  note   = {arXiv:2502.10119},
+  year   = {2025}
+}
+
+% Official: proceedings.mlsys.org 2022 (volume 4, pages 316-336).
+@inproceedings{zhuang2021randomness,
+  author    = {Zhuang, Donglin and Zhang, Xingyao and Song, Shuaiwen and Hooker, Sara},
+  title     = {Randomness in Neural Network Training: Characterizing the Impact of Tooling},
+  booktitle = {Proceedings of Machine Learning and Systems},
+  volume    = {4},
+  pages     = {316--336},
+  year      = {2022}
+}
+
+% Official: https://dl.acm.org/doi/10.1145/3510003.3510163 (ICSE 2022).
+@inproceedings{chen2022reproducible,
+  author    = {Chen, Boyuan and Wen, Mingzhi and Shi, Yong and Lin, Dayi and Rajbahadur, Gopi Krishnan and Jiang, Zhen Ming},
+  title     = {Towards Training Reproducible Deep Learning Models},
+  booktitle = {Proceedings of the 44th International Conference on Software Engineering},
+  pages     = {2202--2214},
+  publisher = {ACM},
+  year      = {2022}
+}
+
+% Official: https://academic.oup.com/bioinformatics/article/39/4/btad164/7099608
+% (full eight-author list per the journal record).
+@article{heumos2023mlfcore,
+  author  = {Heumos, Lukas and Ehmele, Philipp and Kuhn Cuellar, Luis and Menden, Kevin and Miller, Edmund and Lemke, Steffen and Gabernet, Gisela and Nahnsen, Sven},
+  title   = {mlf-core: a framework for deterministic machine learning},
+  journal = {Bioinformatics},
+  volume  = {39},
+  number  = {4},
+  pages   = {btad164},
+  year    = {2023}
+}
+
+% Venue upgrade 2026-07-17: the arXiv:2304.01910 preprint ("Calibrated Chaos")
+% was published at ICLR 2024 under this final title
+% (https://openreview.net/forum?id=pEGSdJu52I).
+@inproceedings{jordan2024variance,
+  author    = {Jordan, Keller},
+  title     = {On the Variance of Neural Network Training with respect to Test Sets and Distributions},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  year      = {2024}
+}
+
+% arXiv-only confirmed 2026-07-17.
+@misc{shkolnikov2026bitidentical,
+  author = {Shkolnikov, Yakov},
+  title  = {Bit-Identical Medical Deep Learning via Structured Orthogonal Initialization},
+  note   = {arXiv:2603.28040},
+  year   = {2026}
+}
+
+% Field-standard training repos audited in the second prevalence wave (2026-07-09).
+% (timm/wightman2019timm already defined above; only ddpm is new.)
+@misc{lucidrains2020ddpm,
+  author = {Wang, Phil},
+  title  = {denoising-diffusion-pytorch},
+  year   = {2020},
+  note   = {GitHub: lucidrains/denoising-diffusion-pytorch}
+}

@@ -1,0 +1,39 @@
+% SOURCE: rewritten 2026-07-09 to the research-paper-writing skill's Version-2
+% (challenge->insight->contribution) shape + AAAI award-tier 4-move critique:
+% lead with the instrument, one-sentence failure, manufactured-gain witness,
+% seed-variance distinction, certificate close, precondition!=harm disclaimer.
+% Monitor and the kernel layer are demoted out of the abstract.
+Same-seed comparisons are widely used to evaluate deep-learning methods while
+controlling run-to-run variation. We study when this intended control fails: an arm-specific
+mid-training probe can advance a random stream or data cursor later consumed
+by training. For state-pure probes in an otherwise identical deterministic
+training program, we prove a sufficient condition for bitwise trajectory
+identity and characterize its first update-level violation; a fixed stream
+offset applies only on the aligned execution prefix, and subsequent
+reconvergence is possible. Desynchronization alone need not bias the marginal
+mean method effect. Direct selection on the affected reported quantity,
+however, has nonnegative expected reporting optimism even with dependent,
+non-Gaussian, unequal-mean placements. We distinguish this optimism from
+systematic placement effects and give exact offset and scale decompositions;
+the iid-Gaussian special case gives $c_m\sigma$, which we use as a
+conditional scaling benchmark.
+An audit of 28 deliberately selected codebases records 22 exposed, four
+guarded and two configuration-dependent cases. Dynamic witnesses have
+different verification strengths; the strongest Meta-Weight-Net comparison
+localizes the first divergent training consumer and restores model and
+meta-network state identity with a probe-free baseline on 5/5 seeds.
+Selecting on the reported quantity itself yields a $4.01$-point uplift over
+the placement average in one single-rig campaign. Whether this translates
+into a positive independent-test gain remains unresolved: both primary
+intervals in our validation-to-test bridge include zero.
+The Gaussian calibration uses the same placement outcomes and is descriptive.
+A separate nanoGPT campaign
+freezes a calibration-only prediction of $0.003884$ loss units before 16
+held-out seeds yield $0.003431$; the discrepancy interval includes zero.
+This checks mean calibration within one additional setting rather than
+the formula's transferability across settings.
+The practical repair combines probe-state isolation,
+deterministic execution and repeat checks on each materially distinct path,
+with explicit metric, weight and full-state verification scopes and costs.
+We provide a reproducible diagnosis of a deep-learning evaluation failure,
+not a claim that any audited published result is wrong.

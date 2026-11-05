@@ -1,0 +1,139 @@
+{
+  "git_commit": "858795c2e85d60c3cb3dc08c2502db27053c09c5",
+  "args": {
+    "task": "cola",
+    "method": "topo_ema",
+    "lawa_k": 6,
+    "exp_name": "topo_ema_payout_det",
+    "model_name": "roberta-base",
+    "model_tag": "",
+    "hf_local_files_only": false,
+    "torch_dtype": "fp32",
+    "lora": false,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "lora_target_modules": "auto",
+    "output_dir": "logs_nlp_payout_det",
+    "seed": 2,
+    "val_split_seed": 2,
+    "val1_size": 128,
+    "val2_size": 128,
+    "split_source": "train",
+    "batch_size": 32,
+    "epochs": 5,
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "max_length": 128,
+    "max_grad_norm": 1.0,
+    "no_save_model": true,
+    "cpu": false,
+    "require_cuda": true,
+    "soft_level_temp": 0.65,
+    "level_assignment": "soft",
+    "support_metric": "participation",
+    "meta_update_every": 8,
+    "smart_weight": 1.0,
+    "smart_steps": 1,
+    "smart_noise_var": 1e-05,
+    "smart_step_size": 0.001,
+    "smart_epsilon": 0.001,
+    "ema_betas": "0.99,0.999",
+    "ema_trigger_ratio": 1.25,
+    "ema_fallback_epoch": 1.0,
+    "ema_private_max_support": 2,
+    "ema_horizons": "",
+    "ema_tail_mean": false,
+    "ema_score_smooth": 0.0,
+    "ema_device": "cuda",
+    "ema_update_every": 1,
+    "ema_force_champion": "",
+    "ema_frozen_candidate": true,
+    "ema_select_margin": 0.005,
+    "lr_schedule": "constant",
+    "warmup_ratio": 0.06,
+    "ema_select_hysteresis": 0,
+    "ema_adaptive_margin_k": 0.0,
+    "deterministic": true,
+    "label_noise": 0.0,
+    "label_noise_type": "uniform",
+    "sieve_warmup_epochs": 1.0,
+    "sieve_gate_cap": 0.45,
+    "sieve_min_noise_frac": 0.1,
+    "sieve_sep_threshold": 1.0,
+    "sieve_rollback_tol": 0.01,
+    "sieve_features": "both",
+    "sieve_soft_weight": 0.0,
+    "sam": false,
+    "sam_rho": 0.05,
+    "log_every": 10,
+    "evals_per_epoch": 2
+  },
+  "dataset": {
+    "task": "cola",
+    "metric_family": "mcc",
+    "split_source": "train",
+    "split_mode": "same_distribution_train_split",
+    "label_noise": 0.0,
+    "label_noise_flipped": 0,
+    "same_distribution": true,
+    "requested_val1_size": 128,
+    "requested_val2_size": 128,
+    "effective_val1_request": 128,
+    "source_train_size": 8551,
+    "source_validation_size": 1043,
+    "train_size": 8295,
+    "val1_size": 128,
+    "val2_size": 128,
+    "label_distribution": {
+      "train": {
+        "0": 2452,
+        "1": 5843
+      },
+      "val1": {
+        "0": 38,
+        "1": 90
+      },
+      "val2": {
+        "0": 38,
+        "1": 90
+      }
+    },
+    "label_noise_type": "uniform",
+    "noise_flipped_indices": [],
+    "train_batches": 259,
+    "batch_size": 32,
+    "drop_last_train": true
+  },
+  "model": {
+    "model_name": "roberta-base",
+    "model_tag": "roberta_base",
+    "num_labels": 2,
+    "feature_mode": "cls",
+    "parameters": {
+      "total_parameters": 124647170,
+      "trainable_parameters": 124647170,
+      "trainable_fraction": 1.0,
+      "lora": {
+        "enabled": false
+      }
+    }
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "trainable_parameter_tensors": 201
+  },
+  "metric": {
+    "primary_metric_name": "mcc",
+    "all_recorded": [
+      "loss",
+      "acc",
+      "f1",
+      "mcc",
+      "primary_metric"
+    ]
+  }
+}

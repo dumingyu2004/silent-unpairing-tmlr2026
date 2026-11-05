@@ -1,0 +1,151 @@
+\section{Extended context and discussion}
+\label{sec:extended-context}
+
+\subsection{Connections to prior work}
+
+\paragraph{Reproducibility, nondeterminism, and causally valid comparison.}
+Empirical work documents how small randomness sources amplify into large
+run-level differences: a one-bit weight change drives a different final model
+\citep{summers2021nondeterminism}, earlier perturbations diverge more (mirroring
+our finding that a probe's \emph{timing} governs its effect)
+\citep{altintas2025butterfly}, exact reproducibility is geometrically fragile
+\citep{ly2025riddled}, and seeds and data order swing
+results in reinforcement and active learning
+\citep{henderson2018deep,ji2023randomness,patterson2024empirical}. A parallel line treats this
+randomness as \emph{variance} to be budgeted across initializations, data
+orders, and hyperparameters, then averaged over with more seeds
+\citep{dodge2020finetuning,bouthillier2021accounting}. That line treats
+performance as a distribution over seeds rather than a point estimate, and we
+complement it from the other side: nothing here argues against reporting
+distributions, but same-seed pairing is how two methods get compared without
+paying for many seeds, and we show it can be invalidated from inside the
+method. Desynchronization alone need not change the marginal mean effect;
+its variance consequence depends on the coupling covariance. Selecting
+favorable outcomes on the reported quantity adds directional optimism
+(Proposition~\ref{prop:harvest}), which averaging already-selected outcomes
+across seeds need not remove. The $+4.01$ demonstration uses this rule.
+Unlike seed hacking, the
+divergence is manufactured inside the method by its own probe and harvested by
+its own selection step, with no researcher-side seed choice anywhere. It
+inherits the statistics of model-selection over-fitting
+\citep{cawley2010overfitting} but not its source: isolation removes the
+probe-induced displacement at the checked resolution under the pairing premises.
+
+The closest prior work sits in stochastic simulation, where misaligned
+random-number realizations are a named problem: \citet{stout2008keeping}
+prescribe synchronizing the numbers consumed by identical stochastic events;
+\citet{klein2024noisefree} quantify the damage when that alignment fails,
+reporting order-of-magnitude variance reductions once comparisons draw aligned
+numbers; and \citet{buffalo2026realizing} formalize the causal failure (under a
+stateful PRNG a path-altering intervention can shift draw indices on the aligned prefix,
+voiding common-random-number counterfactuals) and repair it with counter-based
+RNG. We build on this common-random-number alignment principle; our
+contribution is its diagnosis in deep-learning evaluation, released-code
+causal witnesses, and a connection to selection on the displaced quantity.
+Nor is isolation tooling the gap:
+splittable keys are a JAX design principle \citep{jax2018prng}, PyTorch ships a
+fork-rng context manager \citep{pytorch_forkrng}, the mechanism surfaces in
+issue trackers \citep{lightning2022rngissue} and RL tooling
+\citep{matlab_rlevaluator}, and the common-random-number lineage is decades old
+\citep{glasserman1992crn,pearce2022bayesian}. We do not claim a new general
+principle of randomness or model selection. Section~\ref{sec:f2} connects
+these established ideas through a checkable deep-learning mechanism and
+separates reporting optimism from an unestablished held-out test improvement.
+
+\paragraph{Reproducibility tooling and the harmlessness view.}
+A systems literature makes bitwise-reproducible training practical and supplies
+the operational half of our repair: record--replay and deterministic-execution
+frameworks \citep{chen2022reproducible,heumos2023mlfcore} and verified
+bit-identical pipelines \citep{shkolnikov2026bitidentical} show that an exact
+repeat floor is attainable in practical systems. We use these tools rather
+than compete with them: the contribution is not a determinism mechanism but the
+observation that \emph{pairing validity}, not reproducibility of a single run,
+is the property at stake. Closest in spirit,
+\citet{zhuang2021randomness} characterize how tooling injects nondeterminism;
+we localize a break in the paired comparison and demonstrate its directional
+consequence when selection acts on the affected outcome.
+\citet{jordan2024variance} argues that the between-run
+test-set variance it measures is harmless and inevitable, which we do not dispute: pairing
+exists precisely to see \emph{through} that variance, and our result is that
+the instrument can fail, while selection on the reported quantity creates
+optimism; observed uplift can also contain systematic placement effects.
+
+\paragraph{Bilevel meta-learning and sample reweighting.}
+Learning-to-reweight methods learn per-example weights through a virtual
+optimizer step and a meta-objective on held-out data: L2RW
+\citep{ren2018learning}, Meta-Weight-Net \citep{shu2019metaweightnet}, the
+co-training lineage of Co-teaching \citep{han2018coteaching} and DivideMix
+\citep{li2020dividemix}, recent entries BHN \citep{yu2023bhn} and RENT
+\citep{bae2024rent}, and a three-phase reweighting theory
+\citep{zhang2025revisiting}. This is the audit's home neighborhood. A
+second\diagtwoscope{}
+diagnosis speaks to this family: the canonical lr-scaled
+virtual step emits an exactly $\eta$-scaled meta-signal, which can be dominated
+where an $\eta$-independent term of comparable or larger size competes for the
+same weights, a magnitude ratio rather than an inevitability;
+\diagtwopointer{}.
+
+\paragraph{Weight averaging.}
+Our guarded averaging endpoint illustrates the conditional no-op, rather
+than claiming an accuracy advantage over SWA, model soups, trainable/early
+averaging, LAWA, or adaptive averaging
+\citep{izmailov2018averaging,wortsman2022soups,li2023twa,sanyal2024early,
+kaddour2022lawa,demir2024aswa,melis2022twotailed,wang2025sewa,ajroldi2025when}.
+The auxiliary comparisons are retained in the appendix.
+
+\subsection{Practical implications and detailed scope}
+
+
+\paragraph{A norm that would close the gap.}
+Probe consumption of a stream later used by training can break trajectory
+alignment. Proposition~\ref{prop:pairing} gives a sufficient preservation
+condition and localizes update-relevant divergence; mere stream sharing
+is not enough. The Trainer's
+sequential-sampler/no-grad evaluation is stream-disjoint from training in the tested configuration
+(Table~\ref{tab:hf}), and frameworks that
+isolate probe RNG (Lightning's isolate-rng utility
+\citep{falcon2019lightning}, fairseq's re-keying \citep{ott2019fairseq}, JAX's
+splittable keys \citep{jax2018prng}) ship the primitives that enforce
+isolation, though whether a given program is isolated still depends on how it
+assigns probe and training keys. Isolation is
+often small as a code change, but it must be \emph{checked}, not assumed:
+deterministic kernels and a per-path repeat/state audit add real runtime and
+storage costs, and some platforms lack deterministic implementations. The
+three practices of Section~\ref{sec:repair} make the check mechanical. A
+venue-level norm of repeat-floor reporting would make this artifact class
+checkable, not cost-free.
+
+\paragraph{Selection optimism.}
+The general selection decomposition separates reporting optimism from
+systematic placement effects without independence assumptions. Selecting
+the best of $m$ candidates has expected uplift $c_m\sigma$ only under the
+stated iid-Gaussian benchmark (Proposition~\ref{prop:harvest}); correlated,
+heteroscedastic, or offset placements need not obey that scale: classical
+selection bias \citep{cawley2010overfitting}, fed here by divergence the
+instrument manufactures. Observed max-minus-mean uplift is not identified
+as pure optimism or held-out gain: it also contains placement effects.
+The no-op corollary is an application of the pairing condition, not a
+claim that selecting or averaging candidates improves accuracy. Its
+auxiliary candidate-selection analyses remain separate from the core
+evaluation diagnosis.
+
+\paragraph{Distinct safeguards and remaining limits.}
+State-pure isolation preserves coupling under the proposition's premises.
+Independent-seed comparisons have no exact coupling to lose, but can still
+suffer selection optimism. Omitting selection removes this source of
+directional optimism, not the displacement or its possible variance effect.
+A large true effect does not restore pairing. Every measurement
+here is single-process, and we have not tested the artifact under distributed
+training of any topology, which we leave as future work. Our method
+claims are at academic scale (ResNet-18, RoBERTa-base; nanoGPT enters only the
+artifact analysis) and cover label noise rather than distribution drift, and in
+tuned regimes the reported guard gain is metric-zero; historical evidence
+does not establish a state-level certificate for every cell. The artifact's \emph{dynamic}
+evidence spans CIFAR-10 convnets, two GLUE tasks on RoBERTa-base, and nanoGPT
+at 200 iterations and a separate 2,000-update calibration/held-out campaign,
+with nothing claimed at ImageNet or production-LLM scale. The latter freezes
+its scale on 16 calibration seeds and checks a mean on 16 held-out seeds;
+it does not validate a universal Gaussian model, per-run prediction, or
+independent-test transfer (Section~\ref{sec:harvest}). The core eleven-of-eleven audit is double-read,
+and seven of its entries and the entire field-wide wave are static findings,
+labeled as such, with pinned commits released for re-execution.

@@ -1,0 +1,145 @@
+{
+  "revision_sources/l2rw_torch/data_loader.py": {
+    "citation": {
+      "path": "revision_sources/l2rw_torch/data_loader.py",
+      "lines": "105-111",
+      "source_file_sha256": "2b6b6b23db86fefb2d297b09867e96e3eff4bb73def60816d02f7c95aa13ba8f",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "182aad0ddd11a38d86b7abfb34e35b54bc7efb39",
+    "repository": "l2rw_torch",
+    "repository_url": "https://github.com/danieltan07/learning-to-reweight-examples",
+    "url_status": "verified in recovered README/audit",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/coteaching/model.py": {
+    "citation": {
+      "path": "revision_sources/coteaching/model.py",
+      "lines": "45,54",
+      "source_file_sha256": "99de6d6be13106625aa1c740489e959411ee34e206dbffdcd0738cbbaa060730",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "7c7fbe23e15e517db76a0882b6d108e4508e09d6",
+    "repository": "coteaching",
+    "repository_url": "https://github.com/bhanML/Co-teaching",
+    "url_status": "verified in recovered README/audit",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/selcl/CIFAR/train_Sel-CL.py": {
+    "citation": {
+      "path": "revision_sources/selcl/CIFAR/train_Sel-CL.py",
+      "lines": "189-198",
+      "source_file_sha256": "39bdf8d3a02b50bf49518d67157fdd68264f2b3ec2b778bea71054f56575a7b4",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "98cc41e09789ed338684dff24751685147010b30",
+    "repository": "selcl",
+    "repository_url": null,
+    "url_status": "not recovered in bounded local search; no guessed URL",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/selcl/utils/utils_noise.py": {
+    "citation": {
+      "path": "revision_sources/selcl/utils/utils_noise.py",
+      "lines": "350-359",
+      "source_file_sha256": "97daea9c192fa68f36e2470f70177eaebe89da3a1982e63f0305517da319cab4",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "98cc41e09789ed338684dff24751685147010b30",
+    "repository": "selcl",
+    "repository_url": null,
+    "url_status": "not recovered in bounded local search; no guessed URL",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/promix/Train_promix.py": {
+    "citation": {
+      "path": "revision_sources/promix/Train_promix.py",
+      "lines": "208,419-427,494,514-515",
+      "source_file_sha256": "8b76602f566b7c96a0dfef29b8ad7bc332d7251c058ea63b667657634a60d8d9",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "40d8378193f1a098473479ebcb56dbafa89dfacb",
+    "repository": "promix",
+    "repository_url": null,
+    "url_status": "not recovered in bounded local search; no guessed URL",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/promix/dataloader_cifarn.py": {
+    "citation": {
+      "path": "revision_sources/promix/dataloader_cifarn.py",
+      "lines": "273-303",
+      "source_file_sha256": "2bd865970e3387c71713b0d72ca7626676d923705f28bee70a68bf70316450db",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "40d8378193f1a098473479ebcb56dbafa89dfacb",
+    "repository": "promix",
+    "repository_url": null,
+    "url_status": "not recovered in bounded local search; no guessed URL",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/disc/algorithms/DISC.py": {
+    "citation": {
+      "path": "revision_sources/disc/algorithms/DISC.py",
+      "lines": "308-310,406-420",
+      "source_file_sha256": "aabd281d1e2877005847558cd788cd6341e5ebf8f19de0f9666b5bd4b32c788a",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "a21e910bffeb34873684937ac1066991a720552a",
+    "repository": "disc",
+    "repository_url": null,
+    "url_status": "not recovered in bounded local search; no guessed URL",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/disc/main.py": {
+    "citation": {
+      "path": "revision_sources/disc/main.py",
+      "lines": "183-189",
+      "source_file_sha256": "069a8d1ad40699c7d74fc91b896ecafc5d6842213bc05d6ad1abcae05306f974",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "a21e910bffeb34873684937ac1066991a720552a",
+    "repository": "disc",
+    "repository_url": null,
+    "url_status": "not recovered in bounded local search; no guessed URL",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/infobatch/research/cifar_example.py": {
+    "citation": {
+      "path": "revision_sources/infobatch/research/cifar_example.py",
+      "lines": "51-54,70-77,145-150,174-176",
+      "source_file_sha256": "71f933fea8cac3e57e322ed518bcd2054cf7c8aa3e35be5348aa1d7331526ba2",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "8bbb012c256c9eb4de3bb209f8a5e73899de8d02",
+    "repository": "infobatch",
+    "repository_url": "https://github.com/NUS-HPC-AI-Lab/InfoBatch",
+    "url_status": "verified in recovered README/audit",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/infobatch/research/infobatch.py": {
+    "citation": {
+      "path": "revision_sources/infobatch/research/infobatch.py",
+      "lines": "79-88",
+      "source_file_sha256": "a1c77babbcda18e45bc69db4efb9967121adfcf41c9e6da421595e341ceb46e5",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "8bbb012c256c9eb4de3bb209f8a5e73899de8d02",
+    "repository": "infobatch",
+    "repository_url": "https://github.com/NUS-HPC-AI-Lab/InfoBatch",
+    "url_status": "verified in recovered README/audit",
+    "reason": "No license text recovered; source content not redistributed"
+  },
+  "revision_sources/infobatch/examples/cifar_example.py": {
+    "citation": {
+      "path": "revision_sources/infobatch/examples/cifar_example.py",
+      "lines": "106-108,138-143,271",
+      "source_file_sha256": "01f0ff28752676b2af1bdcc7184e82c7fc6834905c8038c4eb63faa0520c75c0",
+      "release_verification": "metadata_only_source_omitted"
+    },
+    "commit": "8bbb012c256c9eb4de3bb209f8a5e73899de8d02",
+    "repository": "infobatch",
+    "repository_url": "https://github.com/NUS-HPC-AI-Lab/InfoBatch",
+    "url_status": "verified in recovered README/audit",
+    "reason": "No license text recovered; source content not redistributed"
+  }
+}

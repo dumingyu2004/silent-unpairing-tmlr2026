@@ -1,0 +1,4 @@
+# Store every file byte-for-byte. PACKAGE_MANIFEST.json and the frozen
+# provenance records hash exact file bytes, so line endings must not be
+# rewritten on commit or checkout.
+* -text

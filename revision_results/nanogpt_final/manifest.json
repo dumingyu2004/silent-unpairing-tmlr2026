@@ -1,0 +1,77 @@
+{
+  "protocol": "nanoGPT-independent-20260908-v1",
+  "source_commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291",
+  "source_hashes": {
+    "train.py": "413bd97b40bb400a2a0d01230e2946f056c263ebac1b7281c2367d964a123085",
+    "model.py": "7c01703240dbec5d554527dc666e35b3df8391d0b117fddc07afcf325a21d11c",
+    "config/train_shakespeare_char.py": "9b41cdfb2c917259d796a8184d835221a349c23cd18a0a63b46da431d95d9c05"
+  },
+  "code_hashes": {
+    "revision_nanogpt_campaign.py": "5d1509198b3b2abb07d514be6f6fe77eda0d11536984ac47e40d4fd09733ef52",
+    "revision_nanogpt_arm.py": "d4877105b11b07d4446995bf2f04b29571e79a3ec247722de7e0f35739027a20",
+    "revision_nanogpt_analyze.py": "3514921143104c7396ce909883480e223ef90d8f2934d57bde97e4f271359093"
+  },
+  "data_hashes": {
+    "train.bin": "6ec305602a99ac2802745a134e1f5e33e2231b4855525b00b9aebb730ac2626f",
+    "val.bin": "d37d30cc0c8327c270d493299c3dca54135f6d5f1c9ef60cda78076e311204b1",
+    "meta.pkl": "6ee5a37533af83b67fcbe6b93705fde9e15e78bafe895f54b2cb2cb32534526c"
+  },
+  "calibration": [
+    860901,
+    860902,
+    860903,
+    860904,
+    860905,
+    860906,
+    860907,
+    860908,
+    860909,
+    860910,
+    860911,
+    860912,
+    860913,
+    860914,
+    860915,
+    860916
+  ],
+  "validation": [
+    860917,
+    860918,
+    860919,
+    860920,
+    860921,
+    860922,
+    860923,
+    860924,
+    860925,
+    860926,
+    860927,
+    860928,
+    860929,
+    860930,
+    860931,
+    860932
+  ],
+  "pilot_seed": 860899,
+  "placements": [
+    200,
+    500,
+    900,
+    1300,
+    1700
+  ],
+  "updates": 2000,
+  "lr_decay_iters": 2000,
+  "main_runs": 704,
+  "repeats": 2,
+  "initial_eval": "common original estimate_loss, eval_iters200",
+  "probe": "one original estimate_loss after p completed updates, no checkpoint or metric feedback",
+  "fixed_metric": "mean loss over8 val batches, isolated CPU generator seed20260908, batch64/block256",
+  "determinism": "strict, FP32/noTF32, mathSDPA, fusedAdamWFalse, compileFalse",
+  "budget_hours": {
+    "pilot": 4,
+    "main": 60,
+    "reserve": 8,
+    "total": 72
+  }
+}

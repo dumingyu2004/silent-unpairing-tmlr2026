@@ -1,0 +1,19 @@
+% SOURCE: written for the TMLR submission. Kept short and specific: the two
+% concerns that are actually particular to THIS paper are naming real
+% repositories and describing an exploitable procedure, so those are what the
+% statement addresses rather than generic ML-risk boilerplate.
+\section*{Broader Impact Statement}
+
+This paper studies how experiments are measured rather than proposing a model,
+a dataset, or a deployed system, so its effect is on research practice. Two
+consequences deserve naming. First, the audit names repositories and commits:
+we report structural preconditions and, where we re-executed, realized
+divergence, but claim no published result is wrong. These are careful
+implementations, written when nothing in the tooling or the review process
+asked for probe-RNG isolation, and the same reading returned the same verdict
+on our own predecessor first. Second, a procedure that inflates a reported
+gap is a recipe as well as a diagnosis. Disclosure is safer: the mechanism is
+already live in widely used released code, so it operates whether or not
+practitioners intend it. Isolation is often a small code change, but the full
+repair also requires deterministic execution and per-path repeat checks,
+with runtime, storage and platform costs.

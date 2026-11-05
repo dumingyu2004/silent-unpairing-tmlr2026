@@ -1,0 +1,171 @@
+{
+  "experiment": "ext11_bhn_four_arm_pairing_divergence_witness",
+  "repo": "BHN @ 2b09d3a376494371b9dd852e4742aef756b8fd93 (ICML 2023)",
+  "generated_at": "2026-07-07 20:25:50",
+  "args": {
+    "cmd": "python -X utf8 run_arm.py --seed 1 --n_epochs 12",
+    "dataset": "cifar10 (shipped defaults: noise_type instance 0.6, resnet34, sgd lr 2e-3, batch 128)"
+  },
+  "arm_roles": {
+    "A": "iso",
+    "B": "iso",
+    "C": "stock",
+    "D": "stock"
+  },
+  "contrast": {
+    "file": "BHN.py (TorchvisionDataset.loaders, test_loader construction)",
+    "stock": "test_loader = DataLoader(dataset=self.test_set, batch_size=batch_size, shuffle=shuffle_test, num_workers=num_workers)",
+    "iso": "test_loader = DataLoader(dataset=self.test_set, batch_size=batch_size, shuffle=shuffle_test, num_workers=num_workers, generator=torch.Generator().manual_seed(0))"
+  },
+  "contrast_check": {
+    "A": "iso-line present",
+    "B": "iso-line present",
+    "C": "iso-line absent",
+    "D": "iso-line absent"
+  },
+  "common_patches": [
+    "utility.set_bestgpu: body replaced with os.environ['CUDA_VISIBLE_DEVICES']='0' (stock shells out to nvidia-smi|grep>tmp + rm, crashes on Windows)",
+    "utility.set_outdir: short output dir (BHN_OUT_DIR env or 'runs/smoke'; stock concatenates all argparse args -> >260 chars -> Windows MAX_PATH failure); run_arm.py sets BHN_OUT_DIR=runs/ext11, relative so per-arm via cwd",
+    "BHN.py determinism block: cudnn.deterministic=True, cudnn.benchmark=False (stock False/True), torch.use_deterministic_algorithms(True, warn_only=True), EXT11_DET_FLAGS print; run_arm.py sets CUBLAS_WORKSPACE_CONFIG=:4096:8 before torch import",
+    "BHN.py PvalueTrainer.train: EXT11_EPOCH_SHA per-epoch print after self.test(...) (observation-only)",
+    "BHN.py PvalueTrainer.train: EXT11_FINAL_SHA256 print after 'Finished training.' (observation-only); sha256 over state_dict, sorted keys, key utf-8 name + tensor raw bytes",
+    "run_arm.py wrapper (byte-identical all arms): determinism env before torch import, warnings hooked to EXT11_DET_WARNING lines, EXT11_ENV/EXT11_DET_FLAGS_EXIT prints",
+    "deps: statsmodels+pandas required at import (utils_experiments.py)",
+    "data staging: CIFAR-10 copied to /artifact/local-path (no download)"
+  ],
+  "manifests_sha256": {
+    "A": {
+      "BHN.py": "f021186a30538b838497e9b53f382e2e2d47da8d0d79326f36274c3c51d418d4",
+      "utility.py": "36d3c0879dfc01c3de136a4b3e86e29f33a7084897513d5d5006c0c9f970060a",
+      "run_arm.py": "f5296aad6a8e8ef41a8ef8a59c2234d1828de29804d704969e2592f3012b8102"
+    },
+    "B": {
+      "BHN.py": "f021186a30538b838497e9b53f382e2e2d47da8d0d79326f36274c3c51d418d4",
+      "utility.py": "36d3c0879dfc01c3de136a4b3e86e29f33a7084897513d5d5006c0c9f970060a",
+      "run_arm.py": "f5296aad6a8e8ef41a8ef8a59c2234d1828de29804d704969e2592f3012b8102"
+    },
+    "C": {
+      "BHN.py": "e20c90e323b611345c41329b7a84a3b95f1a9f32ba98282464e87c5f2c70ab64",
+      "utility.py": "36d3c0879dfc01c3de136a4b3e86e29f33a7084897513d5d5006c0c9f970060a",
+      "run_arm.py": "f5296aad6a8e8ef41a8ef8a59c2234d1828de29804d704969e2592f3012b8102"
+    },
+    "D": {
+      "BHN.py": "e20c90e323b611345c41329b7a84a3b95f1a9f32ba98282464e87c5f2c70ab64",
+      "utility.py": "36d3c0879dfc01c3de136a4b3e86e29f33a7084897513d5d5006c0c9f970060a",
+      "run_arm.py": "f5296aad6a8e8ef41a8ef8a59c2234d1828de29804d704969e2592f3012b8102"
+    }
+  },
+  "common_patches_identical_across_arms": true,
+  "arms": {
+    "A": {
+      "log": "/artifact/local-path",
+      "log_found": true,
+      "final_sha": "ba6334c19a5f0bd5028dd160255d0bca21ea9ac2f90f9487c1c969630029d546",
+      "final_acc": 0.6246,
+      "epoch_shas": {
+        "1": "204253c6c841dd255602a33db41577ccd289109ac4947798b1d107004ccb4c72",
+        "2": "aa4859fa36d55965f56e47b0fba54377606d423296fa8ae7e78685c24cfe9de3",
+        "3": "d42762746b12915cb002240797f3a0001db43f76e2a09875bbd32fab9ca970bb",
+        "4": "7714f32939552ee5afd53201eb2496a8fa36c7e43ef43c217dbd52e400456e56",
+        "5": "4e5537dab51057c4c4041e4dede59cd3b96aa133f6263afe5379a4a1b3c676fa",
+        "6": "f8a849254171976d3dd6e422302fb38b3ce2c787a6b28947bdd0fc2b3db5c968",
+        "7": "78be9c21cca0f8f65aa5d2e940fe503fa70dfea63923ed0f8ca0f5710d023c4c",
+        "8": "0deca00ff611f9e138dfd8589e5637e04856e6a2a7902275bc8564893d91f571",
+        "9": "3bf8365a8f87daebcf4a109ce801efdb33b39eead6eced8a63e2a97ba02a4b22",
+        "10": "be64b739d09fa9d9b2e96dd9fae883bb4687d8664564d0eaeb6e1f649baf948f",
+        "11": "d587c38fb92c71cac787f0324486c6fbd2b9e91886f79610e12bd2a086dea135",
+        "12": "ba6334c19a5f0bd5028dd160255d0bca21ea9ac2f90f9487c1c969630029d546"
+      },
+      "det_flags": "EXT11_DET_FLAGS cudnn.deterministic=True cudnn.benchmark=False deterministic_algorithms=True CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "det_warnings": 5,
+      "env_line": "EXT11_ENV CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=4 BHN_OUT_DIR=runs/ext11 cwd=/artifact/local-path argv=['--seed', '1', '--n_epochs', '12']",
+      "role": "iso"
+    },
+    "B": {
+      "log": "/artifact/local-path",
+      "log_found": true,
+      "final_sha": "ba6334c19a5f0bd5028dd160255d0bca21ea9ac2f90f9487c1c969630029d546",
+      "final_acc": 0.6246,
+      "epoch_shas": {
+        "1": "204253c6c841dd255602a33db41577ccd289109ac4947798b1d107004ccb4c72",
+        "2": "aa4859fa36d55965f56e47b0fba54377606d423296fa8ae7e78685c24cfe9de3",
+        "3": "d42762746b12915cb002240797f3a0001db43f76e2a09875bbd32fab9ca970bb",
+        "4": "7714f32939552ee5afd53201eb2496a8fa36c7e43ef43c217dbd52e400456e56",
+        "5": "4e5537dab51057c4c4041e4dede59cd3b96aa133f6263afe5379a4a1b3c676fa",
+        "6": "f8a849254171976d3dd6e422302fb38b3ce2c787a6b28947bdd0fc2b3db5c968",
+        "7": "78be9c21cca0f8f65aa5d2e940fe503fa70dfea63923ed0f8ca0f5710d023c4c",
+        "8": "0deca00ff611f9e138dfd8589e5637e04856e6a2a7902275bc8564893d91f571",
+        "9": "3bf8365a8f87daebcf4a109ce801efdb33b39eead6eced8a63e2a97ba02a4b22",
+        "10": "be64b739d09fa9d9b2e96dd9fae883bb4687d8664564d0eaeb6e1f649baf948f",
+        "11": "d587c38fb92c71cac787f0324486c6fbd2b9e91886f79610e12bd2a086dea135",
+        "12": "ba6334c19a5f0bd5028dd160255d0bca21ea9ac2f90f9487c1c969630029d546"
+      },
+      "det_flags": "EXT11_DET_FLAGS cudnn.deterministic=True cudnn.benchmark=False deterministic_algorithms=True CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "det_warnings": 5,
+      "env_line": "EXT11_ENV CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=4 BHN_OUT_DIR=runs/ext11 cwd=/artifact/local-path argv=['--seed', '1', '--n_epochs', '12']",
+      "role": "iso"
+    },
+    "C": {
+      "log": "/artifact/local-path",
+      "log_found": true,
+      "final_sha": "0dae6d5ae32f3c3777fd89a20e7c9c1c1279176c788a134443d9b940e6bc9ebe",
+      "final_acc": 0.6439,
+      "epoch_shas": {
+        "1": "204253c6c841dd255602a33db41577ccd289109ac4947798b1d107004ccb4c72",
+        "2": "3196ae772ba871cf9a121a49bfb1a566b18d8d44394742a204b02edc0f3b206c",
+        "3": "007ebebab4a541cf02f107d6dc857597a215d33e307d87bf254a377cd09e7cfb",
+        "4": "e6fd6440c15c46a4c1e6845f9748ecce0a9d326772636a8eea824517f4b89afd",
+        "5": "4affbf730f843a83c55971fcd6fab19f17b11822f40078d9f874f34e43daa6f8",
+        "6": "82b914a80e8cf6b16631b98b5268c952580b481595e79338cdfafc3090584e86",
+        "7": "8a359408b76abac52b30171e26854c3e120d0f94734e50add743dba95bfdc399",
+        "8": "882ef33ac4f7031991936ccbffecfa60e6c9fb85c08000007cb977f3d9f5ef05",
+        "9": "f9574cc9c9dfd5ed205edd8ade75f0a48255a88c3af761452fb0a38a77928d1e",
+        "10": "0a98940b1025e10a8e39e42aaef5c417bd619eafb0d492c2e6eafbd26f64b239",
+        "11": "994f04df1123d8cea8e567b74d6229ddf80767ca86d3b156383d1689c2a0eaff",
+        "12": "0dae6d5ae32f3c3777fd89a20e7c9c1c1279176c788a134443d9b940e6bc9ebe"
+      },
+      "det_flags": "EXT11_DET_FLAGS cudnn.deterministic=True cudnn.benchmark=False deterministic_algorithms=True CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "det_warnings": 5,
+      "env_line": "EXT11_ENV CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=4 BHN_OUT_DIR=runs/ext11 cwd=/artifact/local-path argv=['--seed', '1', '--n_epochs', '12']",
+      "role": "stock"
+    },
+    "D": {
+      "log": "/artifact/local-path",
+      "log_found": true,
+      "final_sha": "0dae6d5ae32f3c3777fd89a20e7c9c1c1279176c788a134443d9b940e6bc9ebe",
+      "final_acc": 0.6439,
+      "epoch_shas": {
+        "1": "204253c6c841dd255602a33db41577ccd289109ac4947798b1d107004ccb4c72",
+        "2": "3196ae772ba871cf9a121a49bfb1a566b18d8d44394742a204b02edc0f3b206c",
+        "3": "007ebebab4a541cf02f107d6dc857597a215d33e307d87bf254a377cd09e7cfb",
+        "4": "e6fd6440c15c46a4c1e6845f9748ecce0a9d326772636a8eea824517f4b89afd",
+        "5": "4affbf730f843a83c55971fcd6fab19f17b11822f40078d9f874f34e43daa6f8",
+        "6": "82b914a80e8cf6b16631b98b5268c952580b481595e79338cdfafc3090584e86",
+        "7": "8a359408b76abac52b30171e26854c3e120d0f94734e50add743dba95bfdc399",
+        "8": "882ef33ac4f7031991936ccbffecfa60e6c9fb85c08000007cb977f3d9f5ef05",
+        "9": "f9574cc9c9dfd5ed205edd8ade75f0a48255a88c3af761452fb0a38a77928d1e",
+        "10": "0a98940b1025e10a8e39e42aaef5c417bd619eafb0d492c2e6eafbd26f64b239",
+        "11": "994f04df1123d8cea8e567b74d6229ddf80767ca86d3b156383d1689c2a0eaff",
+        "12": "0dae6d5ae32f3c3777fd89a20e7c9c1c1279176c788a134443d9b940e6bc9ebe"
+      },
+      "det_flags": "EXT11_DET_FLAGS cudnn.deterministic=True cudnn.benchmark=False deterministic_algorithms=True CUBLAS_WORKSPACE_CONFIG=:4096:8",
+      "det_warnings": 5,
+      "env_line": "EXT11_ENV CUBLAS_WORKSPACE_CONFIG=:4096:8 OMP_NUM_THREADS=4 BHN_OUT_DIR=runs/ext11 cwd=/artifact/local-path argv=['--seed', '1', '--n_epochs', '12']",
+      "role": "stock"
+    }
+  },
+  "acc_delta_stock_minus_iso_mean": 0.019299999999999984,
+  "verdicts": {
+    "P1_floor_iso_A_eq_B": "PASS",
+    "P2_floor_stock_C_eq_D": "PASS",
+    "P3_artifact_C_ne_A": "PASS",
+    "P4_onset": "PASS",
+    "P4_detail": {
+      "epoch1_A_eq_C": true,
+      "epoch2_A_ne_C": true,
+      "per_epoch_floor_iso_A_eq_B": true,
+      "per_epoch_floor_stock_C_eq_D": true
+    }
+  },
+  "partial": false
+}

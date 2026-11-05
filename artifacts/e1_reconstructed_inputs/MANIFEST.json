@@ -1,0 +1,1114 @@
+{
+  "status": "reconstructed_from_retained_recipe_not_original_saved_arrays",
+  "numpy_version": "2.4.4",
+  "bit_generator": "PCG64 via default_rng",
+  "source": "scripts/moneyshot/e1_valselect_mwnet.py",
+  "source_lines": "316-344",
+  "config_records": 120,
+  "seeds": 20,
+  "labels": "For each train_idx, use (clean_label+offset)%10 where mask is true; otherwise retain clean_label. Clean labels are not included.",
+  "historical_array_equality_independently_verified": false,
+  "training_rerun": false,
+  "files": [
+    {
+      "seed": 101,
+      "path": "artifacts/e1_reconstructed_inputs/seed101.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "31953e4b39d2ff84c233b3eccf04eddb48832ebc546754b028f2182ab8873d7a"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "d38eadd5d6702350fcb9ec128a2c1a55a2e487e1727488ab713991039aaa2e6a"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "15c72cdc943ce86c6fcd17f97557279ac150e9f55c09521476f5b74d6a1ee41d"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "230e1ecbec7b4e22dc709ddd0908e08c3e6ed8525afa3654e2233fc0bdd6d5b6"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "f19feaf2ba29f8652001e5610b88452afd0e7bec76048a0d75d5d0969c0f40b3"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "d361852830e4f59ce0d9444d6b921624c02da95104d6a53ef0213565aa5b6f42"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "36e7d1afa18f9dbcf27854bbc659a70d08bd836065f967eb6e0272ee8de9296a"
+        }
+      }
+    },
+    {
+      "seed": 102,
+      "path": "artifacts/e1_reconstructed_inputs/seed102.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "73a0e94067fe3ee15dce4ec0cac7fd40828899a1efc904616717a1c9d7921a6f"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "628a192397f221183079c002a145f98938ea24494fdb548162e14908f0d08ed3"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "a953529a62fe4a2a43e50baefc0c81f897e3671ee58fe3ca281b78b0551e4c74"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "37c2664729a7f38b814e39a802c90b6dcd880fe1de48a593866fff426d854462"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "3f05cacb9db8893386ffbe904b1fcdec336cb98972bfcd9fa8702ba188fd4623"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "9737132da97f91dc557616df1ba90529818f2a6353e497b3269e756db64bc004"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "c78408ec5246cf16d624f8b4a89a1be9a3909b4d6457f3d18605dc73ae1dc994"
+        }
+      }
+    },
+    {
+      "seed": 103,
+      "path": "artifacts/e1_reconstructed_inputs/seed103.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "d54c070ecf3eac3a48712f35f31cc254d020444a38d41d4b3ecd58bbf67e658c"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "b73c7e8a7fcb098b144ad5d3a2fd5947011739a3a0b49bb3123372ac696dfb3f"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "0e6676b513f8cac1ad296193f479e53c829f21faa6cf2c14c701bb1c6cc94dcc"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "811b3054064a107109993a9d9e3a566dd7b2fd434d88d1122a5750f0033c1f59"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "a672247ba7a96bd3b7939d47dc988acf316b827c731fad1f410c5c77d0eb9fc4"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "81afeb55cc6db5a295eb886d28611ba3109e684404d570eba16dc2cb7d464dcf"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "e72383b871a0aade29f6459c47c179a8c3fbc89eb7738603faec390083525cfd"
+        }
+      }
+    },
+    {
+      "seed": 104,
+      "path": "artifacts/e1_reconstructed_inputs/seed104.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "478ac37611b00c2e896cc84bb6d7a2f0f8a31d3035f505249a550ab389ad57d2"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "5ab28416035b52f7a520c3aec4181992c43b6b73b9dd1370937467111751b2f8"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "fcc9080cb9616cbd32d1f5664db65b9ed0d974b1876c164eaef2853ea3c7c19c"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "a1d6ef58649923c8c5a8465e5844ab5ad676e2801587c50675f55960d02ce323"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "e8f0ca38015218b79a9fdaecef74c4e7e9d447f3b073ae41297d89c784802338"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "862744ac9f604ccaf1833593d56bb1194651380f7d574e6c33a1b455a229182e"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "005053b40679804d8ef15f7e482296a8832fdb325a54e93e2a0fd6be3780be36"
+        }
+      }
+    },
+    {
+      "seed": 105,
+      "path": "artifacts/e1_reconstructed_inputs/seed105.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "acdd69f56e048dba5c940285dce6399a9889adc2ed88ab121ab28b74f89c0723"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "13963c45ea369f0d4a0ac5aa5dda5af7a9cb8cb5185ced7442100183f73d2954"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "be1165c4ef9f8ef010934124f72b1815ba3aca2305a320a627c98a2e6fd6ee4c"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "43f7c727daf7bc484c4ada49e5c897e54ed3fba7ac969c931897215de99cbc0d"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "c7e07cddca036554a1c6522b2c02494dff33d0d5947edcaaad977de0fee87a91"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "a7b930a26d91e5bcd0a11605e6ac5142733d4eda145ffbbb0333ad234a21485d"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "feeb46c0a293c91eb672999e94f15f0deea9444da2c37de4f67eef19f88b1a04"
+        }
+      }
+    },
+    {
+      "seed": 106,
+      "path": "artifacts/e1_reconstructed_inputs/seed106.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "ecab7437da7b588dc5e6f366b5168429185b53a3a977eb74cf9e897a33ddd789"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "05d39fbb4a97f4b2b93cf53dff8c9802b2c437b81ed3cf28724d6370fad9a427"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "ce6a7c7df69c3f97999a2890d669b832d38666aeb074416798cf0f47e46ecd6a"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "814bb34259f390d22d2b8fcb3acb3ef3abc9f5d83b5924e47f8de60122f499b1"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "7856813b1f7eb03c99456a64e594585a52ba0a3f7937f5e71e5251deda2299bc"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "5abfaa23bb0656bd5e3d8bf1a2867ead206e0e4abd1a2850d5056850b0692c6f"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "10b4cb3f370ef254ca364ba930439dfabc15299e3f8eec5aeafbf97f6fd4dbc5"
+        }
+      }
+    },
+    {
+      "seed": 107,
+      "path": "artifacts/e1_reconstructed_inputs/seed107.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "859e60864fbaf11450ac3f15f044caf6a4625ae432c5423314b298133cedad20"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "9a1ce2d2b8e556d78df1a52c89b568f3541ff2bb4925d5bdf82ebada91943303"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "dd94e980df988518f49f607d52f44b6965b2b911edda54af65793343db996335"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "35077bb620cbfdf9099fd3706b5fcc5ac5e4244dbb4f2b1de5e2951ee9cc0531"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "851989403e68e096d7a99663ae8ec2598b24c5a6ac3beb1d03b0c6af8d1039f4"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "8517f47a012576987148383f746b40fd66f8c2a0246bb89cce0bed3b9d85653a"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "6d0ea18f9fcb694e1bccf5890b96c75affbf5fa2e00c123ab38e67c4fbc764bf"
+        }
+      }
+    },
+    {
+      "seed": 108,
+      "path": "artifacts/e1_reconstructed_inputs/seed108.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "413f9bdcb1d8e979e1eb87ef3af27ef6a45a28968537a71526f9c422f25c47ef"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "1ef3ce31e5da63ec21cb2a661009a8d3650fbed3971888d67a15aea88fd0a263"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "00eec01c1e003d7a40e9e8fece716b5f4b9d3accde98f0ee4aabc89ecebab7f0"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "6f879b16638608ed22aff6159cfb5e956cf48a0b7738e2641425359b9c80103d"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "215fc3b90e9a9043d9845fcf0a32f23cfe2a64ca3e845c0ca89fff6428e04173"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "e92268a7cc12d22ef428edeb9cab7b03683ab7a7a6d005e0656a2e6ab85d5049"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "0899bd7f6bb5f920f3ec858234d66eef9c47c3d9b96f55022daac7efdee8fadc"
+        }
+      }
+    },
+    {
+      "seed": 109,
+      "path": "artifacts/e1_reconstructed_inputs/seed109.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "07b19a34d711cf3d614ea804a25d2c20d4b2c4c227b389fc30eed6ec704ea163"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "0f5a54d3dfb5de2e65efa157d5fe7be502ff4009b621dbae2b17035009e09597"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "d501e2d38e9095b83f198e06d1a1208ca35625cf633faef3a8ac772d95a0da48"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "092838b4d29db3e86c45b89af81adef623a30ad41a4b1642850eef26115b930d"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "a30f5e6b8802031ba83ca9e365c067820a728fd3581ca78f75f251b63a6f9a72"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "f405925cc1c6dcc5f22aaf2713429d8d235ed32b76f99e858dc2371699f12d2d"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "c8b18d6c4a576ad4d12800524158ce2d380fd4e910e17d5176b2d963aa47671e"
+        }
+      }
+    },
+    {
+      "seed": 110,
+      "path": "artifacts/e1_reconstructed_inputs/seed110.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "07984e8db27caf001869af1a48a2545e2082651b77954673f2f68f07d8d963d7"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "8139d5363e6b8996761166b1d01dbfee3c59f7e0d910a95b20721e1c99c9bf96"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "fc59698911b802dbfaff7bd3a2394b62721438ac1c4accbb10f48831041e4001"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "cf085ae03f1fc766f793ffef6e24a87a2839f05fa626dc7220e41f950c06c640"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "9f16d1ca9676cffd3937b727420cdea23ea12c07e34039ea625dfb2b942b248a"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "83824096d6e062b00d2e669ec333f406d70bb3bbc5c9f2e22d3854a77bd5ed3c"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "7a4e45f7f1993fd67360e449a1480203192e467452ffbf299cd8c82d23fe2e6f"
+        }
+      }
+    },
+    {
+      "seed": 111,
+      "path": "artifacts/e1_reconstructed_inputs/seed111.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "8209888393cb92bb2478c545bc63eb77ade72d94289096c2c94ed928978c3cfd"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "0a60ffa6bf618ec2df4f6d76d4e75aef0232b9dbd1f2e1f20ffd9b35488401d9"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "1ab2dac41f4b712703df956cf71532636df145bf824ae6c12ddf5e922dfe265a"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "aff49efbf15f78604aae53ab73e385d97b59026de0cc0ca759a0a34dd5850bbc"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "5e40731f45df6e2f5b8a15a457e92358f5d8c89e7f276276580fc21b0d9dec67"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "3775be46cf48ad54812d64f05f8390256fa7ee5a2ecc57e58e5515f76e2fb5f4"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "0de5e38eb5c527e5e2872c115bab8ed7d0d1b6d38ac9388f772c1b3436676cd6"
+        }
+      }
+    },
+    {
+      "seed": 112,
+      "path": "artifacts/e1_reconstructed_inputs/seed112.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "cb1647e73692018719553b3a683d0702d930140bf6ed510f6eba56b84cfed3b5"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "d48c18fe8ebb6aac02ee607b55261d67458a5eb895ac3307102c89d631bf5498"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "1d0190462ccad839ae3ecd4144f7eeef7749f745062be9a1d5f196e23a7656f0"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "3d6bf2adb8f223cf8aa4fc2df90e4aed763b48b2e6315c17a6f53c86b3252c3d"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "c45ce73bbeb748291a3d52e978d93a03ab6b52fad977647c8870d6e0645333c2"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "3ada4d5677ae4e60ebb8a1bf41e14f9822a0d7e17369eaace7847c731414c09a"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "9d937a35cce90de5ee123a4fae7e61500ffc973319b3e1cdc0b2eaf0e706d79a"
+        }
+      }
+    },
+    {
+      "seed": 113,
+      "path": "artifacts/e1_reconstructed_inputs/seed113.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "344c39dc26e2356b2bf07e3baa8c6f58bf67a13c995ad58b6f1f6436d5da6d59"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "776eec268f363655f22cf33c85dad72f8105047d4da66190b98ce78ceb15a352"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "931e4b3ce643942b338df9775de8fd8c280055f5533b81f0629f2064aabb9966"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "a611737043b567d06035594510a552ba68bf6b2a90214e8915f3468840b65e1f"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "a098f55c8c0505ef04084aa4c1607501654c0f035ce1672d5c5df85ec7733662"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "1ca9b126acd9fb90c3250c5296ac648f109b92fb3b93afda5fe6ac2aef68bcc9"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "ac5657a3f75e0fdd322dc6ac575e35b80569fae17f5a1d59dbd2d6d478b8b39a"
+        }
+      }
+    },
+    {
+      "seed": 114,
+      "path": "artifacts/e1_reconstructed_inputs/seed114.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "695bb4ee54a591cf5a051d78a8e63378fa730d9c9b7048e0e0faaaff41080380"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "635dcd23e2f0b778b552ec1e1fcf82632c8fbe90d59ff5fd20ac82a1729ecafc"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "1d5a5cc8cf7a3f00ef8955302b83098e8594605eb9177223eca80ca8fe38f217"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "9b2b0a0b7d59470970d454fb6c68e2a50377bea45a7d002f8b4b8ca121421d5e"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "e6a6f98b0166ab3c98f9424915c17ae329e5ee2e4333945f8d8a0df8d0d213ac"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "6eb4fc05c4500e98a24fbc2b1ba5fd088b0239a2b93e9fd92777ad7c00ed02c2"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "f66ff81b0934e2945ca6c9eeb2ea1c985ff21d3da8e8b0e481b8a5492b2a7086"
+        }
+      }
+    },
+    {
+      "seed": 115,
+      "path": "artifacts/e1_reconstructed_inputs/seed115.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "e97441eb31b82e69392f8bd07edaa411b967d06b3b1087953c79cd723c7fefa7"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "eea2a3934d0e46c91dd946e690d679353bab9404a31e6020017013bf69ce6268"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "936cda3efae6851cdd0fa9c76a234fd551fd0c76f9fdc5a3f0f2f405ae06d01f"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "08f877fdf640dc2a966a707db714088c88a07bd5a62ddb609c82dbfbde152d27"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "32346690bf8f4e940afe4df269055f07a9dde895629830c47bbeb27714b166e6"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "465125a152d33d4b5f369b7ef0ca7fcfe0bdecf5adfd3aab26f48ee28beaafc3"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "2e0fc31b2bfbf1ca1e0d92d84f3b7f709f7cc65506505d7e603e739ce1295219"
+        }
+      }
+    },
+    {
+      "seed": 116,
+      "path": "artifacts/e1_reconstructed_inputs/seed116.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "5014fed3663a7c3ad6748b36f5b18df390ddad7183c680254b47bee2ecc4f493"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "f3afba8254df2e29f0896699c647a049c471cfc880e14731866f5210faf384c7"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "f6b1e26eeb423c73b46b630a13de82f350c47cafaa731c75fe83aee6f19222b7"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "368f88a29f459f882f63916572f177c8c1aa1bc77a20343c94a5d4e50f165960"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "0220e019a6c238d52bad857ea7598c13869bced7598c25a76f906e1c5ebb777b"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "53053c18f394fc5e2761a981a8f4568f7fb51082078edf406787e16813eadd08"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "deac0ad96a4d84a70aae34641aaf19d87eb9c7bd3cda597b3ed60fd5a680e3d1"
+        }
+      }
+    },
+    {
+      "seed": 117,
+      "path": "artifacts/e1_reconstructed_inputs/seed117.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "a16a9a6a69310742acee9978075fd132cc3603357adb12a4b397f0c7c514c6f9"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "52397cf1a3c40fb98b772f409e0bfea7be18878384300eba87c5a866e7780a7a"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "b26b9cf8b8afd96643f84634962950908e62b37c228c8571eb8ccf190091bddb"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "d734eefca5dd5228042a49fea6c0cbef570b07bca777663005bd54300f5499eb"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "9e03f73948446fdc71d95e16d0b3041784c501e59b3124357b470f6b83660ce2"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "163b9b0625e7b5b99af9c607e606a8729de7dd972c7e5f29c0c65fca9cbde4f9"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "7309798a4b8a0b5beba0eed6ff4471e3ec6dc2d2be3b77cec646240031179021"
+        }
+      }
+    },
+    {
+      "seed": 118,
+      "path": "artifacts/e1_reconstructed_inputs/seed118.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "6bc9845eedc84c6a9e9063f79ff668ab224d0f2db31feb74986c4b2da3c6dcbd"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "9b93a4f4912cc13c72fb285e6e45a9b51ff35c92c44ed12f4e4d18985e0f9d57"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "f62f9093f26ff864470d042d742ab083208e9375d67ed71e691672772b78bdaa"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "4f7ea9005abbd19ee682da6c280e12f57881e4d27e6109b537493a94b344c6f5"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "7684f16a2590196df92e94338f9467dcaf422647a6fdf393dbf6935d061ac3d3"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "f02ea6aefe7c3bb396865859d2fe21f9a508d23e2f0f786d4c87124497776f96"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "7325a2fb7b6ed4dcfbe823f04fdf88f0a79767a01dddbe3a5dde3aa5161edce8"
+        }
+      }
+    },
+    {
+      "seed": 119,
+      "path": "artifacts/e1_reconstructed_inputs/seed119.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "34b0e74e878c92f5c03140d365f7731a048e995eda809215f9f9e3b8d3c0b0dc"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "2cedc4de40c511957a1f74df68573a890729554933c43209df274958c70a0749"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "35403b382368822d9cc9f3adab72d1ec2c548190c01eebdf8c4ab1ff7e0a7de4"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "a67873dbc086ae829b8c9127c7cbc26e25c856af379e246d0674d2f129480f4c"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "6064b005d23bb020bd1ad81d38aa63380cc4cc864c0237e9a99bf809b8737704"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "db44cdeb213b7b2e284263bd8f91b9fe7c74b43e6fe0a54616eccee3de26e50f"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "02984210ecd2282e3bc3de5bd76df166304360c71d71b0fbb6bdc6a84d42df7c"
+        }
+      }
+    },
+    {
+      "seed": 120,
+      "path": "artifacts/e1_reconstructed_inputs/seed120.npz",
+      "arrays": {
+        "permutation": {
+          "shape": [
+            50000
+          ],
+          "dtype": "int64",
+          "sha256": "3069321b6230bca774b205b04c86bd2259017b93d5acee23a1d44a8e742cb0f3"
+        },
+        "meta_idx": {
+          "shape": [
+            1000
+          ],
+          "dtype": "int64",
+          "sha256": "a5d2d2c43543ff2d30ea7887bb9a229ec90bd65c62bbc09dfb6cdfe674b13a7a"
+        },
+        "train_idx": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "9cf5343becfd59fc19f77995986abb90563e2ea0893f8989d4d15657c6692db8"
+        },
+        "monitor_idx": {
+          "shape": [
+            2000
+          ],
+          "dtype": "int64",
+          "sha256": "47a69edfd512e8bb62ed030e877367fe3f8364867dda7abf7e34d48bc6e7d24e"
+        },
+        "selection_idx": {
+          "shape": [
+            4000
+          ],
+          "dtype": "int64",
+          "sha256": "ab293aef1a7ab689b11a4dd78f9f91fd7fa6cd11f51990a5e32bad8e536c9380"
+        },
+        "corruption_mask": {
+          "shape": [
+            45000
+          ],
+          "dtype": "bool",
+          "sha256": "be3b29c917e85fb6ea05a63459a061d6c90244ca9c07e67483e1148f840ff81b"
+        },
+        "corruption_offsets": {
+          "shape": [
+            45000
+          ],
+          "dtype": "int64",
+          "sha256": "684347a811649f7a1644a08b2e906f208815e61648e20a35d315d4885ddc5547"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "args": {
+    "repo": "/artifact/local-path",
+    "data_root": "/artifact/local-path",
+    "epochs": 12,
+    "batch_size": 100,
+    "train_size": 45000,
+    "val_size": 2000,
+    "val1_size": 4000,
+    "noise": 0.4,
+    "lr": 0.1,
+    "seed": 102,
+    "probe_step": 5200,
+    "eval_steps": 0,
+    "eval_batch_size": 100,
+    "eval_batches": 4,
+    "arm": "evalcb",
+    "device": "cuda",
+    "out": "/artifact/local-path"
+  },
+  "arm": "evalcb",
+  "result": {
+    "final_test_acc": 0.7515,
+    "official_test_acc": 0.7515,
+    "val1_acc": 0.75325,
+    "val1_n": 4000,
+    "state_sha256": "7860240eeca22aa7fa51bcae6e6df54d21476b0a5eb5ba3db52e233ba87646e8",
+    "vnet_state_sha256": "817ea7573e55f7f60d432c6ff31579bb650e6ca89847bc4f1ffdba63ae15182f",
+    "total_steps": 5400,
+    "sec_per_step": 0.8637909132542578,
+    "train_wall_sec": 4664.470931572992,
+    "eval_wall_sec": 0.18743084499874385,
+    "eval_fired": 1,
+    "eval_rng_int64_draws": 2,
+    "val_metrics": [
+      [
+        5200,
+        0.7225
+      ]
+    ],
+    "mechanism": "DataLoader(val,shuffle=True) monitoring eval; global-stream seed draws",
+    "wall_sec": 4665.221045956998
+  },
+  "partial": false
+}

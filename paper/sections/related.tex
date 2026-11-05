@@ -1,0 +1,27 @@
+\section{Related Work}
+
+Common-random-number alignment is established in stochastic simulation
+\citep{glasserman1992crn,stout2008keeping,pearce2022bayesian}.
+Recent work quantifies variance reductions from alignment
+\citep{klein2024noisefree} and repairs intervention-induced stream shifts
+with counter-based RNG \citep{buffalo2026realizing}. Isolation tools already
+exist in JAX and PyTorch \citep{jax2018prng,pytorch_forkrng}.
+We do not claim a new general principle of randomness or model selection:
+the contribution is a deep-learning evaluation diagnosis, released-code
+causal witnesses, and a connection to selection on the displaced quantity.
+
+Deep-learning studies document sensitivity to perturbations and the need
+to account for variability across seeds
+\citep{summers2021nondeterminism,dodge2020finetuning,bouthillier2021accounting}.
+Our question complements single-run reproducibility: can an arm-specific
+operation invalidate the intended same-seed comparison?
+Deterministic-execution tools
+\citep{chen2022reproducible,heumos2023mlfcore,shkolnikov2026bitidentical}
+help check the repair, but determinism alone does not establish cross-arm
+pairing. Desynchronization need not alter the marginal mean effect; selecting
+favorable outcomes on the reported quantity invokes classical selection
+optimism \citep{cawley2010overfitting}.
+
+Appendix~\ref{sec:extended-context} develops these connections, including
+the reweighting methods motivating the audit and the weight-averaging
+literature relevant to our conditional no-op application.

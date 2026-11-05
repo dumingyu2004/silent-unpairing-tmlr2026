@@ -1,0 +1,516 @@
+{
+  "schema": 1,
+  "interpretation": "Source-file SHA checks provenance only. Hash values inside run records concern only their explicitly named training components. Missing evidence is unknown, not observed inequality.",
+  "nlp_cells": [
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_cola/topo_ema_lindecay/bs32_seed1",
+      "source": "logs_nlp_gateb/roberta_base_cola/topo_ema_lindecay/bs32_seed1/topo_sel_log.jsonl",
+      "source_sha256": "f2603970fef2342efb6381871f2ed2d025996336b75ca346cd0bf8cce36bdbab",
+      "champion": "raw",
+      "selected_metric": 0.6333983481616093,
+      "within_arm_raw_metric": 0.6333983481616093,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_cola/topo_ema_lindecay/bs32_seed2",
+      "source": "logs_nlp_gateb/roberta_base_cola/topo_ema_lindecay/bs32_seed2/topo_sel_log.jsonl",
+      "source_sha256": "e41f3e0d6d9ea8556a36292da52d7c88cb5b6866cd89e739112511a8f78dc2df",
+      "champion": "raw",
+      "selected_metric": 0.6699617485525388,
+      "within_arm_raw_metric": 0.6699617485525388,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_cola/topo_ema_lindecay/bs32_seed3",
+      "source": "logs_nlp_gateb/roberta_base_cola/topo_ema_lindecay/bs32_seed3/topo_sel_log.jsonl",
+      "source_sha256": "fedcd05e01181388060c34e13467b7a64ea11ec3dceff6d69294b0e5799ba9b4",
+      "champion": "raw",
+      "selected_metric": 0.7901814742652775,
+      "within_arm_raw_metric": 0.7901814742652775,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_mrpc/topo_ema_lindecay/bs32_seed1",
+      "source": "logs_nlp_gateb/roberta_base_mrpc/topo_ema_lindecay/bs32_seed1/topo_sel_log.jsonl",
+      "source_sha256": "3ae6a56f38beefe80809711e2b7ea542c648471836f47dcf0fccdd3ef5de329e",
+      "champion": "raw",
+      "selected_metric": 0.9069767441860465,
+      "within_arm_raw_metric": 0.9069767441860465,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_mrpc/topo_ema_lindecay/bs32_seed2",
+      "source": "logs_nlp_gateb/roberta_base_mrpc/topo_ema_lindecay/bs32_seed2/topo_sel_log.jsonl",
+      "source_sha256": "b9e84f59f4e7d9dd8296d4fd757b893acadffdda0b523164aff5f5b63e42de70",
+      "champion": "ema0.99",
+      "selected_metric": 0.9090909090909091,
+      "within_arm_raw_metric": 0.9090909090909091,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_mrpc/topo_ema_lindecay/bs32_seed3",
+      "source": "logs_nlp_gateb/roberta_base_mrpc/topo_ema_lindecay/bs32_seed3/topo_sel_log.jsonl",
+      "source_sha256": "8f23f240b679fccb02b5b93411216dc853a9246dd786bc84692f848b505c658d",
+      "champion": "raw",
+      "selected_metric": 0.8901098901098901,
+      "within_arm_raw_metric": 0.8901098901098901,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_rte/topo_ema_lindecay/bs32_seed1",
+      "source": "logs_nlp_gateb/roberta_base_rte/topo_ema_lindecay/bs32_seed1/topo_sel_log.jsonl",
+      "source_sha256": "a724d8eab05d08a789e3da6e9a20d811dc723143138437aae5e2fe3fe0a30686",
+      "champion": "raw",
+      "selected_metric": 0.703125,
+      "within_arm_raw_metric": 0.703125,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_rte/topo_ema_lindecay/bs32_seed2",
+      "source": "logs_nlp_gateb/roberta_base_rte/topo_ema_lindecay/bs32_seed2/topo_sel_log.jsonl",
+      "source_sha256": "fd74c1e9a4fa512a809362465ec041b9c211b8c3b7de3bb7dc71c574b0a4da2b",
+      "champion": "raw",
+      "selected_metric": 0.703125,
+      "within_arm_raw_metric": 0.703125,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_gateb",
+      "cell": "roberta_base_rte/topo_ema_lindecay/bs32_seed3",
+      "source": "logs_nlp_gateb/roberta_base_rte/topo_ema_lindecay/bs32_seed3/topo_sel_log.jsonl",
+      "source_sha256": "72e336cca382149b458fbbef0be0a69561f68cbaf47b64bd75611989b1ae57ff",
+      "champion": "raw",
+      "selected_metric": 0.75,
+      "within_arm_raw_metric": 0.75,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_cola/topo_ema_payout_det/bs32_seed1",
+      "source": "logs_nlp_payout_det/roberta_base_cola/topo_ema_payout_det/bs32_seed1/topo_sel_log.jsonl",
+      "source_sha256": "2ba82c9dbe5e0033c3da4c6e30b3cffc8fa88095e38d37ff93058019e112abe0",
+      "champion": "raw",
+      "selected_metric": 0.5943072254206807,
+      "within_arm_raw_metric": 0.5943072254206807,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_cola/topo_ema_payout_det/bs32_seed2",
+      "source": "logs_nlp_payout_det/roberta_base_cola/topo_ema_payout_det/bs32_seed2/topo_sel_log.jsonl",
+      "source_sha256": "186da7deef06944aa8a1cbda214bdb18c7564be1c8d5fe3dfe2623fc9816ce38",
+      "champion": "ema0.999",
+      "selected_metric": 0.6287962886429431,
+      "within_arm_raw_metric": 0.4782661528365134,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_cola/topo_ema_payout_det/bs32_seed3",
+      "source": "logs_nlp_payout_det/roberta_base_cola/topo_ema_payout_det/bs32_seed3/topo_sel_log.jsonl",
+      "source_sha256": "45f3f917bd7fe6f9b145b4b21989fb97a6b8e00aff4c10b57daaf4667bab5427",
+      "champion": "raw",
+      "selected_metric": 0.7103525644736788,
+      "within_arm_raw_metric": 0.7103525644736788,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_cola/topo_ema_payout_det/bs32_seed4",
+      "source": "logs_nlp_payout_det/roberta_base_cola/topo_ema_payout_det/bs32_seed4/topo_sel_log.jsonl",
+      "source_sha256": "3ea8aa47893334bbbca92454a090d744bfcbf9d0ffe8a851f2d30ea1e48e4a59",
+      "champion": "ema0.99",
+      "selected_metric": 0.5640555331476095,
+      "within_arm_raw_metric": 0.5421205031924143,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_cola/topo_ema_payout_det/bs32_seed5",
+      "source": "logs_nlp_payout_det/roberta_base_cola/topo_ema_payout_det/bs32_seed5/topo_sel_log.jsonl",
+      "source_sha256": "e56c81ba924c8c88ed65e49ec2a725ae2bd01ced706958542deabdad74db3503",
+      "champion": "ema0.99",
+      "selected_metric": 0.6795551243705877,
+      "within_arm_raw_metric": 0.6097899234909668,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_mrpc/topo_ema_payout_det/bs32_seed1",
+      "source": "logs_nlp_payout_det/roberta_base_mrpc/topo_ema_payout_det/bs32_seed1/topo_sel_log.jsonl",
+      "source_sha256": "20ef4e09af6c0e644cb0f9f923802de9f827bc5d3b620306f21eb23b2811e168",
+      "champion": "ema0.99",
+      "selected_metric": 0.9080459770114943,
+      "within_arm_raw_metric": 0.9005847953216374,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_mrpc/topo_ema_payout_det/bs32_seed2",
+      "source": "logs_nlp_payout_det/roberta_base_mrpc/topo_ema_payout_det/bs32_seed2/topo_sel_log.jsonl",
+      "source_sha256": "0d297ee1cf68571a60fda2f26b8d5c1980b51a4230e5d059eae8c69333aae504",
+      "champion": "ema0.99",
+      "selected_metric": 0.9142857142857143,
+      "within_arm_raw_metric": 0.872093023255814,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_mrpc/topo_ema_payout_det/bs32_seed3",
+      "source": "logs_nlp_payout_det/roberta_base_mrpc/topo_ema_payout_det/bs32_seed3/topo_sel_log.jsonl",
+      "source_sha256": "6739aba66ece31350cc47a71a97e37c3a42a5aaa4800ac57dd753e55887fa9f2",
+      "champion": "raw",
+      "selected_metric": 0.8586956521739131,
+      "within_arm_raw_metric": 0.8586956521739131,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_mrpc/topo_ema_payout_det/bs32_seed4",
+      "source": "logs_nlp_payout_det/roberta_base_mrpc/topo_ema_payout_det/bs32_seed4/topo_sel_log.jsonl",
+      "source_sha256": "fcba4f430adda2a25a0c800931ddb9418711731451559b0792dff8f4a7183709",
+      "champion": "ema0.99",
+      "selected_metric": 0.9152542372881356,
+      "within_arm_raw_metric": 0.8961748633879781,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_mrpc/topo_ema_payout_det/bs32_seed5",
+      "source": "logs_nlp_payout_det/roberta_base_mrpc/topo_ema_payout_det/bs32_seed5/topo_sel_log.jsonl",
+      "source_sha256": "0bb6c5e1fc36885e68a5ab36a7a186335b0b1f1ced6ec0e856e00c6746375f5a",
+      "champion": "ema0.99",
+      "selected_metric": 0.9028571428571428,
+      "within_arm_raw_metric": 0.9005847953216374,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_rte/topo_ema_payout_det/bs32_seed1",
+      "source": "logs_nlp_payout_det/roberta_base_rte/topo_ema_payout_det/bs32_seed1/topo_sel_log.jsonl",
+      "source_sha256": "267ee137151d41e130596637ff605ad1f739069a9fb8acaaff288aca4cc303cb",
+      "champion": "ema0.99",
+      "selected_metric": 0.703125,
+      "within_arm_raw_metric": 0.734375,
+      "selected_equals_within_arm_raw_metric": false,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_rte/topo_ema_payout_det/bs32_seed2",
+      "source": "logs_nlp_payout_det/roberta_base_rte/topo_ema_payout_det/bs32_seed2/topo_sel_log.jsonl",
+      "source_sha256": "6031c51bbfb5bf883528b87949c2f36d54849a8764b1d02d21d4b4991d57898d",
+      "champion": "ema0.99",
+      "selected_metric": 0.7109375,
+      "within_arm_raw_metric": 0.7109375,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_rte/topo_ema_payout_det/bs32_seed3",
+      "source": "logs_nlp_payout_det/roberta_base_rte/topo_ema_payout_det/bs32_seed3/topo_sel_log.jsonl",
+      "source_sha256": "add71f16505c0ac34a0f07cc905231f65a053b77186b4bd54a04dccb01c1d01a",
+      "champion": "raw",
+      "selected_metric": 0.765625,
+      "within_arm_raw_metric": 0.765625,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_rte/topo_ema_payout_det/bs32_seed4",
+      "source": "logs_nlp_payout_det/roberta_base_rte/topo_ema_payout_det/bs32_seed4/topo_sel_log.jsonl",
+      "source_sha256": "1ee7a1119db4d55434449914055a9e46be2f94200957d8eb2a7a3333727685ca",
+      "champion": "raw",
+      "selected_metric": 0.6796875,
+      "within_arm_raw_metric": 0.6796875,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    },
+    {
+      "campaign": "logs_nlp_payout_det",
+      "cell": "roberta_base_rte/topo_ema_payout_det/bs32_seed5",
+      "source": "logs_nlp_payout_det/roberta_base_rte/topo_ema_payout_det/bs32_seed5/topo_sel_log.jsonl",
+      "source_sha256": "cdf1bfb34db29e69e9fc08d8a5a99cac5b24d506d58079808cf3f9da5c13d9f2",
+      "champion": "raw",
+      "selected_metric": 0.71875,
+      "within_arm_raw_metric": 0.71875,
+      "selected_equals_within_arm_raw_metric": true,
+      "cross_arm_weight_equality_verified": false,
+      "full_state_equality_verified": false,
+      "independent_repeat_floor_verified": false,
+      "certificate_eligible": false,
+      "reason": "Selection/metric log alone is not independent baseline weight evidence or within-configuration repeat evidence."
+    }
+  ],
+  "nlp_summary": {
+    "cells_with_selection_logs": 24,
+    "direct_weight_verified": 0,
+    "full_state_verified": 0,
+    "independent_floor_verified": 0,
+    "certificate_eligible": 0
+  },
+  "individually_checked_weight_pairs": [
+    {
+      "campaign": "logs_fullrecipe",
+      "comparison_kind": "cross_arm_isolated_vs_baseline",
+      "arm": "logs_fullrecipe/probe_isolated_p23520_s1.json",
+      "baseline": "logs_fullrecipe/mwnet_s1.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "c0d700d20d48e13d0726839417b3396d7de5b87228f2c354465a663538ea6d62",
+        "vnet_state_sha256": "8c0de698603b8c76ad9c1a719f85ff8bcd8f7c3c775da6ec8225dfe79947a296"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_fullrecipe",
+      "comparison_kind": "cross_arm_isolated_vs_baseline",
+      "arm": "logs_fullrecipe/probe_isolated_p23520_s2.json",
+      "baseline": "logs_fullrecipe/mwnet_s2.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "fd68fd1c9644043dfacf1294d36e8e4c79f8e83790c1605e2cc7496575e48b65",
+        "vnet_state_sha256": "ff44054fd99f3cad3bba3d05c2de033ea6da8c8cdfabcab5a9e328373d57c2ba"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_fullrecipe",
+      "comparison_kind": "cross_arm_isolated_vs_baseline",
+      "arm": "logs_fullrecipe/probe_isolated_p23520_s3.json",
+      "baseline": "logs_fullrecipe/mwnet_s3.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "67142dc7a8ceb2442ff839391e33f98f208bd7701a1b51bf1c5499a5a9bc1865",
+        "vnet_state_sha256": "82c7c81969f3cb31be6c0c2295911553ddc101027e3444bbdd9bf22bc7e7f20b"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_fullrecipe",
+      "comparison_kind": "independent_repeat_floor",
+      "arm": "logs_fullrecipe/mwnet_rep_s1.json",
+      "baseline": "logs_fullrecipe/mwnet_s1.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "c0d700d20d48e13d0726839417b3396d7de5b87228f2c354465a663538ea6d62",
+        "vnet_state_sha256": "8c0de698603b8c76ad9c1a719f85ff8bcd8f7c3c775da6ec8225dfe79947a296"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_fullrecipe",
+      "comparison_kind": "independent_repeat_floor",
+      "arm": "logs_fullrecipe/mwnet_rep_s2.json",
+      "baseline": "logs_fullrecipe/mwnet_s2.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "fd68fd1c9644043dfacf1294d36e8e4c79f8e83790c1605e2cc7496575e48b65",
+        "vnet_state_sha256": "ff44054fd99f3cad3bba3d05c2de033ea6da8c8cdfabcab5a9e328373d57c2ba"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_fullrecipe",
+      "comparison_kind": "independent_repeat_floor",
+      "arm": "logs_fullrecipe/mwnet_rep_s3.json",
+      "baseline": "logs_fullrecipe/mwnet_s3.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "67142dc7a8ceb2442ff839391e33f98f208bd7701a1b51bf1c5499a5a9bc1865",
+        "vnet_state_sha256": "82c7c81969f3cb31be6c0c2295911553ddc101027e3444bbdd9bf22bc7e7f20b"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_moneyshot",
+      "comparison_kind": "cross_arm_isolated_vs_baseline",
+      "arm": "logs_moneyshot/ext21_re_seed1_iso_p1400.json",
+      "baseline": "logs_moneyshot/ext21_re_seed1_rep.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "1dd9e800bbcff4c95e032cbe7e349a35208eea6d8d9ba78f0d0730a1fc8279c5",
+        "vnet_state_sha256": "553f0abf8886fbf6799630211fc1e2ba5811762cad2b6cc1846728f55311488f"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    },
+    {
+      "campaign": "logs_moneyshot",
+      "comparison_kind": "cross_arm_isolated_vs_baseline",
+      "arm": "logs_moneyshot/ext21_re_seed2_iso_p1400.json",
+      "baseline": "logs_moneyshot/ext21_re_seed2_rep.json",
+      "hash_fields": [
+        "state_sha256",
+        "vnet_state_sha256"
+      ],
+      "recorded_hashes": {
+        "state_sha256": "c5e0a612e1c0ddcd26d737bcf2c4def240053c095ac94f8aac3111eaf8dcbf06",
+        "vnet_state_sha256": "29d849c7628234be745d27e40ae4b3111528ebab10ed590403e9aefcabd8750c"
+      },
+      "equal": true,
+      "resolution": "model and meta-network state_dict weights/buffers; not complete optimizer/RNG state",
+      "full_state_equality_verified": false
+    }
+  ],
+  "historical_guard_8_hash_verified_claim": "Withdrawn: original figure script derived 8 from table text, not a per-cell hash registry. Historical metric outcomes retained.",
+  "unverified_campaigns": [
+    "vision tuned guard per-cell weight/floor registry not established by this ledger",
+    "shortened MW-Net witness handled by separate run records; not inferred from guard counts"
+  ]
+}

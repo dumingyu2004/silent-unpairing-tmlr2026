@@ -1,0 +1,35 @@
+{
+  "evidence_type": "author-maintained historical records",
+  "verification_scope": "original retained files before release path sanitization; not a comparison against the sanitized runner",
+  "independent_registration": false,
+  "newline_normalization": "CRLF/CR to LF",
+  "files": [
+    {
+      "path": "scripts/moneyshot/e1_valselect_mwnet.py",
+      "normalized_content_matches": true,
+      "events": [
+        {"operation": "Write", "timestamp_utc": "2026-07-10T14:15:52.921Z"},
+        {"operation": "Edit", "timestamp_utc": "2026-07-10T14:23:15.329Z"}
+      ]
+    },
+    {
+      "path": "docs/E1_PREREG.md",
+      "normalized_content_matches": true,
+      "events": [
+        {"operation": "Write", "timestamp_utc": "2026-07-10T14:19:42.470Z"},
+        {"operation": "Edit", "timestamp_utc": "2026-07-10T14:50:13.566Z"},
+        {"operation": "Edit", "timestamp_utc": "2026-07-10T14:56:32.827Z"},
+        {"operation": "Edit", "timestamp_utc": "2026-07-10T14:56:38.954Z"},
+        {"operation": "Edit", "timestamp_utc": "2026-07-10T14:56:39.888Z"}
+      ]
+    }
+  ],
+  "launch": {
+    "command_timestamp_utc": "2026-07-12T17:39:29.898Z",
+    "output_timestamp_utc": "2026-07-12T17:40:03.093Z",
+    "command_excerpt": "nohup bash e1_launch.sh 12 > e1_master.log 2>&1 &",
+    "output_excerpt": "E1 LAUNCHED, master pid 17055\n== phase 0: repeat-floor gate on THIS machine ==",
+    "redactions": "remote address, account and surrounding filesystem commands omitted"
+  },
+  "protocol_to_recorded_launch_hours": 50.713892
+}

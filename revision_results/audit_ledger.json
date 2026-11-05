@@ -1,0 +1,539 @@
+{
+  "schema": 1,
+  "scope": "Deliberately selected pinned code paths; RNG/cursor exposure only. Not population prevalence, full state purity, dynamic divergence, or published-result validity.",
+  "before_counts": {
+    "exposed": 21,
+    "guarded": 5,
+    "conditional": 2
+  },
+  "after_counts": {
+    "exposed": 22,
+    "guarded": 4,
+    "conditional": 2
+  },
+  "loader_rule": "New PyTorch iterator construction may draw base_seed even with shuffle=False and num_workers=0. Persistent iterator reuse is not new construction. Worker_init_fn can override downstream worker seeds.",
+  "mmengine_dependency": {
+    "commit": "a2e410bd48890c54f16c527d67c371ed8562facd",
+    "path": "revision_sources/mmengine/mmengine/dataset/utils.py",
+    "lines": "34-39",
+    "sha256": "c8b9aed7f802f5d99b8e3579c3e7598e75e9998179b3c25fb65bab3be393e572"
+  },
+  "repositories": [
+    {
+      "name": "l2rw_tf",
+      "pinned_commit": "0b616c99ecf8a1c99925322167694272a966ed00",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/l2rw_tf/mnist/mnist_train.py",
+          "lines": "270-272,372-373,396-397",
+          "source_file_sha256": "c33612a1e8268236e9fd4f183ff76e40157cb7e62560bc77c6fd8efcb0e56131"
+        }
+      ],
+      "conditions": "Evaluation advances the same training iterator; structural cursor channel, not a pure RNG probe."
+    },
+    {
+      "name": "l2rw_torch",
+      "pinned_commit": "182aad0ddd11a38d86b7abfb34e35b54bc7efb39",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/l2rw_torch/data_loader.py",
+          "lines": "105-111",
+          "source_file_sha256": "2b6b6b23db86fefb2d297b09867e96e3eff4bb73def60816d02f7c95aa13ba8f",
+          "release_verification": "metadata_only_source_omitted"
+        }
+      ],
+      "conditions": "Unconditional shuffle=True override shares global CPU sampling. Model reinitialization is an additional method-side consumer, not assumed state-pure."
+    },
+    {
+      "name": "mwnet",
+      "pinned_commit": "3f1800ff26bc66ceda6075f3fa25f3a7e0665a4d",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/mwnet/MW-Net.py",
+          "lines": "196-218",
+          "source_file_sha256": "d671d2ce37c117e1e068a696c22de7143dc3db670a7bc64698bd486ec63d87f5"
+        }
+      ],
+      "conditions": "Meta iterator creation/recreation and model initialization consume shared CPU randomness; witness repair is separately assessed."
+    },
+    {
+      "name": "dividemix",
+      "pinned_commit": "d9d3058fa69a952463b896f84730378cdee6ec39",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/dividemix/Train_cifar.py",
+          "lines": "87,186-187",
+          "source_file_sha256": "3fa169263c3f3b9cbd6b031017394a66d0d999c7e2f53e5cab01d2d241f5df89"
+        }
+      ],
+      "conditions": "Unpinned GMM initialization shares global NumPy with mixup. Pinning changes initialization as well as stream position."
+    },
+    {
+      "name": "coteaching",
+      "pinned_commit": "7c7fbe23e15e517db76a0882b6d108e4508e09d6",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/coteaching/model.py",
+          "lines": "45,54",
+          "source_file_sha256": "99de6d6be13106625aa1c740489e959411ee34e206dbffdcd0738cbbaa060730",
+          "release_verification": "metadata_only_source_omitted"
+        }
+      ],
+      "conditions": "Functional dropout omits training flag, so model.eval does not disable it; evaluation and training share device RNG."
+    },
+    {
+      "name": "maml",
+      "pinned_commit": "98a00d41724c133bd29619a2fb2cc46dd128a368",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/maml/miniimagenet_train.py",
+          "lines": "67,78-86",
+          "source_file_sha256": "9ee9f7b1e1be3b5f4d4f405bc1505a579586890b2dbe7df0d00fa0288a0e3183"
+        }
+      ],
+      "conditions": "Shuffled mid-training test loader and train loader share global CPU generator."
+    },
+    {
+      "name": "nanogpt",
+      "pinned_commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/nanogpt/train.py",
+          "lines": "116-123,216-222,264,303",
+          "source_file_sha256": "5bf6d2fd907c0f86849eb24a2b13d704304adedd4eba8cf0ac81259c8bae64dc"
+        }
+      ],
+      "conditions": "Evaluation get_batch and training get_batch share CPU randint; no repaired arm implied by static verdict."
+    },
+    {
+      "name": "rent",
+      "pinned_commit": "d40f3c408ed78915d7c61b201760de71e101b0f5",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/rent/RENT/library/method_utils.py",
+          "lines": "122-123",
+          "source_file_sha256": "2834b6df1431be088ea6ca15b7b8f82e7444b9de056694f46e6bf5848d727b53"
+        }
+      ],
+      "conditions": "On-device multinomial is a method-specific training consumer. Exposure does not establish a no-op intervention or incorrect published result."
+    },
+    {
+      "name": "bhn",
+      "pinned_commit": "2b09d3a376494371b9dd852e4742aef756b8fd93",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/bhn/BHN.py",
+          "lines": "202-210,756,781,810,1112-1120",
+          "source_file_sha256": "e37c95d6b90b32667d48bd4b3f3217c6c460f57efba44f1a2b862fc8e97be8d6"
+        }
+      ],
+      "conditions": "Unshuffled test iterator construction consumes CPU base seed; next training iterator/augmentation shares that state."
+    },
+    {
+      "name": "topofilter",
+      "pinned_commit": "9835d8cbc966b96b9a99f788760e5bf0b43b0d3c",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/topofilter/train.py",
+          "lines": "103-110,236-269,348-350",
+          "source_file_sha256": "f07ac914a6c44da2e9d5d52da11767dbe53a6a3ea53d65dbe0b074347305d568"
+        }
+      ],
+      "conditions": "Feature extraction reuses shuffled trainloader; selection additionally changes training data."
+    },
+    {
+      "name": "crust",
+      "pinned_commit": "a430069a413a0bb96ab33080df16b7d285e18040",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/crust/robust_cifar_train.py",
+          "lines": "176-184,237,320-335",
+          "source_file_sha256": "1b86b30e17739f766b6f726f11348225f8f46af5726f6b0c7a7c7ccf937c5866"
+        }
+      ],
+      "conditions": "Validation iterator has no dedicated generator; shuffled training shares CPU state. Coreset changes are structural method effects."
+    },
+    {
+      "name": "selcl",
+      "pinned_commit": "98cc41e09789ed338684dff24751685147010b30",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/selcl/CIFAR/train_Sel-CL.py",
+          "lines": "189-198",
+          "source_file_sha256": "39bdf8d3a02b50bf49518d67157fdd68264f2b3ec2b778bea71054f56575a7b4",
+          "release_verification": "metadata_only_source_omitted"
+        },
+        {
+          "path": "revision_sources/selcl/utils/utils_noise.py",
+          "lines": "350-359",
+          "source_file_sha256": "97daea9c192fa68f36e2470f70177eaebe89da3a1982e63f0305517da319cab4",
+          "release_verification": "metadata_only_source_omitted"
+        }
+      ],
+      "conditions": "WeightedRandomSampler shares CPU RNG with pair_selection torch.rand allocation."
+    },
+    {
+      "name": "mlc",
+      "pinned_commit": "5747d0b6294550dfbd8229f50d5035a8e3055d61",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/mlc/CIFAR/data_helper_cifar.py",
+          "lines": "74-79",
+          "source_file_sha256": "54a0866d6be5060c06ff2dc5f58ba1f1b2ec625072ee438dce92c1e22439c36f"
+        }
+      ],
+      "conditions": "Training and validation shuffled loaders have no generator isolation."
+    },
+    {
+      "name": "promix",
+      "pinned_commit": "40d8378193f1a098473479ebcb56dbafa89dfacb",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/promix/Train_promix.py",
+          "lines": "208,419-427,494,514-515",
+          "source_file_sha256": "8b76602f566b7c96a0dfef29b8ad7bc332d7251c058ea63b667657634a60d8d9",
+          "release_verification": "metadata_only_source_omitted"
+        },
+        {
+          "path": "revision_sources/promix/dataloader_cifarn.py",
+          "lines": "273-303",
+          "source_file_sha256": "2bd865970e3387c71713b0d72ca7626676d923705f28bee70a68bf70316450db",
+          "release_verification": "metadata_only_source_omitted"
+        }
+      ],
+      "conditions": "Selection iterates nonpersistent eval loader with shuffle=False and no generator; base seed shares CPU RNG with randperm/training."
+    },
+    {
+      "name": "unicon",
+      "pinned_commit": "1b5a03f6dc0faf6d19dd0172ad17e22f8f0efcae",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/unicon/Train_cifar.py",
+          "lines": "148,291-305,387,402-413",
+          "source_file_sha256": "68edff7ebf427e2c9231ebd2fae1bf8df1023fbc2e0482bf02e2d8e6de21e482"
+        },
+        {
+          "path": "revision_sources/unicon/dataloader_cifar.py",
+          "lines": "314-344",
+          "source_file_sha256": "c7bf83dcb75784b1ba8bf45a9ecf3fc7ef78231ecd7958c4f801880284528881"
+        }
+      ],
+      "conditions": "JSD evaluation iterator consumes CPU base seed, despite shuffle=False; training randperm/loaders share CPU generator."
+    },
+    {
+      "name": "disc",
+      "pinned_commit": "a21e910bffeb34873684937ac1066991a720552a",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/disc/algorithms/DISC.py",
+          "lines": "308-310,406-420",
+          "source_file_sha256": "aabd281d1e2877005847558cd788cd6341e5ebf8f19de0f9666b5bd4b32c788a",
+          "release_verification": "metadata_only_source_omitted"
+        },
+        {
+          "path": "revision_sources/disc/main.py",
+          "lines": "183-189",
+          "source_file_sha256": "069a8d1ad40699c7d74fc91b896ecafc5d6842213bc05d6ad1abcae05306f974",
+          "release_verification": "metadata_only_source_omitted"
+        }
+      ],
+      "conditions": "Per-epoch evaluation loader construction/iteration shares CPU stream with training data loading. Mixup is an additional method consumer."
+    },
+    {
+      "name": "ddpm",
+      "pinned_commit": "d93647ad3cf97d786a064ef80429ee6c3e5ebd55",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/ddpm/denoising_diffusion_pytorch/denoising_diffusion_pytorch.py",
+          "lines": "678-686,791,838,1078-1084",
+          "source_file_sha256": "258271e14ad167ec91ea58df9697b248037a2cd908062504abe5afdd829ba999"
+        }
+      ],
+      "conditions": "Periodic EMA sampling and training diffusion noise use shared device RNG."
+    },
+    {
+      "name": "timm",
+      "pinned_commit": "ce7c976311776496fec826d97ec14ba68db909bf",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/timm/timm/data/loader.py",
+          "lines": "237,346-363",
+          "source_file_sha256": "448179da2e8ec1fa60735efd70f249e1980301613a38ad40735b5fa6c684fd70"
+        },
+        {
+          "path": "revision_sources/timm/train.py",
+          "lines": "1095-1110,1392-1415",
+          "source_file_sha256": "05765a1a497819e7d5861e72e68e969cc665d5458d70ad223ffbf1dc4c16cd54"
+        }
+      ],
+      "conditions": "Nondistributed shuffled path: first eval iterator construction advances global CPU RNG. Persistent workers reuse iterators: do not claim one fresh base seed every epoch."
+    },
+    {
+      "name": "cleanrl",
+      "pinned_commit": "fe8d8a03c41a7ef5b523e2e354bd01c363e786bb",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/cleanrl/cleanrl/qdagger_dqn_atari_impalacnn.py",
+          "lines": "277,328,362",
+          "source_file_sha256": "3a8e7db6fb6347c3fa168d1709fc50fc6217f87746d91adb4829b8524c2239f9"
+        },
+        {
+          "path": "revision_sources/cleanrl/cleanrl_utils/evals/dqn_eval.py",
+          "lines": "28",
+          "source_file_sha256": "2ad2a2a402c3a1b4fd5d9232d8c8cf13ddc410b9e779b333b367cfd3b280c04e"
+        }
+      ],
+      "conditions": "Periodic evaluation and subsequent QDagger training share Python random. Specific QDagger path, not all CleanRL algorithms."
+    },
+    {
+      "name": "litgpt",
+      "pinned_commit": "26857050fe3ff627cd714fe92f5838f51a3d5efa",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/litgpt/litgpt/finetune/lora.py",
+          "lines": "58,343-348,465-490",
+          "source_file_sha256": "5c64297abc5df0be113fce8d1d981bb0e4520dfc353406f3c45b273979aa904e"
+        },
+        {
+          "path": "revision_sources/litgpt/litgpt/lora.py",
+          "lines": "80-84",
+          "source_file_sha256": "25fd7ba284ec0cc2e040513291e15825d7b4dfd2fb4946b3c1ff1b98c2c9e7d0"
+        },
+        {
+          "path": "revision_sources/litgpt/litgpt/generate/base.py",
+          "lines": "31-36",
+          "source_file_sha256": "40d96c8a3a9b7600c89ded0c8ea15cfa7ffc3d2b23fb87082b92c596cdd91ef8"
+        }
+      ],
+      "conditions": "Default LoRA dropout 0.05 and example generation share torch device stream. Zero-dropout or disabled generation requires separate classification."
+    },
+    {
+      "name": "infobatch",
+      "pinned_commit": "8bbb012c256c9eb4de3bb209f8a5e73899de8d02",
+      "before": "guarded",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/infobatch/research/cifar_example.py",
+          "lines": "51-54,70-77,145-150,174-176",
+          "source_file_sha256": "71f933fea8cac3e57e322ed518bcd2054cf7c8aa3e35be5348aa1d7331526ba2",
+          "release_verification": "metadata_only_source_omitted"
+        },
+        {
+          "path": "revision_sources/infobatch/research/infobatch.py",
+          "lines": "79-88",
+          "source_file_sha256": "a1c77babbcda18e45bc69db4efb9967121adfcf41c9e6da421595e341ceb46e5",
+          "release_verification": "metadata_only_source_omitted"
+        },
+        {
+          "path": "revision_sources/infobatch/examples/cifar_example.py",
+          "lines": "106-108,138-143,271",
+          "source_file_sha256": "01f0ff28752676b2af1bdcc7184e82c7fc6834905c8038c4eb63faa0520c75c0",
+          "release_verification": "metadata_only_source_omitted"
+        }
+      ],
+      "conditions": "CORRECTED: counter-reseed guards NumPy pruning only. Unshuffled eval iterator takes global torch CPU base seed; train transforms use CPU randomness with num_workers=0. No dedicated train-loader generator in this path."
+    },
+    {
+      "name": "dcgan",
+      "pinned_commit": "acc295dc7b90714f1bf47f06004fc19a7fe235c4",
+      "before": "guarded",
+      "after": "guarded",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/dcgan/dcgan/main.py",
+          "lines": "133-145,211,240,264-271",
+          "source_file_sha256": "b4f0bc963a1809026e5a45bf6d97ea8572169c6a734c493489ce9fedc5b056d9"
+        }
+      ],
+      "conditions": "RNG channel only: visualization reuses fixed_noise. Train-mode BatchNorm buffers are mutated by netG(fixed_noise), so this is NOT a state-pure or full-pairing certificate."
+    },
+    {
+      "name": "sb3",
+      "pinned_commit": "8908708f10c8ff29759c67f55c8acb56cab27463",
+      "before": "guarded",
+      "after": "guarded",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/sb3/stable_baselines3/common/callbacks.py",
+          "lines": "372-403,465-471",
+          "source_file_sha256": "620dd49f7a33d3ee6dd95f234346318a7b4cdb9a010d052a4a3758a94d6fdb54"
+        },
+        {
+          "path": "revision_sources/sb3/stable_baselines3/common/evaluation.py",
+          "lines": "92-99",
+          "source_file_sha256": "c078eee674718ffe38ed4296113edc07ddca078ce63e6d4b0a568682c2b309ee"
+        }
+      ],
+      "conditions": "Default deterministic policy evaluation with separate environment using its own RNG. Stochastic actions, custom global-RNG environment or feature extractor invalidate this limited guard; separate object alone is insufficient."
+    },
+    {
+      "name": "trl",
+      "pinned_commit": "b6ff4a780e364a92c27165d2fcdb7154bbf1b564",
+      "before": "conditional",
+      "after": "conditional",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/trl/trl/trainer/grpo_trainer.py",
+          "lines": "1352-1368,1542-1614",
+          "source_file_sha256": "c6d298d58e594519ea7ccfdb1c33ecfc700fdb841a84d3c99cb7fe77b098643a"
+        },
+        {
+          "path": "revision_sources/trl/trl/trainer/utils.py",
+          "lines": "712-719,831",
+          "source_file_sha256": "e6d2dadfb8f956791a75bce9bb04d94ec14933c3d9d1ec20f6bc186b36abfa23"
+        }
+      ],
+      "conditions": "Transformers sampling backend exposed when eval enabled. vLLM engine topology needs explicit scope; train-only shuffle is not an eval draw. No blanket immunity for arbitrary engines/reward functions."
+    },
+    {
+      "name": "olmo",
+      "pinned_commit": "fa6c5014c9f6e9ee789da2d9c20d5126fee8df0d",
+      "before": "guarded",
+      "after": "guarded",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/olmo/src/olmo_core/data/data_loader.py",
+          "lines": "544-564,670-688",
+          "source_file_sha256": "12b7f7543b7a7a758ba3ab8cfb88b2c6b47ffa6cad89a967d8a4014201ce4505"
+        },
+        {
+          "path": "revision_sources/olmo/src/olmo_core/train/train_module/transformer/train_module.py",
+          "lines": "497,649-654",
+          "source_file_sha256": "ee19d7706b14617b9242f415390b1b3b76d6d85b82fe2fa0c0292283f7de12b8"
+        }
+      ],
+      "conditions": "Audited evaluator disables training-only forward draws and uses private data-order PCG generator. Torch generator at544 is MOCK batch generation, not generic eval DataLoader construction. No universal k=0 claim."
+    },
+    {
+      "name": "sdxl",
+      "pinned_commit": "e8cd657656fa5d61688191730d0e03242bf4ed44",
+      "before": "exposed",
+      "after": "exposed",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/sdxl/main.py",
+          "lines": "457-459",
+          "source_file_sha256": "d66885a3b482c2c426f47727dc3a6d32f9365fe4bdaa63357acc6a781b592a71"
+        },
+        {
+          "path": "revision_sources/sdxl/sgm/models/diffusion.py",
+          "lines": "246-251",
+          "source_file_sha256": "5e016cb1aca2f0d2e9e93d9dfcf6302e20cc3ebfc4a0942a248da524576ccb95"
+        },
+        {
+          "path": "revision_sources/sdxl/sgm/modules/diffusionmodules/loss.py",
+          "lines": "72-80",
+          "source_file_sha256": "3a2d60944abc4eb0bbfd642b227e34d6440fe29b39697b46299829d72371f5d6"
+        }
+      ],
+      "conditions": "Image logging samples with global torch and stochastic denoising; training uses shared torch noise stream. Trigger must fire mid-training."
+    },
+    {
+      "name": "mmselfsup",
+      "pinned_commit": "db861f30487c9a0b0cb3e35e176d6058887660bc",
+      "before": "guarded",
+      "after": "guarded",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/mmselfsup/configs/selfsup/_base_/datasets/imagenet_deepcluster.py",
+          "lines": "33-55",
+          "source_file_sha256": "c6e4a1e056f38d5b5ed8179d4a42ea86bc0f4b781178cc03b1319eb5b0713a75"
+        },
+        {
+          "path": "revision_sources/mmselfsup/mmselfsup/datasets/samplers/deepcluster_sampler.py",
+          "lines": "47-48",
+          "source_file_sha256": "17e6ce66dbcbc24bf50fd7c7c2a90fa87735001587cd85e5ac5798f8ee399b59"
+        },
+        {
+          "path": "revision_sources/mmselfsup/mmselfsup/engine/hooks/deepcluster_hook.py",
+          "lines": "73-123",
+          "source_file_sha256": "23ed1042a033349b9937bc1c4bf2e734478dbe8c26009660c53fccef39d316ff"
+        }
+      ],
+      "conditions": "Shipped DeepCluster path: private sampler, worker-seeded augmentation, persistent workers. First extract iterator can draw global CPU base seed; shuffle=False is NOT zero consumption. Head initialization/label updates are method effects; no state-purity claim."
+    },
+    {
+      "name": "diffusers",
+      "pinned_commit": "d1b988b08f51110670a0a187f998470d913fb85a",
+      "before": "conditional",
+      "after": "conditional",
+      "verification": "static_source_reading",
+      "citations": [
+        {
+          "path": "revision_sources/diffusers/examples/text_to_image/train_text_to_image.py",
+          "lines": "161-174,972-982,1104",
+          "source_file_sha256": "3e8e2df61aea9ea3090759e29a01e8ecfd0bca0bc4b988b6d81477acffc157eb"
+        }
+      ],
+      "conditions": "Audited validation pipeline uses private generator if seed supplied, global generator otherwise. Applies to this sampling channel, not arbitrary pipeline/scheduler/custom callback."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+ "seeds_present": [
+  1,
+  2
+ ],
+ "placements": [
+  400,
+  1400,
+  2700,
+  4000,
+  5200
+ ],
+ "deltas_A_pt": [
+  [
+   0.12000000000000899,
+   -0.09000000000000119,
+   0.46000000000000485,
+   0.15000000000000568,
+   -0.009999999999998899
+  ],
+  [
+   0.9400000000000075,
+   -0.7699999999999929,
+   -0.649999999999995,
+   0.12000000000000899,
+   -0.009999999999998899
+  ]
+ ],
+ "missing": [],
+ "flip_thresh": 0.5,
+ "c_N": 1.164144305394941,
+ "sigma_bar": 0.4486136637309922,
+ "honest_mean_A": 0.026000000000004908,
+ "per_seed_select_A": 0.7000000000000062,
+ "manufactured_gain_A": 0.6740000000000013,
+ "extreme_value_pred": 0.5222510419547955,
+ "ratio": 1.2905670757059795,
+ "manufactured_gain_B": 0.0,
+ "iso_sha_equal": true,
+ "floor_ok": true,
+ "headline_apparent_gain": 0.6740000000000013,
+ "decision_flip_shared": 0.5,
+ "decision_flip_isolated": 0.0,
+ "per_seed_margin_shared": [
+  0.33400000000000096,
+  1.0140000000000016
+ ],
+ "per_seed_margin_isolated": [
+  0.0,
+  0.0
+ ],
+ "verdicts": {
+  "V1_floor": true,
+  "V2_cure": true,
+  "V3_harvest": true
+ }
+}

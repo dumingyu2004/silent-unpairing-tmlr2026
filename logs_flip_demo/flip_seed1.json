@@ -1,0 +1,20 @@
+{
+  "args": {
+    "repo": "/artifact/local-path",
+    "data_root": "/artifact/local-path",
+    "epochs": 20,
+    "batch_size": 100,
+    "train_size": 10000,
+    "noise": 0.4,
+    "seed": 1,
+    "probe_step": 500,
+    "arms": "mwnet,mwnet_rep,mwnet_probe,sgd_baseline",
+    "out": "logs_flip_demo/flip_seed1.json"
+  },
+  "results": {
+    "mwnet": 0.3098,
+    "mwnet_rep": 0.3098,
+    "mwnet_probe": 0.292,
+    "sgd_baseline": 0.34
+  }
+}

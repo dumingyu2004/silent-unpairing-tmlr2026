@@ -1,0 +1,13 @@
+diff --git a/revision_sources/bhn/BHN.py b/revision_sources/bhn/BHN.py
+--- a/revision_sources/bhn/BHN.py
++++ b/revision_sources/bhn/BHN.py
+@@ -207,7 +207,8 @@ class TorchvisionDataset(BaseADDataset):
+                                  num_workers=num_workers)
+ 
+         test_loader = DataLoader(dataset=self.test_set, batch_size=batch_size, shuffle=shuffle_test,
+-                                 num_workers=num_workers)
++                                 num_workers=num_workers,
++                                 generator=torch.Generator().manual_seed(0))
+         retrain_loader = None
+         if self.retrain_set != None:
+             retrain_loader = DataLoader(dataset=self.retrain_set, batch_size=batch_size, shuffle=shuffle_train,

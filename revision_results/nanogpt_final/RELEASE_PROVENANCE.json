@@ -1,0 +1,29 @@
+{
+  "original_manifest_and_final_verification": "Preserved historical records: code_hashes and code_hash_matches_manifest refer to immutable original run code, not anonymized release copies.",
+  "release_integrity": "PACKAGE_MANIFEST.json hashes actual released bytes. Numeric results and recorded model/data/source hashes are unchanged.",
+  "frozen_prediction": "Bytes unchanged; original 20000-draw analyzer rerun on 726 sanitized record copies with exact primary numerical parity.",
+  "supplement": "Regenerated against release inputs; only provenance may differ. All scientific fields compared exactly.",
+  "prediction_benchmark": "Exploratory post-readout; regenerated against release inputs, every non-provenance field compared exactly; frozen primary untouched.",
+  "raw_record_count": 726,
+  "source_tar_sha256": "5698984566503d45f824b45432d5989762e71f899d7710ab4fe09631527da5fd",
+  "frozen_code_original_and_copy_hashes": [
+    {
+      "path": "revision_results/nanogpt_final/revision_nanogpt_campaign.py",
+      "original_sha256": "5d1509198b3b2abb07d514be6f6fe77eda0d11536984ac47e40d4fd09733ef52",
+      "release_copy_sha256": "5d1509198b3b2abb07d514be6f6fe77eda0d11536984ac47e40d4fd09733ef52",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "revision_results/nanogpt_final/revision_nanogpt_arm.py",
+      "original_sha256": "d4877105b11b07d4446995bf2f04b29571e79a3ec247722de7e0f35739027a20",
+      "release_copy_sha256": "d4877105b11b07d4446995bf2f04b29571e79a3ec247722de7e0f35739027a20",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "revision_results/nanogpt_final/revision_nanogpt_analyze.py",
+      "original_sha256": "3514921143104c7396ce909883480e223ef90d8f2934d57bde97e4f271359093",
+      "release_copy_sha256": "3514921143104c7396ce909883480e223ef90d8f2934d57bde97e4f271359093",
+      "transformation": "unchanged"
+    }
+  ]
+}

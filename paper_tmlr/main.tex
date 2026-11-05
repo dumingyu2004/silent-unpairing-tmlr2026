@@ -1,0 +1,295 @@
+% File: main.tex: TMLR camera-ready (single column).
+% Sections are shared with paper/sections/; the appendix is merged after the
+% references, as TMLR requires (paper_tmlr/appendix_body.tex is generated from
+% paper/appendix.tex by scripts/revision_generate_appendix.py).
+\documentclass[10pt]{article}
+\usepackage[accepted]{tmlr}
+
+% hidelinks: keep cross-references clickable without hyperref's default
+% coloured boxes, which the TMLR template leaves on and which print badly.
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% Math + theorem environments.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\input{../revision_results/statistics_macros.tex}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+% Unnumbered twins: the appendix restates body statements before proving them,
+% so those restatements must not consume a number or a label.
+\newtheorem*{propositionx}{Proposition}
+\newtheorem*{corollaryx}{Corollary}
+\theoremstyle{remark}
+\newtheorem*{remarkx}{Remark}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+% The appendix's small plots are 3.3in wide in a 6.5in column, so each one used
+% to claim a whole row. subcaption lets the generator pair them two-up; see the
+% pairing step in tools/make_tmlr_appendix.py.
+\usepackage{subcaption}
+% A paired float shares one figure number, so a pointer renders "Figure 10a"
+% while stock subcaption prints only "(a)" on the panel: the number the reader
+% was sent to find appears nowhere on the page. Print the full "Figure Na"
+% instead. This swaps one label prefix for another, so unlike a parent caption
+% or a per-panel \caption (both measured at +2 pages) it costs no space.
+\DeclareCaptionLabelFormat{panel}{Figure \thefigure#2}
+\captionsetup[subfigure]{labelformat=panel,labelsep=colon}
+\usepackage{array}
+\usepackage{microtype}
+
+% Exact code identifiers (file:line citations) in the appendix audit registers.
+% (TMLR's wider 10pt font also forces the audit tables' verdict columns to be
+% rebalanced; that happens in the appendix generator, not here.)
+\newcommand{\code}[1]{\texttt{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Width of a "column" figure in this single-column layout. The shared section
+% sources use \figwidthcol so one copy serves both venue builds; 0.62\textwidth
+% keeps a figure drawn at 3.3125in from being blown up across the full 6.5in
+% measure (Phase B re-renders these at native single-column size).
+\newcommand{\figwidthcol}{0.62\textwidth}
+
+% The harvest figure is the exception: its two panels are rendered side by
+% side at exactly 6.5in, the full measure, so it is placed at native size.
+% Stacked and scaled to \figwidthcol it stood 4.6in tall and was the tallest
+% object in the body; two-up it is 2.6in and is not upscaled, which also means
+% its 8pt floor is the size that actually reaches the page.
+\newcommand{\figwidthharvest}{\textwidth}
+
+% Diagnosis II is supplement-scoped. It is a correct result and it explains why
+% the two diagnoses land on the same method family, but its evidence base
+% (analytical plus three instrumented systems) is a different kind of thing
+% from the audit that carries the paper, and stating it in the body invited
+% reviewers to read the submission as two loosely-coupled papers. It therefore
+% lives in the appendix, with one contribution sentence and a pointer here.
+\newcommand{\diagtwoscope}{, supplement-scoped}
+\newcommand{\diagtwopointer}{Appendix~\ref{sec:deadmeta-taxonomy} gives the
+statement, the three escapes, and a per-system taxonomy, with the proof in
+Appendix~\ref{sec:proofs}}
+\newcommand{\contribdiagtwo}{(3) A second, supplement-scoped diagnosis
+(Appendix~\ref{sec:deadmeta-taxonomy}) explains why this method family is the
+one the audit keeps landing on: the canonical lr-scaled virtual step emits an
+exactly $\eta$-scaled meta-signal (Proposition~\ref{prop:deadmeta}), which is
+potentially dominated where an $\eta$-independent term of comparable or larger size competes
+for the same weights. It is a magnitude ratio rather than a certainty, three
+named escapes mitigate it, and we hold it to a lower evidentiary bar than the
+rest of the paper: analytical, instrumented in three systems, not audited at
+scale.}
+% The two harvest-evidence floats. Declared as a macro so the shared
+% section file can place them where Proposition 2 is discussed rather
+% than at the top of the paper, which put both on page 3 five pages
+% ahead of the statement they qualify. AAAI defines this empty.
+% Two-up, not stacked. These are one piece of evidence about how far
+% Proposition 2 transports: how badly the law misses a held-out seed, and how
+% wide the intervals around its ratios really are. Standing them side by side
+% halves the vertical footprint and stops the pair reading as two unrelated
+% results. Both scripts render at 3.05in so the panels arrive at their typeset
+% width instead of being scaled; 0.48 + 0.48 with \hfill cannot overlap.
+\newcommand{\evidencefloats}{%
+\begin{figure}[t]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\IfFileExists{figs/fig_r1_crossseed.pdf}{%
+  \includegraphics[width=\linewidth]{figs/fig_r1_crossseed.pdf}%
+}{}
+\caption{The preregistered leave-one-seed-out predictive check.
+Estimating $\bar\sigma$ from four seeds and predicting the fifth's
+max-minus-mean gives a mean absolute error of $2.17$ points ($54\%$ of the
+$4.01$ being predicted), and the two series \emph{anti}-correlate
+($r=-0.87$). This observed anticorrelation is not forced by leave-one-out
+construction alone. Mean signed error is $+0.11$; substituting each seed's
+own fitted $\sigma$ reduces MAE to $0.83$ but reuses the outcomes and is
+not predictive validation. Neither the Gaussian shape nor transport of its
+scale is established by this comparison.}
+\label{fig:crossseed}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\IfFileExists{figs/fig_r2_ratios_ci.pdf}{%
+  \includegraphics[width=\linewidth]{figs/fig_r2_ratios_ci.pdf}%
+}{}
+\caption{Same-sample harvest-to-scale ratios with joint whole-seed percentile
+$95\%$ intervals, exhaustively enumerating the $n^n$ ordered resamples and
+refitting the scale in each. Both plug-in and conditional Gaussian $c_4$
+corrections are shown. The corrected full-protocol best-checkpoint interval
+$[0.8665,0.9776]$ excludes one, but has only $27$ resamples from three seeds;
+it is not reliable evidence against the model. Best and final use the same
+three seeds, not independent replications.}
+\label{fig:ratios}
+\end{subfigure}
+\end{figure}%
+}
+\newcommand{\evidencefigs}{ (Figures~\ref{fig:crossseed} and~\ref{fig:ratios};
+the verification split is Figure~\ref{fig:ledger})}
+
+% A forced \newpage used to live here, to hand the page carrying the two-up
+% evidence float the three orphaned lines that preceded it. Re-rendering the
+% harvest figure two-up (6.5 x 2.6in instead of 3.3125 x 3.80in scaled to
+% 4.6in tall) freed about two inches on that page and made the break not just
+% unnecessary but harmful: it pinned the freed space at the foot of page 7
+% instead of letting it propagate. Removing it pulled the References onto
+% page 12. \raggedbottom, set above, is what actually closes the float-to-text
+% holes; the break never contributed to that.
+
+% Let TeX stretch interword spacing rather than protrude into the margin: the
+% appendix prose carries long unbreakable code identifiers.
+\emergencystretch=1.5em
+
+% The audit and registry tables are near-page-sized, and the supplement is
+% figure-dense: let floats fill tops AND bottoms and share pages with text
+% rather than each claiming a page, which is what keeps the merged document
+% inside its length target.
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.05}
+% 0.85, and it is still load-bearing after the CaffeNet figure (the float this
+% was originally tuned for) was removed. Re-measured on the current document:
+% 0.85 gives 38 pages with 6 underfull vboxes; 0.7 gives 39 with 2; deleting
+% the line entirely gives 39 with 4. A lower threshold lets some float qualify
+% for a page of its own instead of sharing one with text. The tallest float
+% left is 0.44 of a text page, so nothing here is being forced. Re-measure
+% before changing: the useful value depends on which floats exist.
+\renewcommand{\floatpagefraction}{0.85}
+
+% A page whose only content is a float (e.g. Table 2, page 17) was landing
+% vertically CENTERED rather than pinned to the top. Cause, confirmed by
+% testing: \flushbottom/\raggedbottom control the stretch around the whole
+% text column and had zero effect (tested both); the actual glue is the
+% kernel's float-page-only registers \@fptop / \@fpbot, which split the page's
+% leftover height before and after the float. Both default to "0pt plus 1fil"
+% (set in size10.clo, the 10pt option file, not in article.cls itself), so the
+% two infinite stretches share the slack equally and centre the float. Zeroing
+% \@fptop moves all of it to \@fpbot, the conventional "pinned to top" layout.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+% tmlr.sty line 64 sets \flushbottom, and \parskip (line 169) is rigid, so on
+% a page carrying a tall float there is almost no stretchable glue: TeX reaches
+% \textheight by stretching \textfloatsep far past its 2pt "plus", opening a
+% hole between the float and the text. That is what the log's Underfull \vbox
+% entries were. Measured across the whole document: \flushbottom gave 7 such
+% pages with a worst float-to-text hole of 55pt; \raggedbottom gives 0 and a
+% worst of 23pt, at the same 35 pages and still 0 overfull hboxes. Ragged
+% bottom parks the leftover at the foot of the page, where a slightly short
+% page is ordinary, instead of wedging it above a paragraph. This overrides a
+% tmlr.sty setting, but it touches only where slack sits, not the margins,
+% font size, or leading, so it is not a format deviation.
+\raggedbottom
+
+% "Can Enable Selection Bias", not "Manufacture Gains". The probe does not
+% manufacture anything on its own: it destroys a coupling, and a selection step
+% that reads the affected quantity turns that into a one-sided gain. Section 2.4
+% now states that condition explicitly, which left the old title as the least
+% qualified sentence in the paper.
+\title{Silent Unpairing: How Mid-Training Probes Break Same-Seed Comparisons and Can Enable Selection Bias}
+
+\author{\name Mingyu Du \email z5719990@ad.unsw.edu.au \\
+      \addr University of New South Wales
+      \AND
+      \name Lu Han \\
+      \addr The University of Sydney
+      \AND
+      \name Zhaoqi He \\
+      \addr King's College London
+      \AND
+      \name Jingyao Zhang \\
+      \addr The University of Sydney
+      \AND
+      \name Junming Huang \\
+      \addr The University of Sydney
+      \AND
+      \name Yun Li \\
+      \addr The University of Sydney
+      \AND
+      \name Zerun Niu \\
+      \addr The University of Sydney
+      \AND
+      \name Nguyen H. Tran \\
+      \addr The University of Sydney
+      \AND
+      \name Ken-Tye Yong \\
+      \addr The University of Sydney}
+
+\def\month{10}
+\def\year{2026}
+\def\openreview{\url{https://openreview.net/forum?id=Xr662CduGR}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{../paper/sections/abstract}
+\end{abstract}
+
+\input{../paper/sections/intro}
+
+% Figure 1: mechanism schematic (money figure).
+\begin{figure}[t]
+\centering
+\IfFileExists{figs/fig1_mechanism.pdf}{%
+  \includegraphics[width=\textwidth]{figs/fig1_mechanism.pdf}%
+}{%
+  \fbox{\parbox[c][2.97cm][c]{0.9\textwidth}{\centering
+    Placeholder for \texttt{figs/fig1\_mechanism.pdf}.}}%
+}
+\caption{An extra shared-stream consumption shifts corresponding reads on the
+aligned execution prefix. The first changed training-state update breaks
+trajectory identity; different draws alone need not do so, and later
+reconvergence is possible (Proposition~\ref{prop:pairing}). State-pure isolation
+of every relevant stream restores the sufficient pairing condition.}
+\label{fig:mechanism}
+\end{figure}
+
+
+\input{../paper/sections/f2}
+
+% Diagnosis II used to be a body section here. It is now appendix-only (see the
+% \diagtwoscope / \contribdiagtwo macros above): a correct result on a thinner
+% evidence base than the audit, which reviewers read as a second, loosely
+% attached paper when it sat in the body. sections_tmlr/f1.tex is retired; the
+% appendix is the single source.
+
+\begin{figure}[t]
+\centering
+\IfFileExists{figs/fig_r3_evidence_ledger.pdf}{%
+  \includegraphics[width=\textwidth]{figs/fig_r3_evidence_ledger.pdf}%
+}{}
+\caption{Verification resolution, separated from certificate eligibility.
+The full-protocol and realistic-evaluation cure counts are reproduced from
+archived model and meta-network hash pairs (3/12 and 2/25). Historical guard
+metrics and text-reported checks do not establish a full-state certificate;
+cells without independent floors are excluded from certificate counts.
+Unmeasured repaired arms remain unverified, not inferred successes.}
+\label{fig:ledger}
+\end{figure}
+
+\input{../paper/sections/related}
+\input{../paper/sections/discussion}
+\input{../paper/sections/conclusion}
+% Broader Impact stays in the paper proper: TMLR expects it here, after the
+% conclusion and before the references. The reproducibility statement it used
+% to sit beside is not a TMLR requirement (the venue asks for reproducibility
+% *material* as supplementary files), so it moved to Appendix G, with one
+% pointer from the conclusion.
+\input{../paper/sections/impact}
+
+\bibliography{refs}
+\bibliographystyle{tmlr}
+
+\appendix
+% The supplement is set at the document's own 10pt. It was briefly set \small
+% to buy pages. Preserve the standard body font and meet the regular-submission
+% limit by relocating auxiliary detail instead. Table bodies stay \footnotesize, which is
+% ordinary practice and not a prose-size reduction.
+\input{appendix_body}
+\input{../paper/sections/extended_context}
+
+\end{document}

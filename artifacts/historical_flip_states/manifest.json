@@ -1,0 +1,498 @@
+{
+  "schema_version": 1,
+  "artifact": "historical_mwnet_flip_states",
+  "provenance": {
+    "source_archive_basename": "roberta_momentum_samedist_suite_handoff_20260709_095633.zip",
+    "source_archive_bytes": 579334493,
+    "source_archive_sha256": "d3aff728a21f3e8b99c8d0173eab1b3e16d28fd37f0ae3f2e9d77967b271b166",
+    "selected_checkpoint_members": 15,
+    "recovery_method": "exact allowlist from outer ZIP; no broad extraction",
+    "pickle_deserialized": false
+  },
+  "scope": {
+    "included": "final model and meta-network state_dict tensor storages (parameters and buffers)",
+    "excluded": [
+      "optimizer state",
+      "RNG state",
+      "data-cursor state",
+      "every-update trajectory state"
+    ]
+  },
+  "source": {
+    "file": "scripts/flip_demo_mwnet.py",
+    "sha256": "e0ca96180c398187e21286555833f852b8b9a33b9ab458ee0efca010de2a4b4e",
+    "outer_archive_member": "roberta_momentum_samedist_suite/scripts/flip_demo_mwnet.py",
+    "archive_sha256": "e0ca96180c398187e21286555833f852b8b9a33b9ab458ee0efca010de2a4b4e",
+    "byte_identical_to_archive": true,
+    "save_contract": "dictionary containing model.state_dict() and vnet.state_dict() only"
+  },
+  "checkpoints": [
+    {
+      "file": "floor_seed1_a_mwnet.pt",
+      "seed": 1,
+      "role": "floor_a",
+      "bytes": 1922833,
+      "sha256": "8bc9becd6379f50feb884b0f628d6cf3d3fad4997e382ff0da892be34cf82b34",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed1_a_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "8defdbd56c6313b2b38106bffd802dd8752d550174bfda39c8006a897e61122f",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed1_a.json",
+        "sha256": "808ab64a739884e4a2c02de7289f2e92c7dc641358affc8a760c2bc025667f05",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed1_a.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3098,
+        "state_sha256": "f328ba241210c26a694affbb2dc8aaf7bf429e7ec2b8683158cb351a6f5b2094",
+        "vnet_state_sha256": "06600c0b533b397263ad47e1f610173a7caa9604029a76aeebb26b722de11a31",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "floor_seed1_b_mwnet.pt",
+      "seed": 1,
+      "role": "floor_b",
+      "bytes": 1922833,
+      "sha256": "ce6f61236a6bb80a6dad3db0d7c863489beefbbe06d2dbda8feda27937166b3d",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed1_b_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "8defdbd56c6313b2b38106bffd802dd8752d550174bfda39c8006a897e61122f",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed1_b.json",
+        "sha256": "5c45e3fd2ce4fa6c93759a65dccda2a5ee4c01241b158b517b2df391a5c5bf96",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed1_b.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3098,
+        "state_sha256": "f328ba241210c26a694affbb2dc8aaf7bf429e7ec2b8683158cb351a6f5b2094",
+        "vnet_state_sha256": "06600c0b533b397263ad47e1f610173a7caa9604029a76aeebb26b722de11a31",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "cure_seed1_mwnet_probe_isolated.pt",
+      "seed": 1,
+      "role": "isolated_cure",
+      "bytes": 1924965,
+      "sha256": "235af664175e62a9ffa2e30f1f3ed04a3f4f2a673f6a9152711f705691b14301",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/cure_seed1_mwnet_probe_isolated.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "8defdbd56c6313b2b38106bffd802dd8752d550174bfda39c8006a897e61122f",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/cure_seed1.json",
+        "sha256": "6e6d3104be594ac01fc41f614d5cfee3a0fbc953fecfd6e7b90c43f8f1810095",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/cure_seed1.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3098,
+        "state_sha256": "f328ba241210c26a694affbb2dc8aaf7bf429e7ec2b8683158cb351a6f5b2094",
+        "vnet_state_sha256": "06600c0b533b397263ad47e1f610173a7caa9604029a76aeebb26b722de11a31",
+        "probe_fired": true
+      }
+    },
+    {
+      "file": "floor_seed2_a_mwnet.pt",
+      "seed": 2,
+      "role": "floor_a",
+      "bytes": 1922833,
+      "sha256": "857490af58ac76385019856fe028325a19e31d9c44f5be61227cb970d71f44de",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed2_a_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "101ec17f7d61e6a6dc6ba3e93c69058a69e970e7c457fa173f5b320dfdb732e5",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed2_a.json",
+        "sha256": "def0692167719f6a8565ab50981bbdee28519b8751330d1253a924536d2ac05b",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed2_a.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3808,
+        "state_sha256": "a8028c6cd244af1fc37d7d00ceb1ca727c26edb31c463d391497a7bdef20dd57",
+        "vnet_state_sha256": "65792e560b7e3b026dcc1f14bb33fe4cb0200966de7aeccb7b0de5968ec503b9",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "floor_seed2_b_mwnet.pt",
+      "seed": 2,
+      "role": "floor_b",
+      "bytes": 1922833,
+      "sha256": "966d9f02ade1fd3c243b6b2000397d6239f8e9706caf627a5e54e30644a27027",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed2_b_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "101ec17f7d61e6a6dc6ba3e93c69058a69e970e7c457fa173f5b320dfdb732e5",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed2_b.json",
+        "sha256": "dd91ffa8dd6ffe6621804f18d61289182d39f39db55c3796d72629f414c9741d",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed2_b.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3808,
+        "state_sha256": "a8028c6cd244af1fc37d7d00ceb1ca727c26edb31c463d391497a7bdef20dd57",
+        "vnet_state_sha256": "65792e560b7e3b026dcc1f14bb33fe4cb0200966de7aeccb7b0de5968ec503b9",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "cure_seed2_mwnet_probe_isolated.pt",
+      "seed": 2,
+      "role": "isolated_cure",
+      "bytes": 1924965,
+      "sha256": "7cc62831f2bdc7752b90961ad53892e6372621af3ac5702947850bb5723970a5",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/cure_seed2_mwnet_probe_isolated.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "101ec17f7d61e6a6dc6ba3e93c69058a69e970e7c457fa173f5b320dfdb732e5",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/cure_seed2.json",
+        "sha256": "c2aaaba7a6c17c0e8060e958772d29d1d9e137537ef26a57b50de988ffefdcd3",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/cure_seed2.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3808,
+        "state_sha256": "a8028c6cd244af1fc37d7d00ceb1ca727c26edb31c463d391497a7bdef20dd57",
+        "vnet_state_sha256": "65792e560b7e3b026dcc1f14bb33fe4cb0200966de7aeccb7b0de5968ec503b9",
+        "probe_fired": true
+      }
+    },
+    {
+      "file": "floor_seed3_a_mwnet.pt",
+      "seed": 3,
+      "role": "floor_a",
+      "bytes": 1922833,
+      "sha256": "55b48ac0c2c9564a1d4b6daf4bf29e241d3d78cf6f1e9685437bc9a893ef0749",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed3_a_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "7f10fc170ded4ab1dc71e2c928efb27f92366135ee67d3ecf305d451373efea6",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed3_a.json",
+        "sha256": "46baabbe54177a047654c55cb92ff754f89df964207ac7f3df3785ca7eb6aabb",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed3_a.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3594,
+        "state_sha256": "b5fc5f781e86d102e07e8bff2b3f6059400ff2214661809e4ff61db8afdb3809",
+        "vnet_state_sha256": "388a1f2fa1767afae58fce42b4afa949de34e8e8549b6a47eb3e6796cc6c2b78",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "floor_seed3_b_mwnet.pt",
+      "seed": 3,
+      "role": "floor_b",
+      "bytes": 1922833,
+      "sha256": "12f0115ed1ead19aa3f94848cc558db95a840d7dc218f1711e0738b818d9b55a",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed3_b_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "7f10fc170ded4ab1dc71e2c928efb27f92366135ee67d3ecf305d451373efea6",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed3_b.json",
+        "sha256": "dd588088f1b18ae057380d85946635276f288becd0332ff7c892e33d2edb3da8",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed3_b.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3594,
+        "state_sha256": "b5fc5f781e86d102e07e8bff2b3f6059400ff2214661809e4ff61db8afdb3809",
+        "vnet_state_sha256": "388a1f2fa1767afae58fce42b4afa949de34e8e8549b6a47eb3e6796cc6c2b78",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "cure_seed3_mwnet_probe_isolated.pt",
+      "seed": 3,
+      "role": "isolated_cure",
+      "bytes": 1924965,
+      "sha256": "8f68605d2e8c72cf65e7b2a894f1e77a67516967da54936e5e9512f819481418",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/cure_seed3_mwnet_probe_isolated.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "7f10fc170ded4ab1dc71e2c928efb27f92366135ee67d3ecf305d451373efea6",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/cure_seed3.json",
+        "sha256": "824ebc5be375bc3fd184fdda10413e0583db27664453205642747246a91257a8",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/cure_seed3.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3594,
+        "state_sha256": "b5fc5f781e86d102e07e8bff2b3f6059400ff2214661809e4ff61db8afdb3809",
+        "vnet_state_sha256": "388a1f2fa1767afae58fce42b4afa949de34e8e8549b6a47eb3e6796cc6c2b78",
+        "probe_fired": true
+      }
+    },
+    {
+      "file": "floor_seed4_a_mwnet.pt",
+      "seed": 4,
+      "role": "floor_a",
+      "bytes": 1922833,
+      "sha256": "2b7d5675a6422ee7fdcc0fafa9d5d067ea3e3c511060bb4c76759be4dc3f7b0a",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed4_a_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "60b92bc13296578dccf3adbbabb003f6edc2f8d8429203b95f5f68f8eec6f6fd",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed4_a.json",
+        "sha256": "e9dc9437442bcc760ee1225e93ab50fc87ddaf6216d45ebc16c383df37273124",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed4_a.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3472,
+        "state_sha256": "0e094db749d91238837412c0bf4918caa213a3aa60bfe4ff51761c2427fd235e",
+        "vnet_state_sha256": "7383c4e9f89f24e8c5fcdcd0523fb9d128c808511e2f5e8a033994316b4ed797",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "floor_seed4_b_mwnet.pt",
+      "seed": 4,
+      "role": "floor_b",
+      "bytes": 1922833,
+      "sha256": "644da5d8b4058481c5d0e2fbd4e5a96fac3c8abe248ffcb5162706cdd1b307a3",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed4_b_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "60b92bc13296578dccf3adbbabb003f6edc2f8d8429203b95f5f68f8eec6f6fd",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed4_b.json",
+        "sha256": "1f8631acd5f9d69a0cccf2fc58021737600b5daee5e3bcb133a8a1f8465ba534",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed4_b.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3472,
+        "state_sha256": "0e094db749d91238837412c0bf4918caa213a3aa60bfe4ff51761c2427fd235e",
+        "vnet_state_sha256": "7383c4e9f89f24e8c5fcdcd0523fb9d128c808511e2f5e8a033994316b4ed797",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "cure_seed4_mwnet_probe_isolated.pt",
+      "seed": 4,
+      "role": "isolated_cure",
+      "bytes": 1924965,
+      "sha256": "0a7c1621b1b3975348d7098c846200dcf3bad96d38b967e026ea8f26da6a16fd",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/cure_seed4_mwnet_probe_isolated.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "60b92bc13296578dccf3adbbabb003f6edc2f8d8429203b95f5f68f8eec6f6fd",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/cure_seed4.json",
+        "sha256": "d719c347047189a7eb1828983bd79ef94ae657e4195fb36590f9675a7dc53ea6",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/cure_seed4.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3472,
+        "state_sha256": "0e094db749d91238837412c0bf4918caa213a3aa60bfe4ff51761c2427fd235e",
+        "vnet_state_sha256": "7383c4e9f89f24e8c5fcdcd0523fb9d128c808511e2f5e8a033994316b4ed797",
+        "probe_fired": true
+      }
+    },
+    {
+      "file": "floor_seed5_a_mwnet.pt",
+      "seed": 5,
+      "role": "floor_a",
+      "bytes": 1922833,
+      "sha256": "119dadaf8185b6a9c2025d3c2255e7f3b0db1b6d2c87569da2696367d25df6fc",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed5_a_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "55d19c444dba4c39396a5b1f5858a71b2e0930ddf2553bfbbed2b4fcdfaf90e3",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed5_a.json",
+        "sha256": "18c7f28ab4cdf5c399cdf23c3a59832f33fae2b230e1c91fb4c4a4be9acb088c",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed5_a.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3248,
+        "state_sha256": "25c1f5f0d0d5c5d0ed8a4103a8550ff3f828bb55fc9a4c2174552f3e8ae8d332",
+        "vnet_state_sha256": "cb4d33bf881986798c8ce473ec0cd67cfaaf7f25eff6779ec48cc9ee54f6fe06",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "floor_seed5_b_mwnet.pt",
+      "seed": 5,
+      "role": "floor_b",
+      "bytes": 1922833,
+      "sha256": "d52d22976eab683c137799703cd177e963ea85523076ca4253bc08cf6547db5e",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/floor_seed5_b_mwnet.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "55d19c444dba4c39396a5b1f5858a71b2e0930ddf2553bfbbed2b4fcdfaf90e3",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/floor_seed5_b.json",
+        "sha256": "583230e6880d8dfde34eeebf1f2e731b7b3ac324b76730468124a18e5f8fd845",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/floor_seed5_b.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3248,
+        "state_sha256": "25c1f5f0d0d5c5d0ed8a4103a8550ff3f828bb55fc9a4c2174552f3e8ae8d332",
+        "vnet_state_sha256": "cb4d33bf881986798c8ce473ec0cd67cfaaf7f25eff6779ec48cc9ee54f6fe06",
+        "probe_fired": null
+      }
+    },
+    {
+      "file": "cure_seed5_mwnet_probe_isolated.pt",
+      "seed": 5,
+      "role": "isolated_cure",
+      "bytes": 1924965,
+      "sha256": "0df371008fb3d8c61697c52a0f2a7184731825e37455203fbd104e3976c99ee7",
+      "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/states/cure_seed5_mwnet_probe_isolated.pt",
+      "nested_zip_member_count": 167,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "55d19c444dba4c39396a5b1f5858a71b2e0930ddf2553bfbbed2b4fcdfaf90e3",
+      "pickle_string_operand_count": 588,
+      "sensitive_pickle_string_matches": [],
+      "associated_json": {
+        "file": "logs_flip_demo/cure_seed5.json",
+        "sha256": "f77404c9bec5292abbaa827358cc1d7dfe521dd51dc3be8f61621c542ac63d96",
+        "outer_archive_member": "roberta_momentum_samedist_suite/logs_flip_demo/cure_seed5.json",
+        "byte_identical_to_archive": true
+      },
+      "recorded_observation": {
+        "final_val_acc": 0.3248,
+        "state_sha256": "25c1f5f0d0d5c5d0ed8a4103a8550ff3f828bb55fc9a4c2174552f3e8ae8d332",
+        "vnet_state_sha256": "cb4d33bf881986798c8ce473ec0cd67cfaaf7f25eff6779ec48cc9ee54f6fe06",
+        "probe_fired": true
+      }
+    }
+  ],
+  "seed_triplets": [
+    {
+      "seed": 1,
+      "files": [
+        "floor_seed1_a_mwnet.pt",
+        "floor_seed1_b_mwnet.pt",
+        "cure_seed1_mwnet_probe_isolated.pt"
+      ],
+      "all_tensor_storage_members_byte_equal": true,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "8defdbd56c6313b2b38106bffd802dd8752d550174bfda39c8006a897e61122f",
+      "recorded_state_sha256": "f328ba241210c26a694affbb2dc8aaf7bf429e7ec2b8683158cb351a6f5b2094",
+      "recorded_vnet_state_sha256": "06600c0b533b397263ad47e1f610173a7caa9604029a76aeebb26b722de11a31",
+      "recorded_final_val_acc": 0.3098
+    },
+    {
+      "seed": 2,
+      "files": [
+        "floor_seed2_a_mwnet.pt",
+        "floor_seed2_b_mwnet.pt",
+        "cure_seed2_mwnet_probe_isolated.pt"
+      ],
+      "all_tensor_storage_members_byte_equal": true,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "101ec17f7d61e6a6dc6ba3e93c69058a69e970e7c457fa173f5b320dfdb732e5",
+      "recorded_state_sha256": "a8028c6cd244af1fc37d7d00ceb1ca727c26edb31c463d391497a7bdef20dd57",
+      "recorded_vnet_state_sha256": "65792e560b7e3b026dcc1f14bb33fe4cb0200966de7aeccb7b0de5968ec503b9",
+      "recorded_final_val_acc": 0.3808
+    },
+    {
+      "seed": 3,
+      "files": [
+        "floor_seed3_a_mwnet.pt",
+        "floor_seed3_b_mwnet.pt",
+        "cure_seed3_mwnet_probe_isolated.pt"
+      ],
+      "all_tensor_storage_members_byte_equal": true,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "7f10fc170ded4ab1dc71e2c928efb27f92366135ee67d3ecf305d451373efea6",
+      "recorded_state_sha256": "b5fc5f781e86d102e07e8bff2b3f6059400ff2214661809e4ff61db8afdb3809",
+      "recorded_vnet_state_sha256": "388a1f2fa1767afae58fce42b4afa949de34e8e8549b6a47eb3e6796cc6c2b78",
+      "recorded_final_val_acc": 0.3594
+    },
+    {
+      "seed": 4,
+      "files": [
+        "floor_seed4_a_mwnet.pt",
+        "floor_seed4_b_mwnet.pt",
+        "cure_seed4_mwnet_probe_isolated.pt"
+      ],
+      "all_tensor_storage_members_byte_equal": true,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "60b92bc13296578dccf3adbbabb003f6edc2f8d8429203b95f5f68f8eec6f6fd",
+      "recorded_state_sha256": "0e094db749d91238837412c0bf4918caa213a3aa60bfe4ff51761c2427fd235e",
+      "recorded_vnet_state_sha256": "7383c4e9f89f24e8c5fcdcd0523fb9d128c808511e2f5e8a033994316b4ed797",
+      "recorded_final_val_acc": 0.3472
+    },
+    {
+      "seed": 5,
+      "files": [
+        "floor_seed5_a_mwnet.pt",
+        "floor_seed5_b_mwnet.pt",
+        "cure_seed5_mwnet_probe_isolated.pt"
+      ],
+      "all_tensor_storage_members_byte_equal": true,
+      "tensor_storage_member_count": 161,
+      "tensor_storage_bytes": 1866908,
+      "tensor_storage_fingerprint_sha256": "55d19c444dba4c39396a5b1f5858a71b2e0930ddf2553bfbbed2b4fcdfaf90e3",
+      "recorded_state_sha256": "25c1f5f0d0d5c5d0ed8a4103a8550ff3f828bb55fc9a4c2174552f3e8ae8d332",
+      "recorded_vnet_state_sha256": "cb4d33bf881986798c8ce473ec0cd67cfaaf7f25eff6779ec48cc9ee54f6fe06",
+      "recorded_final_val_acc": 0.3248
+    }
+  ]
+}

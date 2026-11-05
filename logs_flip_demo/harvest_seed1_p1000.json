@@ -1,0 +1,17 @@
+{
+  "args": {
+    "repo": "/artifact/local-path",
+    "data_root": "/artifact/local-path",
+    "epochs": 20,
+    "batch_size": 100,
+    "train_size": 10000,
+    "noise": 0.4,
+    "seed": 1,
+    "probe_step": 1000,
+    "arms": "mwnet_probe",
+    "out": "logs_flip_demo/harvest_seed1_p1000.json"
+  },
+  "results": {
+    "mwnet_probe": 0.2916
+  }
+}

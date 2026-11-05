@@ -1,0 +1,12 @@
+{
+  "actually_hashed_cited_files": 34,
+  "metadata_only_unavailable_cited_files": 11,
+  "omitted_source_repositories": [
+    "coteaching",
+    "disc",
+    "infobatch",
+    "l2rw_torch",
+    "promix",
+    "selcl"
+  ]
+}

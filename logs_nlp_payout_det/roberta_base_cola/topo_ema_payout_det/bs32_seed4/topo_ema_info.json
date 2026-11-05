@@ -1,0 +1,17 @@
+{
+  "betas": [
+    0.99,
+    0.999
+  ],
+  "trigger_step": 64,
+  "trigger_reason": "private_frac 0.0010 >= 1.25 x baseline 0.0007",
+  "level_names": [
+    "32",
+    "16",
+    "8",
+    "4",
+    "2",
+    "1"
+  ],
+  "private_max_support": 2
+}
