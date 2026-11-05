@@ -66,6 +66,26 @@ reproduce the reviewed PDF pixel for pixel before its layout was edited.
   label to the right of its marker (it overlapped s2) and sets the side
   statistics with uniform indentation and a true minus sign.
 
+## Figures and captions: bold titles
+
+- Every figure caption sets its title sentence in bold (the part before a
+  title colon when the first sentence has one). Table captions are unchanged.
+- Titles drawn inside figures are bold black: Figure 1's inset heading and
+  "printed Δ" box title (the colour-coded Run A / Run B titles keep their
+  colours), Figure 2's panel titles, Figure 4a's two statistics headings,
+  and the panel titles of appendix Figures 8, 17 and 18.
+- Figures 8 and 18 needed their generators, which were missing from the
+  reviewed artifact: `figs/make_appS.py`, `figs/make_appP.py` and their 24
+  input records (`logs_a2_mwnet/`, `logs_monitor_study/`,
+  `logs_nlp_gradpr/*/step_log.csv`) are restored from the authors' archive.
+  Both reproduced the reviewed PDFs pixel for pixel before the title change.
+  Machine-local paths in 16 of those records' `args` fields were replaced by
+  `/artifact/local-path`; no recorded value changed.
+- `scripts/nanogpt_supplementary_plot.py`: bold panel titles at 8.8 pt (bold
+  at the default size overran the canvas), and `main()` now writes only the
+  manuscript copy, `paper_tmlr/figs/nanogpt_per_seed.pdf` (it used to also
+  write a `paper/figs/` copy, a directory the release does not have).
+
 ## Code
 
 - `scripts/rng_premise_check.py`: the 13 premise checks now run as assertions

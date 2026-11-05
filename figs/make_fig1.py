@@ -244,7 +244,7 @@ def build_figure() -> Figure:
     rounded_box(ax, 121.8, 47.5, 144.3, 60.5, edge=VERM_DARK,
                 face="#FCEFE7", lw=1.0)
     ax.text(133.05, 56.4, "printed Δ", ha="center", va="center",
-            fontsize=FS_OUTCOME, color=INK, zorder=4.2)
+            fontsize=FS_OUTCOME, color="black", fontweight="bold", zorder=4.2)
     ax.text(133.05, 52.2, "may shift", ha="center", va="center",
             fontsize=FS_BODY, color=VERM_DARK, fontweight="bold", zorder=4.2)
     ax.text(133.05, 48.9, "mean may agree", ha="center", va="center",
@@ -253,8 +253,8 @@ def build_figure() -> Figure:
     # ---------------- inset: isolated probe via fork_rng ------------------
     rounded_box(ax, 20, 5, 144.3, 22, edge="0.55", face="0.985",
                 lw=LW_HAIR, ls=(0, (4, 3)), zorder=0.5)
-    ax.text(23, 19.4, "Under Prop. 1 premises", fontsize=FS_BODY,
-            color="0.25", style="italic", va="center", zorder=4)
+    ax.text(23, 20.4, "Under Prop. 1 premises", fontsize=FS_BODY,
+            color="black", fontweight="bold", va="center", zorder=4)
 
     yI = 14.5
     itick = [35, 45, 55, 65, 75, 85, 95]

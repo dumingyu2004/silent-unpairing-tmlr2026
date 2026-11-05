@@ -303,7 +303,8 @@ def build_figure(data: HFBoundaryData):
             zorder=4,
             label="boundary-cuda",
         )
-        ax_a.set_title("A   Which tested path breaks pairing?", fontsize=8.2, pad=3.0)
+        ax_a.set_title("A   Which tested path breaks pairing?", fontsize=8.2, pad=3.0,
+                       fontweight="bold", color="black")
         ax_a.set_ylabel("max $|\\Delta \\theta|_\\infty$\n($\\times 10^{-4}$)")
         ax_a.set_xticks(x_boundary)
         ax_a.set_xticklabels(data.arm_labels, rotation=0, ha="center")
@@ -364,7 +365,8 @@ def build_figure(data: HFBoundaryData):
                 label=f"cuda-{marker_shape}",
             )
             cuda_marker.set_gid(f"cuda-{pair_key}")
-        ax_b.set_title("B   Ten unique task–seed replications", fontsize=8.2, pad=3.0)
+        ax_b.set_title("B   Ten unique task–seed replications", fontsize=8.2, pad=3.0,
+                       fontweight="bold", color="black")
         ax_b.set_ylabel("max $|\\Delta \\theta|_\\infty$\n($\\times 10^{-4}$)")
         ax_b.set_xticks(x_pairs)
         ax_b.set_xticklabels(labels, rotation=0)

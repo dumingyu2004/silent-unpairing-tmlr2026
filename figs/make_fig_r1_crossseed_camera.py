@@ -8,8 +8,9 @@ of layout:
 
 1. the s4 seed label moves from above its marker to its right, so it no
    longer collides with the s2 label printed below the s2 marker;
-2. the side-panel statistics are re-set with one indentation level and a true
-   minus sign. Every number comes from the same data dict as before.
+2. the side-panel statistics are re-set with one indentation level, a true
+   minus sign and bold black headings. Every number comes from the same data
+   dict as before.
 
 Usage: python figs/make_fig_r1_crossseed_camera.py [--output-dir DIR]
 (default: paper_tmlr/figs, the copy the manuscript includes).
@@ -37,22 +38,44 @@ def _signed(value: float) -> str:
     return f"{value:+.2f}".replace("-", MINUS)
 
 
-def stats_text(data: dict) -> str:
+def stats_lines(data: dict) -> list[tuple[str, str]]:
+    """(kind, text) rows: 'head' = bold black heading, 'item' = indented entry,
+    'note' = unindented entry, '' = blank spacer row."""
     pct = 100 * data["mae"] / data["observed_mean"]
-    return "\n".join([
-        "held out (LOSO)",
-        f"  MAE {data['mae']:.2f} pt",
-        f"  = {pct:.0f}% of mean",
-        f"  harvest {data['observed_mean']:.2f} pt",
-        f"  bias {_signed(data['mean_signed_error'])} pt",
-        f"  {data['n_over']} over, {data['n_under']} under",
-        f"  $r$ = {_signed(data['pearson_r'])}",
-        "",
-        "in sample (own $\\sigma$)",
-        f"  MAE {data['mae_own']:.2f} pt",
-        "",
-        f"$c_6$ = {data['c_m']:.4f} exact",
-    ])
+    return [
+        ("head", "held out (LOSO)"),
+        ("item", f"MAE {data['mae']:.2f} pt"),
+        ("item", f"= {pct:.0f}% of mean"),
+        ("item", f"harvest {data['observed_mean']:.2f} pt"),
+        ("item", f"bias {_signed(data['mean_signed_error'])} pt"),
+        ("item", f"{data['n_over']} over, {data['n_under']} under"),
+        ("item", f"$r$ = {_signed(data['pearson_r'])}"),
+        ("", ""),
+        ("head", "in sample (own $\\sigma$)"),
+        ("item", f"MAE {data['mae_own']:.2f} pt"),
+        ("", ""),
+        ("note", f"$c_6$ = {data['c_m']:.4f} exact"),
+    ]
+
+
+def draw_stats(ax_txt, block, data: dict) -> None:
+    """Replace the frozen single text block with one text per row, so the
+    headings can be bold black while the entries keep the original style."""
+    fontsize = block.get_fontsize()
+    color = block.get_color()
+    block.remove()
+    step = fontsize * 1.32  # the frozen block's linespacing
+    for row, (kind, text) in enumerate(stats_lines(data)):
+        if not kind:
+            continue
+        head = kind == "head"
+        ax_txt.annotate(
+            text, xy=(0.0, 0.98), xycoords="axes fraction",
+            xytext=(fontsize * 0.9 if kind == "item" else 0.0, -row * step),
+            textcoords="offset points", ha="left", va="top",
+            fontsize=fontsize, color="black" if head else color,
+            fontweight="bold" if head else "normal",
+        )
 
 
 def build_camera_figure(data: dict):
@@ -74,7 +97,7 @@ def build_camera_figure(data: dict):
     blocks = [t for t in ax_txt.texts if t.get_text().startswith("held out (LOSO)")]
     if len(blocks) != 1:
         raise RuntimeError("expected exactly one statistics block in the frozen figure")
-    blocks[0].set_text(stats_text(data))
+    draw_stats(ax_txt, blocks[0], data)
     return fig
 
 

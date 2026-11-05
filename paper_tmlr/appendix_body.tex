@@ -530,7 +530,7 @@ masks at evaluation time); our classification collators draw nothing.
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_persistence.pdf}.}}%
 }
-\caption{Persistence of the probe displacement at convergence. Each dot is
+\caption{\textbf{Persistence of the probe displacement at convergence.} Each dot is
 one run's $|\Delta\,\text{val acc}|$ between the CUDA-probe arm and its
 paired reference: ten 150-step pairs (mean $2.58$ points) versus four
 full-length runs (mean $1.27$, maximum $2.73$); gray lines connect matched
@@ -959,7 +959,7 @@ constants are read off is Figure~\ref{fig:app-harvest-heatmap}.
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_harvest\_heatmap.pdf}.}}%
 }
-\caption{The harvest grid behind the Proposition~\ref{prop:harvest} fit:
+\caption{\textbf{The harvest grid behind the Proposition~\ref{prop:harvest} fit:}
 paired deltas (points) for 5 seeds $\times$ 6 probe placements, diverging
 scale centered at $0$, per-seed maximum outlined. The grid spans $-8.98$
 to $+3.08$ points with honest mean $-1.82$; the outlined maxima ($+1.62$,
@@ -1089,9 +1089,9 @@ imply zero action or establish that every batch crosses the threshold.
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_f1\_decoupling.pdf}.}}%
 }
-\caption{Signal-versus-update decoupling in the two re-executed
+\caption{\textbf{Signal-versus-update decoupling in the two re-executed
 meta-reweighting systems (four runs each: noise $\{0, 0.4\} \times$ seeds
-$\{1, 2\}$). Left: Meta-Weight-Net's raw meta-gradient norm (vermillion)
+$\{1, 2\}$).} Left: Meta-Weight-Net's raw meta-gradient norm (vermillion)
 decays $150\times$--$3{,}700\times$ from first to last measurement across
 the four runs, and its full within-run
 $\max/\min$ swing reaches ${\sim}24{,}700\times$, while the induced v-net
@@ -1394,8 +1394,8 @@ legacy $+8.59$ withheld, deterministic re-measurement $+4.86$).
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_kernel\_noise.pdf}.}}%
 }
-\caption{Kernel nondeterminism alone breaks same-seed pairing (legacy
-non-deterministic CIFAR-100 stratified campaign, clean labels): every arm
+\caption{\textbf{Kernel nondeterminism alone breaks same-seed pairing (legacy
+non-deterministic CIFAR-100 stratified campaign, clean labels):} every arm
 trains the same recipe from the same seed, yet the raw candidates spread
 by $6.8$--$15.6$ points within a seed. Dots are the five arms per seed;
 the bracket marks the widest five-arm $\max{-}\min$ spread ($15.6$ points,
@@ -1638,8 +1638,8 @@ preregistration remain unchanged.
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_flip.pdf}.}}%
 }
-\caption{The probe moves a printed method-versus-baseline comparison in
-opposite directions on two seeds (Meta-Weight-Net official code). With a
+\caption{\textbf{The probe moves a printed method-versus-baseline comparison in
+opposite directions on two seeds (Meta-Weight-Net official code).} With a
 probe at step 500, the printed gap moves from $-3.02$ to $-4.80$ points on
 seed 1 (shift $-1.78$) and from $-3.76$ to $-2.60$ on seed 2 (shift
 $+1.16$). Both movements are far above the family's accuracy-exact repeat
@@ -1658,9 +1658,9 @@ zero mean across seeds.}
   \fbox{\parbox[c][2.4cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/fig\_realeval.pdf}.}}%
 }
-\caption{The harvest reproduced by an \emph{unmodified} standard monitoring
+\caption{\textbf{The harvest reproduced by an \emph{unmodified} standard monitoring
 evaluation, at a believable protocol (Meta-Weight-Net official code, full
-$45$k train, $12$ epochs). A shuffled monitoring \texttt{DataLoader}'s two
+$45$k train, $12$ epochs).} A shuffled monitoring \texttt{DataLoader}'s two
 $64$-bit seed draws desynchronize the pair; per-seed selection over five
 placements manufactures $+0.45$ points (tracking $c_5\bar\sigma$, ratio
 $1.15$), while the same evaluation inside \texttt{fork\_rng} is bitwise
@@ -1681,8 +1681,8 @@ small-sample, same-sample calibration.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_payout\_bars.pdf}.}}%
 }
-\caption{Guard payout versus LAWA across the five under-tuned cells, as
-mean holdout gain over the paired baseline: guard $+1.88$ (NLP macro),
+\caption{\textbf{Guard payout versus LAWA across the five under-tuned cells, as
+mean holdout gain over the paired baseline:} guard $+1.88$ (NLP macro),
 $+3.64$/$+6.95$ (CIFAR-10 clean/noise), $+4.86$/$+0.87$ (CIFAR-100
 clean/noise); LAWA $+0.48$, $+4.73$, $-0.89$, $-0.00$ (not run on NLP).
 Above each bar: per-unit win/zero/negative counts (15 task--seed cells for
@@ -1703,9 +1703,9 @@ downside; the conditional no-op implication applies only under its premises.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_symmetry.pdf}.}}%
 }
-\caption{The conditional guard against an unconditional always-EMA policy
+\caption{\textbf{The conditional guard against an unconditional always-EMA policy
 (CIFAR-10, 30\% noise, deterministic, 5 seeds), as mean holdout gain over
-the paired baseline. Under-tuned recipe: guard $+6.95$ versus always-EMA
+the paired baseline.} Under-tuned recipe: guard $+6.95$ versus always-EMA
 $+7.13$; tuned recipe: guard exactly $0.00$ (all champions raw, metric-level
 zeros) versus always-EMA $-0.18$. The $0.18$ points of upside conceded
 where EMA helps accompanies an observed zero where it hurts; these metrics
@@ -1722,9 +1722,9 @@ alone do not establish a state-level certificate.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_nlp\_strip.pdf}.}}%
 }
-\caption{Per-cell guard payout on the under-tuned NLP campaign
+\caption{\textbf{Per-cell guard payout on the under-tuned NLP campaign
 (deterministic; 3 tasks $\times$ 5 seeds; champion from the selection log
-versus the paired baseline's final holdout metric). Task means $-0.62$
+versus the paired baseline's final holdout metric).} Task means $-0.62$
 (RTE), $+1.42$ (MRPC), $+4.84$ (CoLA); seven cells are exact zeros
 (champion raw or holdout tie), and the extremes are the single realized
 selection loss $-3.12$ (RTE seed 1) and the largest rescue $+15.05$ (CoLA
@@ -1742,8 +1742,8 @@ averaged away.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_cola\_case.pdf}.}}%
 }
-\caption{The CoLA seed-2 rescue behind the campaign's $+15.05$ cell
-(deterministic pairing, same seed). The baseline's raw model collapses on
+\caption{\textbf{The CoLA seed-2 rescue behind the campaign's $+15.05$ cell
+(deterministic pairing, same seed).} The baseline's raw model collapses on
 the final half-epoch (holdout MCC $\times 100$: $47.83$), while the
 guard's deployed champion (EMA $0.999$, engaged by the epoch-1 fallback)
 ends at $62.88$. The guard converts trajectory instability the baseline
@@ -1776,8 +1776,8 @@ that restoring the stream cursors removes it bitwise.
   \fbox{\parbox[c][2.97cm][c]{0.9\textwidth}{\centering
     Placeholder for \texttt{figs/fig\_divergence\_heatmap.pdf}.}}%
 }
-\caption{Where the same-seed pair starts to diverge (MW-Net causal trace,
-five seeds). Top: in the shared-stream arm, relative L2 against the
+\caption{\textbf{Where the same-seed pair starts to diverge (MW-Net causal trace,
+five seeds).} Top: in the shared-stream arm, relative L2 against the
 same-seed base is exactly zero (gray) for every layer and seed at the
 pre-probe checkpoint and nonzero from the probe step ($1400$) onward; the
 first divergent training-visible consumer is the meta-batch index draw in
@@ -1879,7 +1879,7 @@ intervals or reasons to exclude seeds; all seeds remain in the primary.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{figs/nanogpt_per_seed.pdf}
-\caption{Independent nanoGPT campaign, in prespecified seed order.
+\caption{\textbf{Independent nanoGPT campaign, in prespecified seed order.}
 Left: descriptive calibration harvest. Middle: held-out harvest with the
 frozen corrected prediction and prespecified uncorrected sensitivity;
 horizontal lines predict a mean, not individual seeds. Right: exploratory
@@ -2034,8 +2034,8 @@ The protocol is portable, not a guarantee of cross-platform bit identity.
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_detector\_grid.pdf}.}}%
 }
-\caption{The participation-ratio detector transfers across datasets and
-modalities: same-seed clean (blue) versus 30\%-noise (vermillion) runs,
+\caption{\textbf{The participation-ratio detector transfers across datasets and
+modalities:} same-seed clean (blue) versus 30\%-noise (vermillion) runs,
 two seeds each (solid/dashed), on CIFAR-10/100 (per-step monitor) and
 CoLA/MRPC (per-40-step monitor). All 8/8 clean--noise pairs separate in
 the early window; at the sample nearest epoch 1 the clean-versus-noise
@@ -2055,8 +2055,8 @@ across datasets, the no-global-cutoff boundary.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_saturation.pdf}.}}%
 }
-\caption{The original private-fraction trigger statistic at batch 512
-(deterministic clean campaigns, seeds 1--2): the statistic sits pinned at
+\caption{\textbf{The original private-fraction trigger statistic at batch 512
+(deterministic clean campaigns, seeds 1--2):} the statistic sits pinned at
 its saturation plateau, run medians $0.70$ (CIFAR-10) and $0.44$
 (CIFAR-100), apart from a transient mid-training dip window, and
 carries no memorization signal at this batch size. This is the saturation
@@ -2075,8 +2075,8 @@ and the epoch-1 fallback engages the candidates instead.}
   \fbox{\parbox[c][2.97cm][c]{0.55\textwidth}{\centering
     Placeholder for \texttt{figs/app\_latewindow.pdf}.}}%
 }
-\caption{The detector's operating window is early training (CIFAR-100
-monitor study, full runs). The clean and 30\%-noise conditions are
+\caption{\textbf{The detector's operating window is early training (CIFAR-100
+monitor study, full runs).} The clean and 30\%-noise conditions are
 separated from the first epoch (two-seed condition means $0.918$ vs.\
 $0.978$), but as the training loss collapses the noisy curves fall
 \emph{below} the clean ones (the condition means invert at epoch 16),

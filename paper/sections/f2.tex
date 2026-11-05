@@ -127,8 +127,8 @@ built on.
   \fbox{\parbox[c][2.4cm][c]{0.9\columnwidth}{\centering
     Placeholder for \texttt{figs/fig3\_hf\_boundary.pdf}.}}%
 }
-\caption{Among the tested HuggingFace paths, only the probe that touches
-training's CUDA random stream breaks exact pairing. (A) In one matched
+\caption{\textbf{Among the tested HuggingFace paths, only the probe that touches
+training's CUDA random stream breaks exact pairing.} (A) In one matched
 five-arm audit, repeat, sequential Trainer evaluation, and a CPU random-batch
 probe are exactly zero; the CUDA random-batch probe is nonzero. (B) Across ten
 unique task--seed pairs, every repeat is exact and every CUDA probe diverges.
@@ -326,7 +326,7 @@ printed comparison by more than a point above an exact floor.
   \fbox{\parbox[c][2.97cm][c]{0.9\columnwidth}{\centering
     Placeholder for \texttt{figs/fig2\_harvest.pdf}.}}%
 }
-\caption{Selection turns bidirectional divergence into a one-sided report.
+\caption{\textbf{Selection turns bidirectional divergence into a one-sided report.}
 Across five seeds and six probe placements, the honest mean is $-1.82$ points,
 whereas selecting each seed's best placement reports $+2.19$, manufacturing
 $+4.01$. The growth over the number of tried placements tracks the finite-$m$ Gaussian benchmark in this grid rather than its asymptotic form
