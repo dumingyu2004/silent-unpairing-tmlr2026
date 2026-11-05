@@ -41,6 +41,8 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
   name because the code and `revision_results/statistics.json` call it
   `reviewer_bootstrap`.
 - PDF metadata (title, authors, subject) set with `\hypersetup`.
+- An epigraph (Feynman, "Cargo Cult Science", 1974) opens the introduction,
+  set with standard LaTeX (no new package).
 
 ## Code
 
