@@ -48,7 +48,9 @@ torch 2.11.0). Corrections, applied to `paper/appendix.tex` and
   experimentation pipelines), presented as an argument rather than a
   measurement, and uses plain terms in place of paper-specific ones
   ("probe positions" for placements, "winner's-curse effect" for reporting
-  optimism). No result, number or conclusion changed.
+  optimism). The introduction gains one matching sentence, citing a survey
+  of LLM-based agents (Xu et al., 2026). No result, number or conclusion
+  changed.
 
 ## Figures: overlapping labels fixed
 
